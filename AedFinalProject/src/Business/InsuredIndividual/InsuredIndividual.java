@@ -9,5 +9,5 @@ package Business.InsuredIndividual;
  * @author hrishipal
  */
 public class InsuredIndividual {
-    
+           
 }
