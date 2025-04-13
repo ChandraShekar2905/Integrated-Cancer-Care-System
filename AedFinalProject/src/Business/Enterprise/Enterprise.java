@@ -30,7 +30,7 @@ public abstract class Enterprise extends Organization {
 
         HealthcareCenter("HealthcareCenter"),
         InsuranceCompany("InsuranceCompany"),
-        AdministrationAid("AdministrationAid"),
+        AdministrationAid("GovernmentAid"),
         Pharmacy("Pharmacy");
         
 
@@ -60,18 +60,18 @@ public abstract class Enterprise extends Organization {
         this.enterpriseType = enterpriseType;
     }
 
-//    public Enterprise(EnterpriseType type, String name) {
-//        super(name);
-//        this.enterpriseType = type;
-//        organizationDirectory = new OrganizationDirectory();
-//        this.type = this.getClass().getSimpleName(); // Automatically set type to the subclass name
-//
-//    }
-//
-//    public String getType() {
-//        return type;
-//    }
-//    
-//    public abstract List<Organization.Type> getOrganizationTypes();
+    public Enterprise(EnterpriseType type, String name) {
+        super(name);
+        this.enterpriseType = type;
+        organizationDirectory = new OrganizationDirectory();
+        this.type = this.getClass().getSimpleName(); // Automatically set type to the subclass name
+
+    }
+
+    public String getType() {
+        return type;
+    }
+    
+    public abstract List<Organization.Type> getOrganizationTypes();
 
 }
