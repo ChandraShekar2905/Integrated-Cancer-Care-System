@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author hrishipal
  */
-public class InsuredIndiviualDirectory {
+public class InsuredIndividualDirectory {
       private List<InsuredIndividual> insuranceHolders = new ArrayList<>();
 
     public List<InsuredIndividual> getInsuranceHolders() {
