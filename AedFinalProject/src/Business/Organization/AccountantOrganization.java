@@ -5,15 +5,15 @@
  */
 package Business.Organization;
 
-import Business.Role.AccountantRole;
-import Business.Role.Role;
-import java.util.ArrayList;
-
-
 /**
  *
  * @author aaryakpawar
  */
+
+import Business.Role.AccountantRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 public class AccountantOrganization extends Organization {
 
     public AccountantOrganization() {
