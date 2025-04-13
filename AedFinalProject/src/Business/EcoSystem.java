@@ -4,13 +4,17 @@
  */
 package Business;
 
-import Business.Employee.Employee;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Role.Role;
 import Business.Role.SystemAdminRole;
-import Business.UserAccount.UserAccount;
+import java.util.ArrayList;
+
 /**
  *
  * @author hrishipal
  */
-public class ConfiureASystem {
+// Extending Organization from ECosystem
+public class EcoSystem extends Organization{
     
 }
