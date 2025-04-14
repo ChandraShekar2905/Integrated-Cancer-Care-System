@@ -42,7 +42,6 @@ public class Patient {
         return lastName;
     }
 
-   
     
     public void setSsn(String ssn) {
         this.ssn = ssn;
