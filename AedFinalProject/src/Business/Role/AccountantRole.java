@@ -12,7 +12,7 @@ import Business.Organization.AccountantOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.HealthcareAccountantRole.AccountantWorkAreaJPanel;
+import userinterface.Accountant.AccountantWorkAreaJPanel;
 
 /**
  *
