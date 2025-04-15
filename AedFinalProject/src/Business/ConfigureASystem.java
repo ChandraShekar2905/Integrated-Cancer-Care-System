@@ -11,6 +11,6 @@ import Business.UserAccount.UserAccount;
  *
  * @author hrishipal
  */
-public class ConfiureASystem {
+public class ConfigureASystem {
     
 }
