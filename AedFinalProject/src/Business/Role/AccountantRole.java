@@ -6,6 +6,11 @@
 
 package Business.Role;
 
+/**
+ *
+ * @author aaryakpawar
+ */
+
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.AccountantOrganization;
@@ -14,10 +19,6 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.Accountant.AccountantWorkAreaJPanel;
 
-/**
- *
- * @author aaryakpawar
- */
 public class AccountantRole extends Role{
 
     @Override
