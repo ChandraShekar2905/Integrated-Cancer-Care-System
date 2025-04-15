@@ -11,9 +11,10 @@ import Business.Patient.Patient;
 
 /**
  *
- * @author Dell
+ * @author aaryakpawar
  */
 
+//Billing logic
 public class AccountantBillingRequest extends WorkRequest {
 
     private double bill;
