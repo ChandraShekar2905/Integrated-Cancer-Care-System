@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.GovernmentSecretaries;
+import Business.Role.GovernmentTreasurer;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,16 +13,16 @@ import java.util.ArrayList;
  *
  * @author aaryakpawar
  */
-public class SecretaryOrganization extends Organization {
+public class TreasurerOrganization extends Organization {
 
-    public SecretaryOrganization() {
-        super(Organization.Type.GovernmentSecretary.getValue());
+   public TreasurerOrganization() {
+        super(Organization.Type.GovernmentAccountant.getValue());
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GovernmentSecretaries());
+        roles.add(new GovernmentTreasurer());
         return roles;
     }
     
