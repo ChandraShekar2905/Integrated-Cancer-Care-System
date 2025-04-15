@@ -28,31 +28,31 @@ public class EnterpriseDirectory {
     public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
         
-//        if(type==Enterprise.EnterpriseType.HealthcareCenter){
-//            enterprise=new HealthCenterEnterprise(name);
-//            enterpriseList.add(enterprise);
-//        }
-//        
-//        else if(type == Enterprise.EnterpriseType.GovernmentAid)
-//        {
-//            enterprise =  new GovernmentEnterprise(name);
-//            enterpriseList.add(enterprise);
-//            
-//        }
-//        
-//        else if(type == Enterprise.EnterpriseType.InsuranceCompany)
-//        {
-//            enterprise = new InsuranceCompanyEnterprise(name);
-//            enterpriseList.add(enterprise);
-//            }
-//         else if(type == Enterprise.EnterpriseType.Pharmacy)
-//        {
-//            enterprise = new PharmacyEnterprise(name);
-//            enterpriseList.add(enterprise);
-//            
-//            
-//        }
-//        
+        if(type==Enterprise.EnterpriseType.HealthcareCenter){
+            enterprise=new HealthCenterEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        
+        else if(type == Enterprise.EnterpriseType.GovernmentAid)
+        {
+            enterprise =  new GovernmentEnterprise(name);
+            enterpriseList.add(enterprise);
+            
+        }
+        
+        else if(type == Enterprise.EnterpriseType.InsuranceCompany)
+        {
+            enterprise = new InsuranceCompanyEnterprise(name);
+            enterpriseList.add(enterprise);
+            }
+         else if(type == Enterprise.EnterpriseType.Pharmacy)
+        {
+            enterprise = new PharmacyEnterprise(name);
+            enterpriseList.add(enterprise);
+            
+            
+        }
+        
         return enterprise;
     }
 }
