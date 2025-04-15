@@ -4,18 +4,77 @@
  */
 package userinterface.Nurse;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.NurseOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Panel;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class NurseWorkAreaJPanel extends javax.swing.JPanel {
+    private JPanel userProcessContainer;
+    private NurseOrganization nurseOrganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
 
     /**
      * Creates new form NurseWorkAreaJPanel
+     * 
+     * @param userProcessContainer
+     * @param account
+     * @param organization
+     * @param enterprise
+     * @param business
      */
-    public NurseWorkAreaJPanel() {
+     
+    public NurseWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.nurseOrganization = (NurseOrganization) organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        
+        populateRequestTable();
     }
+    
+    public void populateRequestTable() {
+        DefaultTableModel model = (DefaultTableModel) tblWorkRequest1.getModel();
+        model.setRowCount(0);
+
+        // Fetch work requests from NurseOrganization's WorkQueue
+    for (WorkRequest request : nurseOrganization.getWorkQueue().getWorkRequests()) {
+        if (request instanceof PatientTreatmentWorkRequest) {
+            PatientTreatmentWorkRequest treatmentRequest = (PatientTreatmentWorkRequest) request;
+            Object[] row = new Object[8];
+            row[0] = treatmentRequest.getRegistrationDate();
+            row[1] = treatmentRequest.getPatient().getId();
+            row[2] = treatmentRequest.getPatient().getFirstName() + " " + treatmentRequest.getPatient().getLastName();
+            row[3] = treatmentRequest.getReasonForVisit();
+            row[4] = treatmentRequest.getAssignedDoctor();
+            row[5] = treatmentRequest.getLabAssistant();
+            row[6] = treatmentRequest.getLabResult();
+            row[7] = treatmentRequest.getStatus();
+
+            model.addRow(row);
+            }
+        }
+
+        // Add a table row sorter
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblWorkRequest1.setRowSorter(sorter);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +85,77 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblWorkAreaForNurse = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblWorkRequest1 = new javax.swing.JTable();
+
         setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        lblWorkAreaForNurse.setFont(new java.awt.Font("AkayaTelivigala", 1, 18)); // NOI18N
+        lblWorkAreaForNurse.setForeground(new java.awt.Color(51, 51, 51));
+        lblWorkAreaForNurse.setText("Nurse Work Area");
+        jPanel1.add(lblWorkAreaForNurse);
+        lblWorkAreaForNurse.setBounds(470, 50, 380, 21);
+
+        tblWorkRequest1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        tblWorkRequest1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Patient Registration Date", "Patient Id", "Patient Name", "Illness", "Assigned Doctor", "Lab Assistant", "Lab Result", "Treatment Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblWorkRequest1);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(40, 140, 1050, 190);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGap(0, 1131, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblWorkAreaForNurse;
+    private javax.swing.JTable tblWorkRequest1;
     // End of variables declaration//GEN-END:variables
 }
