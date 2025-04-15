@@ -16,4 +16,11 @@ import userinterface.Nurse.NurseWorkAreaJPanel;
  * @author hrishipal
  */
 
+public class Nurse extends Role {
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new NurseWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+    }
+}
+
 

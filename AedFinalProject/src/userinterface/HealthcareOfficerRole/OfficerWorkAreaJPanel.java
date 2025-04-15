@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.HealthDepartmentOfficial;
+package userinterface.HealthcareOfficerRole;
 
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
-public class HealthDepartmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
+public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HealthDepartmentOfficialWorkAreaJPanel
      */
-    public HealthDepartmentOfficialWorkAreaJPanel() {
+    public OfficerWorkAreaJPanel() {
         initComponents();
     }
 
