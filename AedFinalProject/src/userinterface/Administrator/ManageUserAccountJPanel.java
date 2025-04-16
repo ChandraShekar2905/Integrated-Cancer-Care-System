@@ -4,17 +4,83 @@
  */
 package userinterface.Administrator;
 
+import Business.Employee.Employee;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Organization.PatientOrganization;
+import Business.Role.Role;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class ManageUserAccountJPanel extends javax.swing.JPanel {
+    
+    private JPanel container;
+    private Enterprise enterprise;
 
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    public ManageUserAccountJPanel() {
+    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
         initComponents();
+        
+        this.enterprise = enterprise;
+        this.container = container;
+
+        popOrganizationComboBox();
+        popData();
+    }
+    
+    public void popOrganizationComboBox() {
+        cborganization.removeAllItems();
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+            if (!(organization instanceof PatientOrganization)) {
+                cborganization.addItem(organization);
+            }
+        }
+    }
+
+    public void populateEmployeeComboBox(Organization organization) {
+        cbEmployee.removeAllItems();
+
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+            cbEmployee.addItem(employee);
+        }
+    }
+
+    private void populateRoleComboBox(Organization organization) {
+        cbRole.removeAllItems();
+        for (Role role : organization.getSupportedRole()) {
+            cbRole.addItem(role);
+        }
+    }
+
+    public void popData() {
+
+        DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                Object row[] = new Object[2];
+                row[0] = ua;
+                row[1] = ua.getRole();
+                ((DefaultTableModel) tblUser.getModel()).addRow(row);
+            }
+        }
     }
 
     /**
@@ -26,19 +92,311 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cborganization = new javax.swing.JComboBox();
+        createUserJButton = new javax.swing.JButton();
+        lblRole = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        cbRole = new javax.swing.JComboBox();
+        lblUsername = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblUser = new javax.swing.JTable();
+        lblValidatePassword = new javax.swing.JLabel();
+        txtPasswordConfirm = new javax.swing.JPasswordField();
+        lblPassword = new javax.swing.JLabel();
+        lblManageUser = new javax.swing.JLabel();
+        lblEmployee = new javax.swing.JLabel();
+        cbEmployee = new javax.swing.JComboBox();
+        btnBack = new javax.swing.JButton();
+        lblOrgnization = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        cborganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cborganization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cborganizationActionPerformed(evt);
+            }
+        });
+
+        createUserJButton.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        createUserJButton.setText("Create");
+        createUserJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createUserJButtonActionPerformed(evt);
+            }
+        });
+
+        lblRole.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblRole.setText("Role");
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
+        cbRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblUsername.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblUsername.setText("User Name");
+
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyReleased(evt);
+            }
+        });
+
+        tblUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User Name", "Role"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblUser);
+
+        lblValidatePassword.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblValidatePassword.setText("re-enter Password");
+
+        txtPasswordConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordConfirmActionPerformed(evt);
+            }
+        });
+
+        lblPassword.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblPassword.setText("Password");
+
+        lblManageUser.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblManageUser.setText("Manage User Account");
+
+        lblEmployee.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblEmployee.setText("Employee");
+
+        cbEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnBack.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        lblOrgnization.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblOrgnization.setText("Organization");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 258, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cbRole, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblValidatePassword)
+                            .addComponent(lblEmployee)
+                            .addComponent(lblOrgnization)
+                            .addComponent(lblRole)
+                            .addComponent(lblUsername)
+                            .addComponent(lblPassword))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cborganization, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPasswordConfirm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(328, 328, 328))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(251, 251, 251)
+                        .addComponent(lblManageUser))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(446, 446, 446)
+                        .addComponent(createUserJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblManageUser)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lblOrgnization))
+                    .addComponent(cborganization, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEmployee)
+                    .addComponent(lblEmployee))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbRole)
+                    .addComponent(lblRole))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtName)
+                    .addComponent(lblUsername))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPassword))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblValidatePassword))
+                .addGap(30, 30, 30)
+                .addComponent(createUserJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cborganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cborganizationActionPerformed
+        Organization organization = (Organization) cborganization.getSelectedItem();
+        if (organization != null) {
+            populateEmployeeComboBox(organization);
+            populateRoleComboBox(organization);
+        }
+    }//GEN-LAST:event_cborganizationActionPerformed
+
+    private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
+        String userName = txtName.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+        String rePassword = String.valueOf(txtPasswordConfirm.getPassword());
+        Organization organization = (Organization) cborganization.getSelectedItem();
+        Employee employee = (Employee) cbEmployee.getSelectedItem();
+        Role role = (Role) cbRole.getSelectedItem();
+
+        if (userName.trim().isEmpty() || password.trim().isEmpty())
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.RED));
+            JOptionPane.showMessageDialog(null, "Username and Password cannot be empty");
+        } else if  (!password.equals(rePassword)) {
+            JOptionPane.showMessageDialog(null, "Passwords don't match");
+            txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
+            txtPasswordConfirm.setBorder(BorderFactory.createLineBorder(Color.RED));
+            return;
+        }
+        else {
+            List<UserAccount> userAccountList = organization.getUserAccountDirectory().getUserAccountList();
+            for (UserAccount userAccount : userAccountList) {
+                if (userAccount.getUsername().equals(userName)) {
+                    JOptionPane.showMessageDialog(null, "username already taken!!");
+                    txtName.setBorder(BorderFactory.createLineBorder(Color.RED));
+                    return;
+                }
+
+            }
+            organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+            popData();
+            txtName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            txtPassword.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            txtPasswordConfirm.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            txtPassword.setText("");
+            txtPasswordConfirm.setText("");
+            txtName.setText("");
+        }
+
+       
+    }//GEN-LAST:event_createUserJButtonActionPerformed
+             private boolean passwordPatternValidation() {
+             Pattern p = Pattern.compile(
+                    "^(?=.*[0-9])" +           // At least one digit
+                    "(?=.*[a-z])" +            // At least one lowercase letter
+                    "(?=.*[A-Z])" +            // At least one uppercase letter
+                    "(?=.*[@#$%^&+=])" +       // At least one special character
+                    "(?=\\S+$).{5,20}$"        // No whitespace, length between 5-20
+                );
+                Matcher m = p.matcher(String.valueOf(txtPassword.getPassword()));
+                return m.matches();
+                }
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
+        
+        if (!passwordPatternValidation()) {
+            lblValidatePassword.setText("Invalid Password: Must be 5-20 characters, include uppercase, lowercase, digit, and special character.");
+            lblValidatePassword.setForeground(Color.RED);
+            txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
+        } else {
+            lblValidatePassword.setText("Password is valid.");
+            lblValidatePassword.setForeground(Color.GREEN);
+            txtPassword.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+        }
+
+    }//GEN-LAST:event_txtPasswordKeyReleased
+
+    private void txtPasswordConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordConfirmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordConfirmActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        container.remove(this);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.previous(container);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JComboBox cbEmployee;
+    private javax.swing.JComboBox cbRole;
+    private javax.swing.JComboBox cborganization;
+    private javax.swing.JButton createUserJButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblEmployee;
+    private javax.swing.JLabel lblManageUser;
+    private javax.swing.JLabel lblOrgnization;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JLabel lblValidatePassword;
+    private javax.swing.JTable tblUser;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JPasswordField txtPasswordConfirm;
     // End of variables declaration//GEN-END:variables
 }
