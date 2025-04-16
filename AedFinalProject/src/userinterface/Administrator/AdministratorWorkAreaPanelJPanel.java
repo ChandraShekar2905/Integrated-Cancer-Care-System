@@ -55,6 +55,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         lblEnterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         btnRequestFunds = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         lblAdminTitle.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblAdminTitle.setText("PERSONAL WORK-AREA ADMINISTRATIVE ROLE");
@@ -96,6 +97,8 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,7 +106,9 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 276, Short.MAX_VALUE)
                 .addComponent(lblAdminTitle)
-                .addGap(330, 330, 330))
+                .addGap(215, 215, 215)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -123,9 +128,11 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lblAdminTitle)
-                .addGap(54, 54, 54)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminTitle)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,6 +187,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageOrganization;
     private javax.swing.JButton btnManageUser;
     private javax.swing.JButton btnRequestFunds;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblAdminTitle;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel valueLabel;
