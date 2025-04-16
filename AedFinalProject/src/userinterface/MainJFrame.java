@@ -161,8 +161,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setMaximumSize(new java.awt.Dimension(1070, 768));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1070, 1024));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1070, 1024));
 
         javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
         container.setLayout(containerLayout);
