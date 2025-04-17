@@ -4,7 +4,7 @@
  */
 package Business.Enterprise;
 
-import Business.InsurancePolicy.InsurancePolicyDirectory;
+import Business.Insurance.InsurancePolicyDirectory;
 import Business.InsuredIndividual.InsuredIndividualDirectory;
 import Business.Organization.Organization;
 import Business.Role.Role;

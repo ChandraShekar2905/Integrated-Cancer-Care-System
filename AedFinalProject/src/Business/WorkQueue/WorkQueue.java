@@ -26,6 +26,13 @@ public List<WorkRequest> getWorkRequestList() {
     public ArrayList<WorkRequest> getWorkRequests() {
         return workRequests;
     }
-    
-    
+     public List<PharmacyWorkRequest> getPharmacyWorkRequests() {
+        List<PharmacyWorkRequest> pharmacyRequests = new ArrayList<>();
+        for (WorkRequest request : workRequestList) {
+            if (request instanceof PharmacyWorkRequest) {
+                pharmacyRequests.add((PharmacyWorkRequest) request);
+            }
+        }
+        return pharmacyRequests;
+    }
 }

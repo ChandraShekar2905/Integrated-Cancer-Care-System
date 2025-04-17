@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.GovernmentHealthOfficerRole;
+import Business.Role.AdministrationHealthOfficerRole;
 import Business.Role.LabAssistantRole;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class HealthCareOfficerOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GovernmentHealthOfficerRole());
+        roles.add(new AdministrationHealthOfficerRole());
         return roles;
     }
 

@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.GovernmentSecretaries;
+import Business.Role.AdministrationSecretaries;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class SecretaryOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GovernmentSecretaries());
+        roles.add(new AdministrationSecretaries());
         return roles;
     }
     
