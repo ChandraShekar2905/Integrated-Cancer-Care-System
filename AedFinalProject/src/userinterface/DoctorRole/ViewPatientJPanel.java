@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.Doctor;
+package userinterface.DoctorRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
@@ -19,20 +19,18 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author chandrashekarreddykusukunthla
+ * @author aaryakpawar
  */
-public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
+public class ViewPatientJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private DoctorOrganization doctorOrganization;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    /**
-     * Creates new form DoctorWorkAreaJPanel
-     */
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise) {
+
+    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, PatientTreatmentWorkRequest patientWorkRequest) {
         initComponents();
-        
+
         this.userProcessContainer = userProcessContainer;
         this.doctorOrganization = organization;
         this.enterprise = enterprise;
@@ -76,6 +74,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD:AedFinalProject/src/userinterface/DoctorRole/ViewPatientJPanel.java
+=======
         btnRequestLab = new javax.swing.JButton();
         lblEnterprise = new javax.swing.JLabel();
         lblValue = new javax.swing.JLabel();
@@ -172,10 +172,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblWorkRequest1);
 
+>>>>>>> 9741d02592a5c848f1fdb73a64724fe6ca8708a8:AedFinalProject/src/userinterface/Doctor/DoctorWorkAreaJPanel.java
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD:AedFinalProject/src/userinterface/DoctorRole/ViewPatientJPanel.java
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,6 +237,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnRequestLab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPrescribe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(344, Short.MAX_VALUE))
+>>>>>>> 9741d02592a5c848f1fdb73a64724fe6ca8708a8:AedFinalProject/src/userinterface/Doctor/DoctorWorkAreaJPanel.java
         );
     }// </editor-fold>//GEN-END:initComponents
 
