@@ -4,18 +4,66 @@
  */
 package userinterface.DoctorRole;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.NurseOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author aaryakpawar
  */
 public class ViewPatientJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ViewPatientJPanel
-     */
-    public ViewPatientJPanel() {
+    private JPanel userProcessContainer;
+    private DoctorOrganization doctorOrganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+
+    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, PatientTreatmentWorkRequest patientWorkRequest) {
         initComponents();
+
+        this.userProcessContainer = userProcessContainer;
+        this.doctorOrganization = organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        lblValue.setText(enterprise.getName());
+        populateRequestTable();
     }
+    
+     public void populateRequestTable() {
+
+        DefaultTableModel model = (DefaultTableModel) tblWorkRequest1.getModel();
+
+        model.setRowCount(0);
+
+        for (WorkRequest request : doctorOrganization.getWorkQueue().getWorkRequests()) {
+            Object[] row = new Object[8];
+            row[0] = ((PatientTreatmentWorkRequest) request).getRegistrationDate();
+            row[1] = String.valueOf(((PatientTreatmentWorkRequest) request).getPatient().getId());
+            row[2] = ((PatientTreatmentWorkRequest) request).getPatient().getFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getLastName();
+            row[3] = ((PatientTreatmentWorkRequest) request);
+            row[4] = ((PatientTreatmentWorkRequest) request).getAssignedDoctor();
+            row[5] = ((PatientTreatmentWorkRequest) request).getLabAssistant();
+            row[6] = ((PatientTreatmentWorkRequest) request).getLabResult();
+            row[7] = request.getStatus();
+
+            model.addRow(row);
+
+        }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblWorkRequest1.setRowSorter(sorter);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +74,333 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD:AedFinalProject/src/userinterface/DoctorRole/ViewPatientJPanel.java
+=======
+        btnRequestLab = new javax.swing.JButton();
+        lblEnterprise = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblMedicalTestWorkQueue = new javax.swing.JLabel();
+        btnAssignToMe = new javax.swing.JButton();
+        btnPrescribe = new javax.swing.JButton();
+        btnTreated = new javax.swing.JButton();
+        btnViewPatient = new javax.swing.JButton();
+        lblWorkAreaForDoctors = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblWorkRequest1 = new javax.swing.JTable();
+
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        btnRequestLab.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnRequestLab.setText("Request Lab Test");
+        btnRequestLab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestLabActionPerformed(evt);
+            }
+        });
+
+        lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblEnterprise.setText("Enterprise :");
+
+        lblValue.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblValue.setText("<value>");
+
+        lblMedicalTestWorkQueue.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 12)); // NOI18N
+        lblMedicalTestWorkQueue.setText("Medical Test Work Queue");
+
+        btnAssignToMe.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAssignToMe.setText("Assign To Me");
+        btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignToMeActionPerformed(evt);
+            }
+        });
+
+        btnPrescribe.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnPrescribe.setText("Provide Prescription");
+        btnPrescribe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrescribeActionPerformed(evt);
+            }
+        });
+
+        btnTreated.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnTreated.setText("Complete Treatment");
+        btnTreated.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTreatedActionPerformed(evt);
+            }
+        });
+
+        btnViewPatient.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnViewPatient.setText("View Patient");
+        btnViewPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPatientActionPerformed(evt);
+            }
+        });
+
+        lblWorkAreaForDoctors.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblWorkAreaForDoctors.setForeground(new java.awt.Color(204, 0, 0));
+        lblWorkAreaForDoctors.setText("WORK-AREA FOR DOCTOR");
+
+        tblWorkRequest1.setBackground(new java.awt.Color(206, 255, 235));
+        tblWorkRequest1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        tblWorkRequest1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Patient Registration Date", "Patient Id", "Patient Name", "Illness", "Assigned Doctor", "Lab Assistant", "Lab Result", "Treatment Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblWorkRequest1);
+
+>>>>>>> 9741d02592a5c848f1fdb73a64724fe6ca8708a8:AedFinalProject/src/userinterface/Doctor/DoctorWorkAreaJPanel.java
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD:AedFinalProject/src/userinterface/DoctorRole/ViewPatientJPanel.java
             .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(335, 335, 335)
+                        .addComponent(lblWorkAreaForDoctors))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblEnterprise)
+                        .addGap(6, 6, 6)
+                        .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(368, 368, 368)
+                        .addComponent(lblMedicalTestWorkQueue))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnViewPatient)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAssignToMe)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnRequestLab)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnPrescribe)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTreated)))
+                .addGap(62, 62, 62))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(lblWorkAreaForDoctors)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, 14)
+                .addComponent(lblMedicalTestWorkQueue)
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTreated, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAssignToMe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRequestLab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPrescribe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(344, Short.MAX_VALUE))
+>>>>>>> 9741d02592a5c848f1fdb73a64724fe6ca8708a8:AedFinalProject/src/userinterface/Doctor/DoctorWorkAreaJPanel.java
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRequestLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestLabActionPerformed
+
+        int selectedRow = tblWorkRequest1.getSelectedRow();
+        PatientTreatmentWorkRequest workRequest;
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        } else {
+            workRequest = (PatientTreatmentWorkRequest) tblWorkRequest1.getValueAt(selectedRow, 3);
+            if (workRequest.getAssignedDoctor() != null) {
+                if (userAccount.equals(workRequest.getAssignedDoctor())) {
+                    if (workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
+
+                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                        layout.next(userProcessContainer);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Can not create the Lab request as the current status is " + workRequest.getStatus());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Not Authorised");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Please assign the request first");
+            }
+        }
+
+    }//GEN-LAST:event_btnRequestLabActionPerformed
+
+    private void btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToMeActionPerformed
+
+        int selectedRow = tblWorkRequest1.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        } else {
+
+            WorkRequest patientTreatmentWorkRequest = (PatientTreatmentWorkRequest) tblWorkRequest1.getValueAt(selectedRow, 3);
+            if (((PatientTreatmentWorkRequest) patientTreatmentWorkRequest).getAssignedDoctor() == null) {
+
+                if (patientTreatmentWorkRequest.getStatus().equalsIgnoreCase("Waiting for Doctor")) {
+                    //patientTreatmentWorkRequest.setReceiver(userAccount);
+                    ((PatientTreatmentWorkRequest) patientTreatmentWorkRequest).setAssignedDoctor(userAccount);
+                    patientTreatmentWorkRequest.setStatus("Under Consultation");
+                    populateRequestTable();
+                    JOptionPane.showMessageDialog(null, "Success !! Request is assigned to you ");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Cannot assign this patient as its current state is: " + patientTreatmentWorkRequest.getStatus());
+                }
+
+            } else {
+                if(userAccount.equals(((PatientTreatmentWorkRequest) patientTreatmentWorkRequest).getAssignedDoctor())) {
+                    JOptionPane.showMessageDialog(null, "Request is already assigned to you");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Not Authorized");
+                }
+            }
+        }
+    }//GEN-LAST:event_btnAssignToMeActionPerformed
+
+    private void btnPrescribeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescribeActionPerformed
+        int selectedRow = tblWorkRequest1.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        }
+
+        PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) tblWorkRequest1.getValueAt(selectedRow, 3);
+
+        if (request.getAssignedDoctor() != null && userAccount.equals(request.getAssignedDoctor())) {
+            if (request.getStatus().equalsIgnoreCase("Lab Test is Completed") || request.getStatus().equalsIgnoreCase("Under Consultation")) {
+                // Update prescription and status
+                request.setPrescription("Prescription details here");  // Replace with actual prescription input
+                request.setStatus("Prescription Provided");
+
+                // Add request to NurseOrganization's WorkQueue
+                for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (org instanceof NurseOrganization) {
+                        org.getWorkQueue().getWorkRequests().add(request);
+                        break;
+                    }
+                }
+
+                JOptionPane.showMessageDialog(null, "Prescription provided and request forwarded to Nurse.");
+                populateRequestTable();
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot prescribe. Current status: " + request.getStatus());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Not authorized to prescribe for this patient.");
+        }
+    }//GEN-LAST:event_btnPrescribeActionPerformed
+
+    private void btnTreatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatedActionPerformed
+        int selectedRow = tblWorkRequest1.getSelectedRow();
+        PatientTreatmentWorkRequest workRequest;
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        } else {
+            workRequest = (PatientTreatmentWorkRequest) tblWorkRequest1.getValueAt(selectedRow, 3);
+            if(workRequest.getAssignedDoctor() != null)
+            {
+                if (userAccount.equals(workRequest.getAssignedDoctor())) {
+                    if (workRequest.getStatus().equalsIgnoreCase("Prescription Provided")) {
+
+                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                        userProcessContainer.add("RequestBillingJPanel", new RequestBillingJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                        workRequest.getPatient().setIsTreatmentComplete(true);
+                        layout.next(userProcessContainer);
+                    } else {
+                        if(workRequest.getStatus().equalsIgnoreCase("Consultation Completed"))
+                        {
+                            JOptionPane.showMessageDialog(null, "Treatment is already complete!");
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "Cannot complete the treatment. Please provide Prescription first!");
+                        }
+                    }
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Not Authorised");
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Please assign the request first");
+            }
+        }
+    }//GEN-LAST:event_btnTreatedActionPerformed
+
+    private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
+        int selectedRow = tblWorkRequest1.getSelectedRow();
+        PatientTreatmentWorkRequest patientWorkRequest;
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        } else {
+            patientWorkRequest = (PatientTreatmentWorkRequest) tblWorkRequest1.getValueAt(selectedRow, 3);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            userProcessContainer.add("ViewPatientJPanel", new ViewPatientJPanel(userProcessContainer, userAccount, enterprise, patientWorkRequest));
+            layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_btnViewPatientActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssignToMe;
+    private javax.swing.JButton btnPrescribe;
+    private javax.swing.JButton btnRequestLab;
+    private javax.swing.JButton btnTreated;
+    private javax.swing.JButton btnViewPatient;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblMedicalTestWorkQueue;
+    private javax.swing.JLabel lblValue;
+    private javax.swing.JLabel lblWorkAreaForDoctors;
+    private javax.swing.JTable tblWorkRequest1;
     // End of variables declaration//GEN-END:variables
 }
