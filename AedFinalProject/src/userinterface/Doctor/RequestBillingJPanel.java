@@ -4,17 +4,40 @@
  */
 package userinterface.Doctor;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.AccountantOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class RequestBillingJPanel extends javax.swing.JPanel {
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private Enterprise enterprise;
+    private PatientTreatmentWorkRequest patientTreatmentWorkRequest;
+    private EcoSystem ecoSystem;
+    private double consultationCharges = 50;
 
     /**
      * Creates new form RequestBillingJPanel
      */
-    public RequestBillingJPanel() {
+    public RequestBillingJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, PatientTreatmentWorkRequest workRequest) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = userAccount;
+        this.enterprise = enterprise;
+        this.patientTreatmentWorkRequest = workRequest;
+        populateTable();
     }
 
     /**
@@ -26,21 +49,401 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblBillingRequest = new javax.swing.JLabel();
+        lblPatientInfo = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        lblFirstName = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        lblAssignedDoctor = new javax.swing.JLabel();
+        txtAssignedDoctor = new javax.swing.JTextField();
+        lblPatientId = new javax.swing.JLabel();
+        txtPatientId = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        txtConsultationFees = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        txtMedicationFees = new javax.swing.JTextField();
+        jLabel113 = new javax.swing.JLabel();
+        txtLabFees = new javax.swing.JTextField();
+        jLabel123 = new javax.swing.JLabel();
+        txtMiscellaneousFees = new javax.swing.JTextField();
+        btnRequestBill = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        lblBillingRequest.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        lblBillingRequest.setForeground(new java.awt.Color(204, 0, 0));
+        lblBillingRequest.setText("BILLING REQUEST");
+
+        lblPatientInfo.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPatientInfo.setText("PATIENT INFORMATION");
+
+        txtFirstName.setEditable(false);
+
+        lblFirstName.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblFirstName.setText("First Name :");
+
+        lblLastName.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblLastName.setText("Last Name :");
+
+        txtLastName.setEditable(false);
+
+        lblAssignedDoctor.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblAssignedDoctor.setText("Assigned Doctor :");
+
+        txtAssignedDoctor.setEditable(false);
+
+        lblPatientId.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblPatientId.setText("Patient Id:");
+
+        txtPatientId.setEditable(false);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("BILLING INFORMATION");
+
+        jLabel43.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel43.setText("Consultaion Charges (USD) :");
+
+        txtConsultationFees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConsultationFeesActionPerformed(evt);
+            }
+        });
+        txtConsultationFees.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtConsultationFeesKeyTyped(evt);
+            }
+        });
+
+        jLabel53.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel53.setText("Medication Charges (USD):");
+
+        txtMedicationFees.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMedicationFeesKeyTyped(evt);
+            }
+        });
+
+        jLabel113.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel113.setText("Lab Test Charges (USD) :");
+
+        txtLabFees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLabFeesActionPerformed(evt);
+            }
+        });
+        txtLabFees.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLabFeesKeyTyped(evt);
+            }
+        });
+
+        jLabel123.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel123.setText("Miscellaneous Charges (USD):");
+
+        txtMiscellaneousFees.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMiscellaneousFeesKeyTyped(evt);
+            }
+        });
+
+        btnRequestBill.setBackground(new java.awt.Color(0, 153, 255));
+        btnRequestBill.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnRequestBill.setText("Send Billing Request");
+        btnRequestBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestBillActionPerformed(evt);
+            }
+        });
+
+        btnBack.setBackground(new java.awt.Color(255, 0, 51));
+        btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(txtMiscellaneousFees, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(450, 450, 450)
+                        .addComponent(txtPatientId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel113, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(450, 450, 450)
+                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(txtAssignedDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(357, 357, 357)
+                        .addComponent(lblPatientId, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(txtConsultationFees, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(txtMedicationFees, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(txtLabFees, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(lblAssignedDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(lblBillingRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblPatientInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(357, 357, 357)
+                        .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btnRequestBill, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200)
+                        .addComponent(txtMiscellaneousFees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(txtPatientId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel113, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(txtAssignedDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(lblPatientId))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(txtConsultationFees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(txtMedicationFees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(txtLabFees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(lblAssignedDoctor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblBillingRequest))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(lblPatientInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(lblLastName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(btnRequestBill, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtConsultationFeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultationFeesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConsultationFeesActionPerformed
+
+    private void txtConsultationFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConsultationFeesKeyTyped
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtConsultationFeesKeyTyped
+
+    private void txtMedicationFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedicationFeesKeyTyped
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMedicationFeesKeyTyped
+
+    private void txtLabFeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLabFeesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLabFeesActionPerformed
+
+    private void txtLabFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLabFeesKeyTyped
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtLabFeesKeyTyped
+
+    private void txtMiscellaneousFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMiscellaneousFeesKeyTyped
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMiscellaneousFeesKeyTyped
+
+    private void btnRequestBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBillActionPerformed
+        //        String consultationCharge = txtConsultationFees.getText().trim();
+        //        String labChargesStr = txtLabFees.getText();
+        //        String miscellaneouschargesStr = txtMiscellaneousFees.getText();
+        //        String medicationChargesStr = txtMedicationFees.getText();
+        if (txtConsultationFees.getText().trim().isEmpty()|| txtLabFees.getText().trim().isEmpty() || txtMiscellaneousFees.getText().trim().isEmpty() || txtMedicationFees.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields are mandatory.");
+        } else {
+
+            double labCharges = Double.parseDouble(txtLabFees.getText());
+            double miscellaneouscharges = Double.parseDouble(txtMiscellaneousFees.getText());
+            double medicationCharges = Double.parseDouble(txtMedicationFees.getText().trim());
+            double billingAmount = labCharges + consultationCharges + medicationCharges + miscellaneouscharges;
+            //request.setBillAmount(billingAmount);
+
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                patientTreatmentWorkRequest.setStatus("Consultation Completed");
+
+                AccountantBillingRequest accountantBillingRequest = new AccountantBillingRequest();
+                accountantBillingRequest.setBill(billingAmount);
+                //  accountantBillingRequest.setPatientId(Integer.parseInt(txtPatientId.getText()));
+
+                accountantBillingRequest.setSender(userAccount);
+                accountantBillingRequest.setStatus("Sent");
+                accountantBillingRequest.setPatient(patientTreatmentWorkRequest.getPatient());
+
+                Organization org = null;
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+                    if (organization instanceof AccountantOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequests().add(accountantBillingRequest);
+                    userAccount.getWorkQueue().getWorkRequests().add(accountantBillingRequest);
+                }
+
+                JOptionPane.showMessageDialog(null, "Prescription submitted successfully");
+                btnRequestBill.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_btnRequestBillActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
+        dwjp.populateRequestTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnRequestBill;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel lblAssignedDoctor;
+    private javax.swing.JLabel lblBillingRequest;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblPatientId;
+    private javax.swing.JLabel lblPatientInfo;
+    private javax.swing.JTextField txtAssignedDoctor;
+    private javax.swing.JTextField txtConsultationFees;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLabFees;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtMedicationFees;
+    private javax.swing.JTextField txtMiscellaneousFees;
+    private javax.swing.JTextField txtPatientId;
     // End of variables declaration//GEN-END:variables
+
+    
+        private void populateTable() {
+
+        txtFirstName.setText(patientTreatmentWorkRequest.getPatient().getFirstName());
+        txtLastName.setText(patientTreatmentWorkRequest.getPatient().getLastName());
+        txtPatientId.setText(String.valueOf(patientTreatmentWorkRequest.getPatient().getId()));
+        txtAssignedDoctor.setText(patientTreatmentWorkRequest.getAssignedDoctor().getEmployee().getEmployeename());
+        txtConsultationFees.setText(String.valueOf(consultationCharges));
+
+    }
+
+
+
+
+
 }

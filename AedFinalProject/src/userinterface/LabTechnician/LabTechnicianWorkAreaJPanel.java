@@ -4,17 +4,60 @@
  */
 package userinterface.LabTechnician;
 
+import Business.EcoSystem;
+import Business.Organization.LabOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
+    
+        private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private LabOrganization labOrganization;
 
     /**
      * Creates new form LabTechnicianWorkAreaJPanel
      */
-    public LabTechnicianWorkAreaJPanel() {
+    public LabTechnicianWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.labOrganization = (LabOrganization) organization;
+
+        populateTable();
+    }
+    
+    public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblLabRequest.getModel();
+
+        model.setRowCount(0);
+
+        for (WorkRequest request : labOrganization.getWorkQueue().getWorkRequests()) {
+            Object[] row = new Object[6];
+            row[0] = request;
+            row[1] = request.getSender().getEmployee().getEmployeename();
+            row[2] = ((PatientTreatmentWorkRequest) request).getLabAssistant();
+            row[3] = request.getStatus();
+            row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getLastName();
+            row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getId();
+            model.addRow(row);
+        }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblLabRequest.setRowSorter(sorter);
     }
 
     /**
@@ -26,21 +69,172 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblLabRequest = new javax.swing.JTable();
+        btnAssign = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        tblLabRequest.setBackground(new java.awt.Color(173, 234, 203));
+        tblLabRequest.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Message", "Sender", "Receiver", "Status", "Patient Name", "Patient Id"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblLabRequest);
+
+        btnAssign.setBackground(new java.awt.Color(173, 234, 203));
+        btnAssign.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnAssign.setText("Self Assignment");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignActionPerformed(evt);
+            }
+        });
+
+        btnProcess.setBackground(new java.awt.Color(173, 234, 203));
+        btnProcess.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnProcess.setText("Proceed");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcessActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Hospital Laboratory");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(327, 327, 327)
+                        .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1)
+                .addGap(143, 143, 143)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
+
+        int selectedRow = tblLabRequest.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please select a row first");
+            return;
+        }
+
+        PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) tblLabRequest.getValueAt(selectedRow, 0);
+        if (request.getLabAssistant() == null) {
+            if (request.getStatus().equalsIgnoreCase("SentToLab")) {
+                request.setLabAssistant(userAccount);
+                request.setStatus("Pending on Lab Assistant");
+                //  request.setReceiver(userAccount);
+                populateTable();
+                JOptionPane.showMessageDialog(null, "The request is assigned to You!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getStatus());
+            }
+        }
+        else
+        {
+            if(userAccount.equals(request.getLabAssistant()))
+            {
+                JOptionPane.showMessageDialog(null,"Request is already assigned to you");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Request is assigned to other Lab Assistant");
+            }
+        }
+    }//GEN-LAST:event_btnAssignActionPerformed
+
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
+
+        int selectedRow = tblLabRequest.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        }
+
+        PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) tblLabRequest.getValueAt(selectedRow, 0);
+
+        // request.setStatus("Processing");
+        ProcessLabRequestJPanel processWorkRequestJPanel = new ProcessLabRequestJPanel(userProcessContainer, request);
+        if (request.getLabAssistant() != null) {
+            if (userAccount.equals(request.getLabAssistant())) {
+                if (request.getStatus().equalsIgnoreCase("Pending on Lab Assistant")) {
+
+                    userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
+                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                    layout.next(userProcessContainer);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getStatus());
+                }
+
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Not authorised to process the request");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please assign the request first");
+        }
+    }//GEN-LAST:event_btnProcessActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblLabRequest;
     // End of variables declaration//GEN-END:variables
 }
