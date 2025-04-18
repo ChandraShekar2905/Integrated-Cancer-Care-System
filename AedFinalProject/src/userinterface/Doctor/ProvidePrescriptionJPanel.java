@@ -4,18 +4,69 @@
  */
 package userinterface.Doctor;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Organization.PharmacyOrganization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import Business.WorkQueue.PharmacyWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import userinterface.DoctorRole.DoctorWorkAreaJPanel;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
+    
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private Enterprise enterprise;
+    private PatientTreatmentWorkRequest request;
 
     /**
      * Creates new form ProvidePrescriptionJPanel
      */
-    public ProvidePrescriptionJPanel() {
+    public ProvidePrescriptionJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, PatientTreatmentWorkRequest workRequest) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = userAccount;
+        this.enterprise = enterprise;
+        this.request = workRequest;
+        populateTable();
     }
+    
+        private void populateTable() {
+        txtFirstName.setText(request.getPatient().getFirstName());
+        txtLastName.setText(request.getPatient().getLastName());
+       // txtBirthDate1.setText(String.valueOf(request.getPatient().getDateOfBirth()));
+        txtAge.setText(String.valueOf(request.getPatient().getAge()));
+        txtMedicalCondition.setText(request.getReasonForVisit());
+        txtAssignedDoctor.setText(request.getAssignedDoctor().getEmployee().getEmployeename());
+
+    }
+    
+        private void populateTable(PatientTreatmentWorkRequest request) {
+    // Set the Patient's Information
+    txtFirstName.setText(request.getPatient().getFirstName());  // Patient's first name
+    txtLastName.setText(request.getPatient().getLastName());    // Patient's last name
+    txtAge.setText(String.valueOf(request.getPatient().getAge()));  // Patient's age
+    txtMedicalCondition.setText(request.getReasonForVisit());  // Reason for visit (medical condition)
+    
+    // Set Prescription Information
+    txtPrescription.setText(request.getPrescription());  // Medication prescribed from the treatment work request
+    
+    // Retrieve the assigned doctor from the PatientTreatmentWorkRequest
+    UserAccount assignedDoctor = request.getAssignedDoctor();  // Assigned doctor from the work request
+    if (assignedDoctor != null) {
+        txtAssignedDoctor.setText(assignedDoctor.getEmployee().getEmployeename());  // Doctor's name
+    } else {
+        txtAssignedDoctor.setText("N/A");  // If no doctor assigned, show "N/A"
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +77,281 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblProvidePrescription = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        lblFirstName = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        lblAssignedDoctorInformation = new javax.swing.JLabel();
+        lblAge = new javax.swing.JLabel();
+        lblPrescribeAndFeedback = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtPrescription = new javax.swing.JTextArea();
+        lblPatientMedicalCondition = new javax.swing.JLabel();
+        txtMedicalCondition = new javax.swing.JTextField();
+        txtAssignedDoctor = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+
         setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        lblProvidePrescription.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblProvidePrescription.setForeground(new java.awt.Color(204, 0, 0));
+        lblProvidePrescription.setText("Provide Prescription");
+
+        jLabel6.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jLabel6.setText("PATIENT INFORMATION");
+
+        txtFirstName.setEditable(false);
+
+        lblFirstName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblFirstName.setText("First Name:");
+
+        txtAge.setEditable(false);
+        txtAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgeActionPerformed(evt);
+            }
+        });
+
+        lblLastName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblLastName.setText("Last Name :");
+
+        txtLastName.setEditable(false);
+
+        lblAssignedDoctorInformation.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblAssignedDoctorInformation.setText("Assigned Doctor Information:");
+
+        lblAge.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblAge.setText("Age :");
+
+        lblPrescribeAndFeedback.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPrescribeAndFeedback.setText("PRESCRIPTION AND FEEDBACK");
+
+        txtPrescription.setColumns(20);
+        txtPrescription.setRows(5);
+        jScrollPane1.setViewportView(txtPrescription);
+
+        lblPatientMedicalCondition.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPatientMedicalCondition.setText("Patient Medical Condition:");
+
+        txtMedicalCondition.setEditable(false);
+
+        txtAssignedDoctor.setEditable(false);
+
+        btnSubmit.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+
+        btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(txtAssignedDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(346, 346, 346)
+                        .addComponent(txtMedicalCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(420, 420, 420)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(lblFirstName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(lblAssignedDoctorInformation))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(475, 475, 475)
+                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(532, 532, 532)
+                        .addComponent(lblLastName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(315, 315, 315)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(654, 654, 654)
+                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(654, 654, 654)
+                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(lblPatientMedicalCondition))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(445, 445, 445)
+                        .addComponent(lblProvidePrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(580, 580, 580)
+                        .addComponent(lblAge))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(lblPrescribeAndFeedback)))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(336, 336, 336)
+                        .addComponent(txtAssignedDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(txtMedicalCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(lblAssignedDoctorInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(589, 589, 589)
+                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(263, 263, 263)
+                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(lblLastName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(433, 433, 433)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(307, 307, 307)
+                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(lblPatientMedicalCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(lblProvidePrescription))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(lblAge))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(404, 404, 404)
+                        .addComponent(lblPrescribeAndFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+
+        String prescription = txtPrescription.getText();
+        if (prescription.equals("")) {
+            JOptionPane.showMessageDialog(null, "Prescription is mandatory");
+            return;
+        } else {
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                // Update the current work request
+                request.setPrescription(prescription);
+                request.setStatus("Prescription Provided");
+
+                // Create a new PharmacyWorkRequest
+                PharmacyWorkRequest pharmacyRequest = new PharmacyWorkRequest(prescription, request.getPatient());
+                pharmacyRequest.setRequestId("PH-" + System.currentTimeMillis());
+                pharmacyRequest.setSender(userAccount);
+                pharmacyRequest.setMedication(prescription); // Add the prescription as the medication
+                pharmacyRequest.setPatient(request.getPatient());
+                pharmacyRequest.setStatus("Pending");
+
+                // Add the PharmacyWorkRequest to the PharmacyOrganization's work queue
+                for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (org instanceof PharmacyOrganization) {
+                        ((PharmacyOrganization) org).getWorkQueue().getWorkRequests().add(pharmacyRequest);
+                        break;
+                    }
+                }
+
+                JOptionPane.showMessageDialog(null, "Prescription submitted successfully");
+                btnSubmit.setEnabled(false);
+            }
+        }
+
+        //        String prescription = txtPrescription.getText();
+        //        if (prescription.equals("")) {
+            //            JOptionPane.showMessageDialog(null, "Prescription is mandatory");
+            //            return;
+            //        } else {
+            //            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
+            //            if (dialogResult == JOptionPane.YES_OPTION) {
+                //                request.setPrescription(prescription);
+                //                request.setStatus("Prescription Provided");
+                //                JOptionPane.showMessageDialog(null, "Prescription submitted successfully");
+                //                btnSubmit.setEnabled(false);
+                //
+                //            }
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
+        dwjp.populateRequestTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblAssignedDoctorInformation;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblPatientMedicalCondition;
+    private javax.swing.JLabel lblPrescribeAndFeedback;
+    private javax.swing.JLabel lblProvidePrescription;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtAssignedDoctor;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtMedicalCondition;
+    private javax.swing.JTextArea txtPrescription;
     // End of variables declaration//GEN-END:variables
 }
