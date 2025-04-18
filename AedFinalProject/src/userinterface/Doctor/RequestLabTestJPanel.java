@@ -4,17 +4,39 @@
  */
 package userinterface.Doctor;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.LabOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
 
+    
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private PatientTreatmentWorkRequest patientTreatmentWorkRequest;
     /**
      * Creates new form RequestLabTestJPanel
      */
-    public RequestLabTestJPanel() {
+    public RequestLabTestJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, PatientTreatmentWorkRequest patientTreatmentWorkRequest) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.patientTreatmentWorkRequest = patientTreatmentWorkRequest;
+        lblValue.setText(enterprise.getName());
+        btnRequestTest.setEnabled(true);
     }
 
     /**
@@ -26,21 +48,167 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnRequestTest = new javax.swing.JButton();
+        lblMessage = new javax.swing.JLabel();
+        txtMessage = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        lblValue = new javax.swing.JLabel();
+        lblEnterprise = new javax.swing.JLabel();
+        lblLabType = new javax.swing.JLabel();
+        txtLabType = new javax.swing.JTextField();
+        lblRequestLabTest = new javax.swing.JLabel();
+
         setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        btnRequestTest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnRequestTest.setText("Request Test");
+        btnRequestTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestTestActionPerformed(evt);
+            }
+        });
+
+        lblMessage.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblMessage.setText("Message:");
+
+        btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        lblValue.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblValue.setText("<value>");
+
+        lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblEnterprise.setText("Enterprise :");
+
+        lblLabType.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblLabType.setText("Lab Type:");
+
+        lblRequestLabTest.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblRequestLabTest.setForeground(new java.awt.Color(204, 0, 0));
+        lblRequestLabTest.setText("REQUEST LAB TEST");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(lblLabType, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(txtLabType, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addComponent(btnRequestTest, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRequestLabTest, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(434, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblRequestLabTest)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblLabType))
+                    .addComponent(txtLabType, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMessage)
+                    .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(btnRequestTest, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(425, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRequestTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestTestActionPerformed
+
+        String labType = txtLabType.getText().trim();
+        String message = txtMessage.getText().trim();
+
+        if (labType.equals("")) {
+            JOptionPane.showMessageDialog(null, "Lap type is mandatory!");
+            return;
+        }
+        if (message.equals("")) {
+            JOptionPane.showMessageDialog(null, "Message is mandatory");
+            return;
+        }
+
+        patientTreatmentWorkRequest.setLabTestMessage(message);
+        patientTreatmentWorkRequest.setSender(userAccount);
+        patientTreatmentWorkRequest.setStatus("SentToLab");
+        patientTreatmentWorkRequest.setReceiver(null);
+
+        Organization org = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+            if (organization instanceof LabOrganization) {
+                org = organization;
+                break;
+            }
+        }
+        if (org != null) {
+            org.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
+            userAccount.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
+            JOptionPane.showMessageDialog(null, "Lab request sent");
+            txtMessage.setText("");
+            txtLabType.setText("");
+            btnRequestTest.setEnabled(false);
+        }
+    }//GEN-LAST:event_btnRequestTestActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
+        dwjp.populateRequestTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnRequestTest;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblLabType;
+    private javax.swing.JLabel lblMessage;
+    private javax.swing.JLabel lblRequestLabTest;
+    private javax.swing.JLabel lblValue;
+    private javax.swing.JTextField txtLabType;
+    private javax.swing.JTextField txtMessage;
     // End of variables declaration//GEN-END:variables
 }
