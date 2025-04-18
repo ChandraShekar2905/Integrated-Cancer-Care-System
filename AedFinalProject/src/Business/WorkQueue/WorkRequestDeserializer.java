@@ -27,9 +27,16 @@ public class WorkRequestDeserializer implements JsonDeserializer<WorkRequest> {
             case "InsuranceWorkRequest":
                 return context.deserialize(json, InsuranceWorkRequest.class);
             case "LabTestWorkRequest":
+                return context.deserialize(json, LabTestWorkRequest.class);
+            case "PatientTreatmentWorkRequest":
+                return context.deserialize(json, PatientTreatmentWorkRequest.class);
+            case "PharmacyWorkRequest":
+                return context.deserialize(json, PharmacyWorkRequest.class);
+            
 
             default:
                 throw new JsonParseException("Unknown type: " + type);
         }
     }
+    
 }

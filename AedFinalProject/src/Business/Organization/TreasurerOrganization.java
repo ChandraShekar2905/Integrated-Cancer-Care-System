@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.GovernmentTreasurer;
+import Business.Role.AdministrationTreasurer;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class TreasurerOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GovernmentTreasurer());
+        roles.add(new AdministrationTreasurer());
         return roles;
     }
     

@@ -17,7 +17,7 @@ import Business.Organization.AccountantOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.Accountant.AccountantWorkAreaJPanel;
+import userinterface.HealthcareAccountantRole.AccountantWorkAreaJPanel;
 
 public class AccountantRole extends Role{
 

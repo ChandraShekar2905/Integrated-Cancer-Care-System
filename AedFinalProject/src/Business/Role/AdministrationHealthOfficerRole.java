@@ -16,7 +16,7 @@ import userinterface.HealthcareOfficerRole.OfficerWorkAreaJPanel;
  *
  * @author hrishipal
  */
-public class AdministrationHealthOfficialRole extends Role {
+public class AdministrationHealthOfficerRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business) {
