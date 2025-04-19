@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.*;
 import Business.Network.Network;
-import Business.Role.EnterpriseAdminRole;
+import Business.Role.AdministratorRole;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
@@ -309,7 +309,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
             
             Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
-            UserAccount userAccount = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new EnterpriseAdminRole());
+            UserAccount userAccount = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdministratorRole());
             populateTable();
 
             lblPassword.setForeground(Color.BLACK);

@@ -5,7 +5,7 @@
  */
 package userinterface.AdministrationTreasurerRole;
 
-import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.AdministrationFundRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -18,18 +18,18 @@ import javax.swing.JPanel;
 public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     private JPanel jPanel;
-    private GovernmentFundRequest governmentFundRequest;
+    private AdministrationFundRequest administrationFundRequest;
 
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public TreasurerProcessWorkRequestJPanel(JPanel jPanel, GovernmentFundRequest fundRequest) {
+    public TreasurerProcessWorkRequestJPanel(JPanel jPanel, AdministrationFundRequest fundRequest) {
         initComponents();
         this.jPanel = jPanel;
-        this.governmentFundRequest = fundRequest;
-        btnAmount.setText(String.valueOf(governmentFundRequest.getAmountRequested()));
-        btnLocation.setText(governmentFundRequest.getRegion());
-        btnPopulation.setText(String.valueOf(governmentFundRequest.getPopulation()));
+        this.administrationFundRequest = fundRequest;
+        btnAmount.setText(String.valueOf(administrationFundRequest.getAmountRequested()));
+        btnLocation.setText(administrationFundRequest.getRegion());
+        btnPopulation.setText(String.valueOf(administrationFundRequest.getPopulation()));
 
     }
 
@@ -144,10 +144,10 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
         }
         else
         {
-        governmentFundRequest.setMessage(message);
+        administrationFundRequest.setMessage(message);
          int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
          if (dialogResult == JOptionPane.YES_OPTION) {
-        governmentFundRequest.setStatus("Accepted");
+        administrationFundRequest.setStatus("Accepted");
         JOptionPane.showMessageDialog(null, "Funds Disbursed Successfully!!!");
         btnSubmit.setEnabled(false);
         btnMessage.setText("");
@@ -175,12 +175,12 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Message is mandatory!");
             return;
         } else {
-        governmentFundRequest.setMessage(message);
+        administrationFundRequest.setMessage(message);
         int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
             
             
             if (dialogResult == JOptionPane.YES_OPTION) {
-        governmentFundRequest.setStatus("Rejected");
+        administrationFundRequest.setStatus("Rejected");
          btnMessage.setText("");
             btnReject.setEnabled(false);
             btnSubmit.setEnabled(false);

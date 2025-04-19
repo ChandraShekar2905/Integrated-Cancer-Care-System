@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.AdministrationFundRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -27,18 +27,18 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
     private JPanel jPanel;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    private GovernmentFundRequest governmentFundRequest;
+    private AdministrationFundRequest administrationFundRequest;
 
-    public SecretaryProcessWorkRequestJPanel(JPanel jPanel, UserAccount userAccount, GovernmentFundRequest fundRequest, Enterprise enterprise) {
+    public SecretaryProcessWorkRequestJPanel(JPanel jPanel, UserAccount userAccount, AdministrationFundRequest fundRequest, Enterprise enterprise) {
         initComponents();
 
         this.jPanel = jPanel;
         this.enterprise = enterprise;
         this.userAccount = userAccount;
-        this.governmentFundRequest = fundRequest;
-        txtAmount.setText(String.valueOf(governmentFundRequest.getAmountRequested()));
-        txtRegion.setText(governmentFundRequest.getRegion());
-        txtPopulation.setText(String.valueOf(governmentFundRequest.getPopulation()));
+        this.administrationFundRequest = fundRequest;
+        txtAmount.setText(String.valueOf(administrationFundRequest.getAmountRequested()));
+        txtRegion.setText(administrationFundRequest.getRegion());
+        txtPopulation.setText(String.valueOf(administrationFundRequest.getPopulation()));
 
     }
 
@@ -206,13 +206,13 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
             return;
         }
         else{
-        governmentFundRequest.setMessage(msg);
+        administrationFundRequest.setMessage(msg);
         
         int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to proceed?");
             
          if (dialogResult == JOptionPane.YES_OPTION) {
-        governmentFundRequest.setSender(userAccount);
-        governmentFundRequest.setStatus("Transfered to Treasurer");
+        administrationFundRequest.setSender(userAccount);
+        administrationFundRequest.setStatus("Transfered to Treasurer");
 
         Organization org = null;
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
@@ -222,8 +222,8 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         }
         if (org != null) {
-            org.getWorkQueue().getWorkRequests().add(governmentFundRequest);
-            userAccount.getWorkQueue().getWorkRequests().add(governmentFundRequest);
+            org.getWorkQueue().getWorkRequests().add(administrationFundRequest);
+            userAccount.getWorkQueue().getWorkRequests().add(administrationFundRequest);
         }
         JOptionPane.showMessageDialog(null, "Requested to Treasurer is completed!!!");
         txtMessage.setText("");
@@ -256,11 +256,11 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Kindly enter a message!");
             return;
         } else {
-        governmentFundRequest.setMessage(message);
+        administrationFundRequest.setMessage(message);
         
          int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to proceed?");
             if (dialogResult == JOptionPane.YES_OPTION) {
-                governmentFundRequest.setStatus("Rejected");
+                administrationFundRequest.setStatus("Rejected");
                 txtMessage.setText("");
             btnReject.setEnabled(false);
             btnTransferRequest.setEnabled(false);
