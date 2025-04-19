@@ -9,7 +9,7 @@ package Business.Organization;
  * @author aaryakpawar
  */
 
-import Business.Role.EnterpriseAdminRole;
+import Business.Role.AdministratorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class AdminOrganization extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new EnterpriseAdminRole());
+        roles.add(new AdministratorRole());
         return roles;
     }
      
