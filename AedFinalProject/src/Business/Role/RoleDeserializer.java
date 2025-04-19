@@ -27,7 +27,7 @@ public class RoleDeserializer implements JsonDeserializer<Role> {
             case "GovernmentHealthOfficerRole":
                 return context.deserialize(json, AdministrationHealthOfficerRole.class);
             case "GovernmentSecretaries":
-                return context.deserialize(json, AdministrationSecretaries.class);
+                return context.deserialize(json, AdministrationSecretary.class);
             case "GovernmentTreasurer":
                 return context.deserialize(json, AdministrationTreasurer.class);
             case "InsuranceAgentRole":
