@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.AdministrationFundRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -27,10 +27,10 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
     private JPanel jPanel;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    private GovernmentFundRequest governmentFundRequest;
+    private AdministrationFundRequest governmentFundRequest;
     private OfficerWorkAreaJPanel officerWorkAreaJPanel;
 
-    public OfficerProcessWorkRequestJPanel(JPanel jPanel, UserAccount userAccount, GovernmentFundRequest fundRequest, Enterprise enterprise) {
+    public OfficerProcessWorkRequestJPanel(JPanel jPanel, UserAccount userAccount, AdministrationFundRequest fundRequest, Enterprise enterprise) {
         initComponents();
 
         this.jPanel = jPanel;

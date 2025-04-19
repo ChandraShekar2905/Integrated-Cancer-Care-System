@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.AdministrationFundRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -147,7 +147,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row first !!");
             return;
         } else {
-            WorkRequest request = (GovernmentFundRequest) tblWorkRequest.getValueAt(selectedRow, 0);
+            WorkRequest request = (AdministrationFundRequest) tblWorkRequest.getValueAt(selectedRow, 0);
             if (request.getStatus().equals("Sent")) {
                 request.setReceiver(userAccount);
                 request.setStatus("Pending on " + request.getReceiver().getEmployee().getEmployeename());
@@ -166,7 +166,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
             return;
         } else {
 
-            GovernmentFundRequest request = (GovernmentFundRequest) tblWorkRequest.getValueAt(selectedRow, 0);
+            AdministrationFundRequest request = (AdministrationFundRequest) tblWorkRequest.getValueAt(selectedRow, 0);
 
             if (request.getStatus().equals("Rejected")) {
                 JOptionPane.showMessageDialog(null, "Selected Rejected Request", "Warning!", JOptionPane.WARNING_MESSAGE);
@@ -215,7 +215,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         for (WorkRequest request : healthCareOfficerOrganization.getWorkQueue().getWorkRequests()) {
             Object[] row = new Object[5];
             String status = request.getStatus();
-            row[0] = ((GovernmentFundRequest) request);
+            row[0] = ((AdministrationFundRequest) request);
             row[1] = request.getSender().getEmployee().getEmployeename();
             if (status.equalsIgnoreCase("Sent to Treasurer") || status.equalsIgnoreCase("Sent to Secretary")) {
                 row[2] = null;
@@ -223,7 +223,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
                 row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getEmployeename();
             }
             row[3] = request.getStatus();
-            row[4] = ((GovernmentFundRequest) request).getAmountRequested();
+            row[4] = ((AdministrationFundRequest) request).getAmountRequested();
 
             model.addRow(row);
         }
