@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.AdministrationFundRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -126,7 +126,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row first from the table to view details");
             return;
         } else {
-            WorkRequest request = (GovernmentFundRequest) workRequestJTable.getValueAt(selectedRow, 5);
+            WorkRequest request = (AdministrationFundRequest) workRequestJTable.getValueAt(selectedRow, 5);
             if (request.getStatus().equals("Transfered to Treasurer")) {
                 request.setReceiver(userAccount);
                 request.setStatus("Pending on " + request.getReceiver().getEmployee().getEmployeename());
@@ -146,7 +146,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row first from the table to view details");
             return;
         } else {
-            GovernmentFundRequest request = (GovernmentFundRequest) workRequestJTable.getValueAt(selectedRow, 5);
+            AdministrationFundRequest request = (AdministrationFundRequest) workRequestJTable.getValueAt(selectedRow, 5);
             if (request.getStatus().equalsIgnoreCase("Sent to Treasurer")) {
                 JOptionPane.showMessageDialog(null, "Please assign selected request first");
                 return;
@@ -194,8 +194,8 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             }
 
             row[2] = status;
-            row[3] = ((GovernmentFundRequest) request).getAmountRequested();
-            row[4] = ((GovernmentFundRequest) request).getMessage();
+            row[3] = ((AdministrationFundRequest) request).getAmountRequested();
+            row[4] = ((AdministrationFundRequest) request).getMessage();
             row[5] = request;
 
             model.addRow(row);
