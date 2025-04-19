@@ -7,7 +7,6 @@ package userinterface.InsuranceOfficer;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.InsuranceCompanyEnterprise;
 import Business.Insurance.Insurance;
-import Business.InsuranceCustomer.InsuranceCustomer;
 import Business.InsuredIndividual.InsuredIndividual;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;

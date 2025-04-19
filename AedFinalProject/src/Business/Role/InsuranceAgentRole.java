@@ -12,7 +12,8 @@ import Business.Organization.InsuranceAgentOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.InsuranceAgentRole.InsuranceAgentWorkAreaJPanel;
+import userinterface.InsuranceOfficer.InsuranceOfficerWorkAreaJPanel;
+
 
 /**
  *
@@ -22,7 +23,7 @@ public class InsuranceAgentRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-     return new InsuranceAgentWorkAreaJPanel(userProcessContainer, account, (InsuranceAgentOrganization)organization, enterprise);
+     return new InsuranceOfficerWorkAreaJPanel(userProcessContainer, account, (InsuranceAgentOrganization)organization, enterprise);
     }
     
 }
