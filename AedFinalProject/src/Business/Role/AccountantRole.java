@@ -17,13 +17,13 @@ import Business.Organization.AccountantOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.HealthcareAccountantRole.AccountantWorkAreaJPanel;
+import userinterface.ReceptionistRole.ReceptionistWorkAreaJPanel;
 
 public class AccountantRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem) {
-        return new AccountantWorkAreaJPanel(userProcessContainer, account, (AccountantOrganization)organization, enterprise, ecosystem);
+        return new ReceptionistWorkAreaJPanel(userProcessContainer, account, (AccountantOrganization)organization, enterprise, ecosystem);
     }
     
 }
