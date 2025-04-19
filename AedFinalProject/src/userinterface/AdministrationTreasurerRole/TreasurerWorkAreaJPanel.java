@@ -56,7 +56,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         btnAssign = new javax.swing.JButton();
         requestGovSecretaryBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(173, 234, 203));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
@@ -65,7 +65,6 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(350, 40, 209, 21);
 
-        workRequestJTable.setBackground(new java.awt.Color(206, 255, 235));
         workRequestJTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         workRequestJTable.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
