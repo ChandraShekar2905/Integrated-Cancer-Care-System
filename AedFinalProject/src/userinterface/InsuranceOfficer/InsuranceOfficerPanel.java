@@ -17,17 +17,17 @@ import javax.swing.JPanel;
  *
  * @author chandrashekarreddykusukunthla
  */
-public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
+public class InsuranceOfficerPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form InsuranceOfficerWorkAreaJPanel
+     * Creates new form InsuranceOfficerPanel
      */
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private InsuranceAgentOrganization insuranceAgentOrganization;
     private Enterprise enterprise;
 
-    public InsuranceOfficerWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
+    public InsuranceOfficerPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = jpanel;
         this.userAccount = userAccount;
