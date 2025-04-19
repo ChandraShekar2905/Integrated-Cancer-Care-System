@@ -4,6 +4,24 @@
  */
 package userinterface.InsuranceOfficer;
 
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Insurance.Insurance;
+import Business.InsuranceCustomer.InsuranceCustomer;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
@@ -13,8 +31,20 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddNewPolicyHolderJPanel
      */
-    public AddNewPolicyHolderJPanel() {
+    
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private InsuranceCompanyEnterprise insuranceCompanyEnterprise;
+    private String policyNumber;
+    
+    public AddNewPolicyHolderJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, String policyNumber) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.insuranceCompanyEnterprise = (InsuranceCompanyEnterprise) enterprise;
+        this.userAccount = userAccount;
+        this.policyNumber = policyNumber;
+        populateFields();
+        populateTable();
     }
 
     /**
@@ -28,7 +58,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
 
         lblInsuranceMember = new javax.swing.JLabel();
         btnAddCustomer = new javax.swing.JButton();
-        lblPersonalInformation = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCustomerPolicy = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
@@ -49,6 +78,7 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         cmbGender = new javax.swing.JComboBox();
         lblLastName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        lblPersonalInformation = new javax.swing.JLabel();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         lblPolicyCoverage = new javax.swing.JLabel();
         txtInsuranceCoverage = new javax.swing.JTextField();
@@ -67,10 +97,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
                 btnAddCustomerActionPerformed(evt);
             }
         });
-
-        lblPersonalInformation.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        lblPersonalInformation.setForeground(new java.awt.Color(0, 51, 51));
-        lblPersonalInformation.setText("Customer Information");
 
         tblCustomerPolicy.setBackground(new java.awt.Color(204, 204, 255));
         tblCustomerPolicy.setModel(new javax.swing.table.DefaultTableModel(
@@ -139,6 +165,10 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         lblLastName.setForeground(new java.awt.Color(0, 51, 51));
         lblLastName.setText("Last Name :");
 
+        lblPersonalInformation.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPersonalInformation.setForeground(new java.awt.Color(0, 51, 51));
+        lblPersonalInformation.setText("Customer Information");
+
         jDesktopPane1.setLayer(lblAddress, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(txtAddress, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblSocialSecurityNumber, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -155,6 +185,7 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         jDesktopPane1.setLayer(cmbGender, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lblLastName, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(txtName, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblPersonalInformation, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -199,11 +230,17 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
                                 .addComponent(lblLastName))
                             .addComponent(jDateChooserDob, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(lblPersonalInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(lblPersonalInformation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPolicyNumber)
                     .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -338,11 +375,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(51, 51, 51))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblPersonalInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,11 +392,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(115, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(278, Short.MAX_VALUE)
-                    .addComponent(lblPersonalInformation)
-                    .addGap(0, 473, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -548,4 +575,100 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPolicyNumber;
     private javax.swing.JTextField txtSSN;
     // End of variables declaration//GEN-END:variables
+ private boolean phonePatternCorrect() {
+
+        Pattern pattern = Pattern.compile("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}");
+        Matcher matcher = pattern.matcher(txtContact.getText());
+
+        boolean b = false;
+
+        if (matcher.matches()) {
+            b = true;
+        } else {
+            b = false;
+        }
+
+        return b;
+    }
+
+    private boolean ssnValidate() {
+
+        Pattern pattern = Pattern.compile("^(?!000|111)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000|1111)[0-9]{4}$");
+        
+        Matcher matcher = pattern.matcher(txtSSN.getText());
+
+        boolean validate = false;
+
+        if (matcher.matches()) {
+            validate = true;
+        } else {
+            validate = false;
+        }
+
+        return validate;
+    }
+
+    private void refresh() {
+
+        txtPolicyNumber.setText(UUID.randomUUID().toString().substring(0, 7));
+        txtFName.setText("");
+        txtName.setText("");
+        txtContact.setText("");
+        txtSSN.setText("");
+        jDateChooserDob.setDate(null);
+        txtAddress.setText("");
+
+    }
+
+    private void populateFields() {
+        txtPolicyNumber.setText(policyNumber);
+        List<Insurance> policies = insuranceCompanyEnterprise.getInsurancePolicyList().getInsurancePolicies();
+
+        for (Insurance policy : policies) {
+            cmbInsurancePolicyName.addItem(policy);
+        }
+
+        Insurance selectedPolicy = (Insurance) cmbInsurancePolicyName.getSelectedItem();
+        
+        if(selectedPolicy != null)
+        {
+        txtInsuranceCoverage.setText(String.valueOf(selectedPolicy.getCoveragepercentage()));
+        }
+        else{
+            JOptionPane.showMessageDialog(null , "No Existing policy!");
+            return;
+        }
+
+    }
+
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel) tblCustomerPolicy.getModel();
+
+        dtm.setRowCount(0);
+        List<InsuranceCustomer> customers = insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders();
+        for (InsuranceCustomer customer : customers) {
+            Object[] row = new Object[5];
+            row[0] = customer.getFirstName() + " " + customer.getLastName();
+            row[1] = customer;
+            row[2] = customer.getInsurance().getPolicyName();
+            row[3] = customer.getInsurance().getCoveragepercentage();
+            row[4] = customer.getSocialSecurityID();
+
+            dtm.addRow(row);
+        }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
+        tblCustomerPolicy.setRowSorter(sorter);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -4,6 +4,16 @@
  */
 package userinterface.InsuranceOfficer;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.InsuranceFinanceOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.InsuranceWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author chandrashekarreddykusukunthla
@@ -13,8 +23,19 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProcessRequestJPanel
      */
-    public ProcessRequestJPanel() {
+    
+    private JPanel userProcessContainer;
+    private UserAccount account;
+    private Enterprise enterprise;
+    private InsuranceWorkRequest insuranceWorkRequest;
+    
+    public ProcessRequestJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, InsuranceWorkRequest insuranceWorkRequest) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.insuranceWorkRequest = insuranceWorkRequest;
+        this.account = userAccount;
+        populateFields();
     }
 
     /**
@@ -26,19 +47,287 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblPolicyNumber = new javax.swing.JLabel();
+        txtPolicyNumber = new javax.swing.JTextField();
+        lblClaimAmount = new javax.swing.JLabel();
+        txtClaimAmount = new javax.swing.JTextField();
+        lblMassage = new javax.swing.JLabel();
+        txtMessage = new javax.swing.JTextField();
+        btnAccept = new javax.swing.JButton();
+        btnReject = new javax.swing.JButton();
+        lblCustomerName = new javax.swing.JLabel();
+        txtCustomerName = new javax.swing.JTextField();
+        lblTotalBill = new javax.swing.JLabel();
+        txtBillAmount = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        lblPolicyNumber.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPolicyNumber.setText("Policy Number :");
+
+        txtPolicyNumber.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtPolicyNumber.setEnabled(false);
+
+        lblClaimAmount.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblClaimAmount.setText("Claim Amount :");
+
+        txtClaimAmount.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtClaimAmount.setEnabled(false);
+
+        lblMassage.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblMassage.setText("Message :");
+
+        txtMessage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMessageActionPerformed(evt);
+            }
+        });
+
+        btnAccept.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAccept.setText("Route To Finance Department");
+        btnAccept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcceptActionPerformed(evt);
+            }
+        });
+
+        btnReject.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnReject.setText("Reject");
+        btnReject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRejectActionPerformed(evt);
+            }
+        });
+
+        lblCustomerName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblCustomerName.setText("Customer Name :");
+
+        txtCustomerName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtCustomerName.setEnabled(false);
+
+        lblTotalBill.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblTotalBill.setText("Total Bill Amount :");
+
+        txtBillAmount.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtBillAmount.setEnabled(false);
+
+        btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setText("FINANCE DEPARTMENT APPROVAL PANEL");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(lblPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(lblTotalBill, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(txtBillAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(lblClaimAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(307, 307, 307)
+                        .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(txtClaimAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(lblMassage, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(305, 305, 305)
+                        .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(lblPolicyNumber)
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTotalBill)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(txtBillAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblClaimAmount)
+                        .addGap(21, 21, 21)
+                        .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(txtClaimAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(lblMassage))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(353, 353, 353)
+                        .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(lblCustomerName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMessageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMessageActionPerformed
+
+    private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+
+        String msg ;
+        msg = txtMessage.getText();
+        if (msg.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Message is must to be entered!");
+            return;
+        } else {
+            insuranceWorkRequest.setMessage(msg);
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to proceed?");
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                Organization org = null;
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+                    if (organization instanceof InsuranceFinanceOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
+                    account.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
+                }
+
+                JOptionPane.showMessageDialog(null, "Request is approved routed To Finance Department");
+                insuranceWorkRequest.setStatus("Sent To Finance Department");
+                insuranceWorkRequest.setAgent(account.getEmployee().getEmployeename());
+                insuranceWorkRequest.setReceiver(null);
+
+                txtMessage.setText("");
+                btnReject.setEnabled(false);
+                btnAccept.setEnabled(false);
+
+            }
+            txtMessage.setText("");
+        }
+    }//GEN-LAST:event_btnAcceptActionPerformed
+
+    private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
+
+        String message = txtMessage.getText();
+        if (message.equals("")) {
+            JOptionPane.showMessageDialog(null, "Message is must to be entered!");
+            return;
+        } else {
+            insuranceWorkRequest.setMessage(message);
+
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to proceed?");
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                insuranceWorkRequest.setStatus("Rejected");
+                insuranceWorkRequest.setMessage(txtMessage.getText().trim());
+                insuranceWorkRequest.setAgent(account.getEmployee().getEmployeename());
+                txtMessage.setText("");
+                btnReject.setEnabled(false);
+                btnAccept.setEnabled(false);
+            }
+            txtMessage.setText("");
+        }
+    }//GEN-LAST:event_btnRejectActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        AllInsuranceRequestsJPanel allInsuranceRequestsJPanel = (AllInsuranceRequestsJPanel) component;
+        allInsuranceRequestsJPanel.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccept;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnReject;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblClaimAmount;
+    private javax.swing.JLabel lblCustomerName;
+    private javax.swing.JLabel lblMassage;
+    private javax.swing.JLabel lblPolicyNumber;
+    private javax.swing.JLabel lblTotalBill;
+    private javax.swing.JTextField txtBillAmount;
+    private javax.swing.JTextField txtClaimAmount;
+    private javax.swing.JTextField txtCustomerName;
+    private javax.swing.JTextField txtMessage;
+    private javax.swing.JTextField txtPolicyNumber;
     // End of variables declaration//GEN-END:variables
+
+        private void populateFields() {
+
+        txtPolicyNumber.setText(insuranceWorkRequest.getPolicyId());
+        txtCustomerName.setText(insuranceWorkRequest.getInsuranceCustomer().getFirstName() + " " + insuranceWorkRequest.getInsuranceCustomer().getLastName());
+        txtBillAmount.setText(String.valueOf(insuranceWorkRequest.getAmountBilled()));
+        txtClaimAmount.setText(String.valueOf(insuranceWorkRequest.getAmountClaimed()));
+
+    }
+
+    
+    
+
 }
