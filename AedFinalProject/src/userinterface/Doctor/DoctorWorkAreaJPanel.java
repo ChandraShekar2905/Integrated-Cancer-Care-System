@@ -88,6 +88,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblWorkRequest1 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(227, 242, 253));
+
         btnRequestLab.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRequestLab.setText("Request Lab Test");
         btnRequestLab.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +101,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblEnterprise.setText("Enterprise :");
 
-        lblValue.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblValue.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblValue.setText("<value>");
 
         lblMedicalTestWorkQueue.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 12)); // NOI18N
@@ -138,10 +140,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         lblWorkAreaForDoctors.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblWorkAreaForDoctors.setForeground(new java.awt.Color(204, 0, 0));
+        lblWorkAreaForDoctors.setForeground(new java.awt.Color(0, 153, 51));
         lblWorkAreaForDoctors.setText("WORK-AREA FOR DOCTOR");
 
-        tblWorkRequest1.setBackground(new java.awt.Color(206, 255, 235));
         tblWorkRequest1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         tblWorkRequest1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

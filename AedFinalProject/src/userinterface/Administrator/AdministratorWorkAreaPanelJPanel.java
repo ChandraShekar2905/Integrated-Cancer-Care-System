@@ -55,12 +55,14 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         lblEnterprise = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         btnRequestFunds = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+
+        setBackground(new java.awt.Color(214, 234, 248));
+        setForeground(new java.awt.Color(255, 255, 255));
 
         lblAdminTitle.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblAdminTitle.setText("PERSONAL WORK-AREA ADMINISTRATIVE ROLE");
 
-        btnManageUser.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnManageUser.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnManageUser.setText("Manage User");
         btnManageUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +70,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEmployee.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnManageEmployee.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnManageEmployee.setText("Manage Employee");
         btnManageEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +78,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageOrganization.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnManageOrganization.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnManageOrganization.setText("Manage Organization");
         btnManageOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,20 +86,19 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblEnterprise.setBackground(new java.awt.Color(255, 255, 255));
         lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblEnterprise.setText("ENTERPRISE :");
 
-        valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        valueLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
 
-        btnRequestFunds.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnRequestFunds.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnRequestFunds.setText("Request Funds from Government");
         btnRequestFunds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestFundsActionPerformed(evt);
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -106,9 +107,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 276, Short.MAX_VALUE)
                 .addComponent(lblAdminTitle)
-                .addGap(215, 215, 215)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGap(330, 330, 330))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -128,11 +127,9 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdminTitle)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(30, 30, 30)
+                .addComponent(lblAdminTitle)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,7 +184,6 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageOrganization;
     private javax.swing.JButton btnManageUser;
     private javax.swing.JButton btnRequestFunds;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblAdminTitle;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel valueLabel;

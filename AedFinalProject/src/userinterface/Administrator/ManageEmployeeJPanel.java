@@ -96,6 +96,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(214, 234, 248));
+
         cbOrganizationEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbOrganizationEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +139,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrganization);
 
-        btnCreateEmployee.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCreateEmployee.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnCreateEmployee.setText("CREATE EMPLOYEE");
         btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
