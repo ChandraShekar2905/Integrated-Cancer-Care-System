@@ -4,6 +4,16 @@
  */
 package userinterface.InsuranceOfficer;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.InsuranceAgentOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.util.UUID;
+import javax.swing.JPanel;
+
+
+
 /**
  *
  * @author chandrashekarreddykusukunthla
@@ -13,8 +23,19 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form InsuranceOfficerWorkAreaJPanel
      */
-    public InsuranceOfficerWorkAreaJPanel() {
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private InsuranceAgentOrganization insuranceAgentOrganization;
+    private Enterprise enterprise;
+
+    
+    
+    public InsuranceOfficerWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
+        this.userProcessContainer = jpanel;
+        this.userAccount = userAccount;
+        this.insuranceAgentOrganization = (InsuranceAgentOrganization) organization;
+        this.enterprise = enterprise;
     }
 
     /**
