@@ -58,6 +58,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         txtLabType = new javax.swing.JTextField();
         lblRequestLabTest = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(227, 242, 253));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         btnRequestTest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N

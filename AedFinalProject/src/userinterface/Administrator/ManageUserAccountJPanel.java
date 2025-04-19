@@ -110,6 +110,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblOrgnization = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(214, 234, 248));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         cborganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -119,7 +120,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        createUserJButton.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        createUserJButton.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         createUserJButton.setText("Create");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +128,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblRole.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblRole.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblRole.setText("Role");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +139,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         cbRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        lblUsername.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblUsername.setText("User Name");
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -172,7 +173,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblUser);
 
-        lblValidatePassword.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblValidatePassword.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblValidatePassword.setText("re-enter Password");
 
         txtPasswordConfirm.addActionListener(new java.awt.event.ActionListener() {
@@ -181,18 +182,18 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblPassword.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblPassword.setText("Password");
 
         lblManageUser.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblManageUser.setText("Manage User Account");
 
-        lblEmployee.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblEmployee.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblEmployee.setText("Employee");
 
         cbEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnBack.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +201,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblOrgnization.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblOrgnization.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblOrgnization.setText("Organization");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
