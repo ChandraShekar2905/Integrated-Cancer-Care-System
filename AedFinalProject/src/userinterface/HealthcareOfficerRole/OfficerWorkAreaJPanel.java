@@ -58,7 +58,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         btnAssign = new javax.swing.JButton();
         btnProcessRequest = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(173, 234, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lblHealthOfficer.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblHealthOfficer.setText("WORK-AREA GOVERNMENT HEALTH OFFICER");
@@ -91,7 +91,6 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblWorkRequest);
 
-        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
         btnAssign.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnAssign.setText("Assign To Self");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +99,6 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcessRequest.setBackground(new java.awt.Color(0, 153, 255));
         btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
