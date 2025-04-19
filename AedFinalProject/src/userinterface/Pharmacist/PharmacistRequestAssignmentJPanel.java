@@ -2,18 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.Receptionist;
+package userinterface.Pharmacist;
+
+import Business.Enterprise.Enterprise;
+import Business.Organization.PharmacyOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
 
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
-public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
+public class PharmacistRequestAssignmentJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ReceptionistWorkAreaJPanel
+     * Creates new form PharmacistRequestAssignmentJPanel
      */
-    public ReceptionistWorkAreaJPanel() {
+    public PharmacistRequestAssignmentJPanel(JPanel userProcessContainer, UserAccount userAccount, PharmacyOrganization par, Enterprise enterprise) {
         initComponents();
     }
 
@@ -25,8 +30,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
-        setPreferredSize(new java.awt.Dimension(1024, 768));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
