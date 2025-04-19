@@ -8,10 +8,12 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.InsuranceCompanyEnterprise;
 import Business.Insurance.Insurance;
 import Business.InsuranceCustomer.InsuranceCustomer;
+import Business.InsuredIndividual.InsuredIndividual;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -503,19 +505,19 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
 
             Insurance insurance = new Insurance(insurancePolicyName, insuranceCompanyEnterprise.getName(), coverage);
 
-            InsuranceCustomer insuranceCustomer = new InsuranceCustomer(policyNumber, insurance);
+            InsuredIndividual insuredIndividual = new InsuredIndividual(policyNumber, insurance);
 
-            insuranceCustomer.setFirstName(firstName);
-            insuranceCustomer.setLastName(lastName);
-            insuranceCustomer.setDob(dateOfBirth);
-            insuranceCustomer.setSex(gender);
-            insuranceCustomer.setSocialSecurityID(ssn);
-            insuranceCustomer.setContactNumber(phone);
-            insuranceCustomer.setAddress(address);
+            insuredIndividual.setFirstName(firstName);
+            insuredIndividual.setLastName(lastName);
+            insuredIndividual.setDob(dateOfBirth);
+            insuredIndividual.setSex(gender);
+            insuredIndividual.setSocialSecurityID(ssn);
+            insuredIndividual.setContactNumber(phone);
+            insuredIndividual.setAddress(address);
 
-            insuranceCustomer.setInsurance(insurance);
+            insuredIndividual.setInsurance(insurance);
 
-            insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders().add(insuranceCustomer);
+            insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders().add(insuredIndividual);
 
             insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders();
 
@@ -645,8 +647,8 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) tblCustomerPolicy.getModel();
 
         dtm.setRowCount(0);
-        List<InsuranceCustomer> customers = insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders();
-        for (InsuranceCustomer customer : customers) {
+        List<InsuredIndividual> customers = insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders();
+        for (InsuredIndividual customer : customers) {
             Object[] row = new Object[5];
             row[0] = customer.getFirstName() + " " + customer.getLastName();
             row[1] = customer;
