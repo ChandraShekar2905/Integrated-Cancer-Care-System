@@ -72,10 +72,11 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(227, 242, 253));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblBillingRequest.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        lblBillingRequest.setForeground(new java.awt.Color(204, 0, 0));
+        lblBillingRequest.setForeground(new java.awt.Color(0, 153, 51));
         lblBillingRequest.setText("BILLING REQUEST");
 
         lblPatientInfo.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N

@@ -89,6 +89,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         txtFundsReceived = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(214, 234, 248));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblRequestFunds.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
