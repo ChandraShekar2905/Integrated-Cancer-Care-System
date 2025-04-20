@@ -33,18 +33,21 @@ public class GsonFactory {
     public static Gson getGson() {
     return new GsonBuilder()
                 // Register custom (de)serializers for Enterprise
-                .registerTypeAdapter(Enterprise.class, new EnterpriseSerializer())
+                //.registerTypeAdapter(Enterprise.class, new EnterpriseSerializer())
+            
                 .registerTypeAdapter(Enterprise.class, new EnterpriseDeserializer())
 
                 // Register custom (de)serializers for Organization
-                .registerTypeAdapter(Organization.class, new OrganizationSerializer())
+               // .registerTypeAdapter(Organization.class, new OrganizationSerializer())
+            
                 .registerTypeAdapter(Organization.class, new OrganizationDeserializer())
                 
                 // Register custom serializers and deserializers for Role
-                .registerTypeAdapter(Role.class, new RoleSerializer())
+               // .registerTypeAdapter(Role.class, new RoleSerializer())
+            
                 .registerTypeAdapter(Role.class, new RoleDeserializer())
                 
-                .registerTypeAdapter(WorkRequest.class, new WorkRequestSerializer())
+                //.registerTypeAdapter(WorkRequest.class, new WorkRequestSerializer())
                 .registerTypeAdapter(WorkRequest.class, new WorkRequestDeserializer())
 
                 .setDateFormat("MMM d, yyyy, h:mm:ss a")
