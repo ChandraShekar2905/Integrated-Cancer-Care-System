@@ -89,6 +89,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         lblWorkAreaForNurse = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblWorkRequest1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
@@ -130,7 +131,11 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblWorkRequest1);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 140, 1050, 190);
+        jScrollPane2.setBounds(0, 150, 1010, 190);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Nurse.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(340, 340, 380, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,6 +158,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblWorkAreaForNurse;

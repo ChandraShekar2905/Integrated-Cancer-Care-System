@@ -89,7 +89,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(170, 210, 734, 92);
+        jScrollPane1.setBounds(150, 200, 734, 92);
 
         btnAssigntoSelf.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAssigntoSelf.setText("Assign to Self");
@@ -99,7 +99,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAssigntoSelf);
-        btnAssigntoSelf.setBounds(170, 340, 142, 34);
+        btnAssigntoSelf.setBounds(350, 330, 142, 34);
 
         btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnProcessRequest.setText("Process Request");
@@ -109,13 +109,13 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcessRequest);
-        btnProcessRequest.setBounds(360, 340, 150, 34);
+        btnProcessRequest.setBounds(540, 330, 150, 34);
 
         lblSecretery.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblSecretery.setForeground(new java.awt.Color(204, 0, 0));
         lblSecretery.setText("SECRETERY WORK-AREA");
         add(lblSecretery);
-        lblSecretery.setBounds(420, 140, 236, 37);
+        lblSecretery.setBounds(410, 130, 236, 37);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssigntoSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssigntoSelfActionPerformed

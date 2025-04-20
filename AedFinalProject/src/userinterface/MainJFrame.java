@@ -57,6 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         UsernameIcon = new javax.swing.JLabel();
         passwordIcon = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -112,43 +113,58 @@ public class MainJFrame extends javax.swing.JFrame {
 
         passwordIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/secure.png"))); // NOI18N
 
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Title.png"))); // NOI18N
+
         javax.swing.GroupLayout loginAreaLayout = new javax.swing.GroupLayout(loginArea);
         loginArea.setLayout(loginAreaLayout);
         loginAreaLayout.setHorizontalGroup(
             loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginAreaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(loginJLabel))
-            .addGroup(loginAreaLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(loginAreaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginAreaLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(passwordJLabel))
+                        .addGroup(loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(loginAreaLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(loginJLabel))
+                            .addGroup(loginAreaLayout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(loginAreaLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(loginAreaLayout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addComponent(passwordJLabel))
+                                    .addGroup(loginAreaLayout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addComponent(usernameJLabel))
+                                    .addComponent(passwordIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(loginAreaLayout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(UsernameIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(6, 6, 6)
+                                .addGroup(loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(loginAreaLayout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(loginAreaLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(usernameJLabel))
-                    .addComponent(passwordIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(loginAreaLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(UsernameIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(6, 6, 6)
-                .addGroup(loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(loginAreaLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         loginAreaLayout.setVerticalGroup(
             loginAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginAreaLayout.createSequentialGroup()
-                .addGap(291, 291, 291)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(loginJLabel)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel2)
@@ -332,6 +348,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel loginArea;
     private javax.swing.JLabel loginJLabel;

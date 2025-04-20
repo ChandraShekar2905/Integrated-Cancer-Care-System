@@ -52,8 +52,10 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         btnAddNewMember.setBackground(new java.awt.Color(204, 204, 255));
@@ -65,7 +67,7 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAddNewMember);
-        btnAddNewMember.setBounds(420, 190, 184, 41);
+        btnAddNewMember.setBounds(610, 270, 184, 41);
 
         btnProcessRequests.setBackground(new java.awt.Color(204, 204, 255));
         btnProcessRequests.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -76,7 +78,7 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcessRequests);
-        btnProcessRequests.setBounds(400, 350, 220, 39);
+        btnProcessRequests.setBounds(590, 450, 220, 39);
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -87,7 +89,7 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(390, 340, 240, 140);
+        jScrollPane1.setBounds(580, 440, 240, 140);
 
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -98,13 +100,17 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTextArea2);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(390, 180, 240, 140);
+        jScrollPane2.setBounds(580, 260, 240, 140);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Insurance Agent Work Area");
+        jLabel1.setText("Insurance Officer Work Area");
         add(jLabel1);
         jLabel1.setBounds(160, 60, 690, 21);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/InsuranceAgent.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(-30, 150, 570, 490);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewMemberActionPerformed
@@ -127,6 +133,7 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddNewMember;
     private javax.swing.JButton btnProcessRequests;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
