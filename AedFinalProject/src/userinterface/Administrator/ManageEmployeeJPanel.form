@@ -21,33 +21,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                      <Component id="lblOrganization" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Component id="cbOrganizations" min="-2" pref="198" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblSelectOrganization" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtName" min="-2" pref="173" max="-2" attributes="0"/>
-                          <Component id="cbOrganizationEmployee" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
-                          <Component id="btnCreateEmployee" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="258" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="514" max="-2" attributes="0"/>
@@ -58,6 +33,42 @@
                       <EmptySpace min="-2" pref="371" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="lblOrganization" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="cbOrganizations" min="-2" pref="198" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lblSelectOrganization" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblName" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtName" min="-2" pref="173" max="-2" attributes="0"/>
+                              <Component id="cbOrganizationEmployee" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="418" max="-2" attributes="0"/>
+                          <Component id="UpdateEmpBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                      <Component id="btnCreateEmployee" min="-2" pref="141" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="DeleteBtn" min="-2" pref="155" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,9 +96,13 @@
                   <Component id="txtName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="btnCreateEmployee" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace pref="322" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCreateEmployee" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="UpdateEmpBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Component id="DeleteBtn" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="337" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -154,6 +169,9 @@
           <Font name="Courier New" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CREATE EMPLOYEE"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[140, 20]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateEmployeeActionPerformed"/>
@@ -200,6 +218,31 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="DeleteBtn">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Courier New" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Delete Employee"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[140, 20]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="UpdateEmpBtn">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Courier New" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Update Employee"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateEmpBtnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

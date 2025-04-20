@@ -59,48 +59,64 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                      <Component id="loginJLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="153" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
-                              <Component id="passwordJLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                                      <Component id="loginJLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" pref="153" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
+                                              <Component id="passwordJLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
+                                              <Component id="usernameJLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="passwordIcon" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                              <Component id="UsernameIcon" min="-2" pref="27" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtUsername" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="pfPassword" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="76" pref="76" max="-2" attributes="0"/>
+                                      <Component id="btnLogout" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                      <Component id="btnLogin" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
-                              <Component id="usernameJLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="passwordIcon" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                              <Component id="UsernameIcon" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtUsername" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="pfPassword" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="76" pref="76" max="-2" attributes="0"/>
-                      <Component id="btnLogout" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                      <Component id="btnLogin" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="291" pref="291" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="210" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="loginJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -234,6 +250,19 @@
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icons/secure.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Title.png"/>
                 </Property>
               </Properties>
             </Component>

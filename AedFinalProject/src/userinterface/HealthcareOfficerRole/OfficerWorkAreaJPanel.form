@@ -31,22 +31,19 @@
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="365" max="-2" attributes="0"/>
-                              <Component id="btnAssign" min="-2" pref="132" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnProcessRequest" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
-                              <Component id="lblHealthOfficer" min="-2" pref="413" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" pref="307" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="365" max="-2" attributes="0"/>
+                      <Component id="btnAssign" min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnProcessRequest" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="297" max="32767" attributes="0"/>
+              <Component id="lblHealthOfficer" min="-2" pref="444" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,7 +70,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier New" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="WORK-AREA GOVERNMENT HEALTH OFFICER"/>
+        <Property name="text" type="java.lang.String" value="WORK-AREA ADMINISTRATION HEALTH OFFICER"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

@@ -94,7 +94,7 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(txtMessage);
-        txtMessage.setBounds(450, 300, 265, 23);
+        txtMessage.setBounds(440, 300, 265, 23);
 
         btnAccept.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAccept.setText("Route To Finance Department");

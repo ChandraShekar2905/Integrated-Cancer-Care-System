@@ -87,6 +87,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         lblWorkAreaForDoctors = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblWorkRequest1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -171,43 +172,51 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblWorkRequest1);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Doc.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(335, 335, 335)
-                        .addComponent(lblWorkAreaForDoctors))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblEnterprise)
-                        .addGap(6, 6, 6)
-                        .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(368, 368, 368)
-                        .addComponent(lblMedicalTestWorkQueue))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnViewPatient)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAssignToMe)
-                        .addGap(32, 32, 32)
-                        .addComponent(btnRequestLab)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnPrescribe)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnTreated)))
-                .addGap(69, 69, 69))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblWorkAreaForDoctors)
+                        .addGap(396, 396, 396))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblEnterprise)
+                                .addGap(6, 6, 6)
+                                .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(368, 368, 368)
+                                .addComponent(lblMedicalTestWorkQueue))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnViewPatient)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAssignToMe)
+                                .addGap(32, 32, 32)
+                                .addComponent(btnRequestLab)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnPrescribe)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnTreated)))
+                        .addGap(65, 65, 65))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(328, 328, 328)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(43, 43, 43)
                 .addComponent(lblWorkAreaForDoctors)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -227,7 +236,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnAssignToMe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRequestLab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPrescribe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -386,6 +397,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRequestLab;
     private javax.swing.JButton btnTreated;
     private javax.swing.JButton btnViewPatient;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblMedicalTestWorkQueue;

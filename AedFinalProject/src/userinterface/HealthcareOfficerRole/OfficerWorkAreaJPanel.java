@@ -62,7 +62,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblHealthOfficer.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblHealthOfficer.setText("WORK-AREA GOVERNMENT HEALTH OFFICER");
+        lblHealthOfficer.setText("WORK-AREA ADMINISTRATION HEALTH OFFICER");
 
         tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,17 +118,16 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(365, 365, 365)
-                                .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnProcessRequest))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(298, 298, 298)
-                                .addComponent(lblHealthOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 307, Short.MAX_VALUE)))
+                        .addGap(365, 365, 365)
+                        .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnProcessRequest)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 297, Short.MAX_VALUE)
+                .addComponent(lblHealthOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(283, 283, 283))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

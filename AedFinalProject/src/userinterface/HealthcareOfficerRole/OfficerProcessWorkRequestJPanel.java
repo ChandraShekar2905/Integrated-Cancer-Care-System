@@ -27,7 +27,7 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
     private JPanel jPanel;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    private AdministrationFundRequest governmentFundRequest;
+    private AdministrationFundRequest administrationFundRequest;
     private OfficerWorkAreaJPanel officerWorkAreaJPanel;
 
     public OfficerProcessWorkRequestJPanel(JPanel jPanel, UserAccount userAccount, AdministrationFundRequest fundRequest, Enterprise enterprise) {
@@ -36,10 +36,10 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         this.jPanel = jPanel;
         this.enterprise = enterprise;
         this.userAccount = userAccount;
-        this.governmentFundRequest = fundRequest;
-        txtAmount.setText(String.valueOf(governmentFundRequest.getAmountRequested()));
-        txtLocation.setText(governmentFundRequest.getRegion());
-        txtPopulation.setText(String.valueOf(governmentFundRequest.getPopulation()));
+        this.administrationFundRequest = fundRequest;
+        txtAmount.setText(String.valueOf(administrationFundRequest.getAmountRequested()));
+        txtLocation.setText(administrationFundRequest.getRegion());
+        txtPopulation.setText(String.valueOf(administrationFundRequest.getPopulation()));
     }
 
     /**
@@ -197,14 +197,14 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Kindly enter a message!");
             return;
         } else {
-            governmentFundRequest.setMessage(message);
+            administrationFundRequest.setMessage(message);
 
             int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to proceed?");
 
             if (dialogResult == JOptionPane.YES_OPTION) {
 
-                governmentFundRequest.setSender(userAccount);
-                governmentFundRequest.setStatus("Transfered to Secretary");
+                administrationFundRequest.setSender(userAccount);
+                administrationFundRequest.setStatus("Transfered to Secretary");
 
                 Organization org = null;
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
@@ -214,8 +214,8 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
                     }
                 }
                 if (org != null) {
-                    org.getWorkQueue().getWorkRequests().add(governmentFundRequest);
-                    userAccount.getWorkQueue().getWorkRequests().add(governmentFundRequest);
+                    org.getWorkQueue().getWorkRequests().add(administrationFundRequest);
+                    userAccount.getWorkQueue().getWorkRequests().add(administrationFundRequest);
                 }
                 JOptionPane.showMessageDialog(null, "Requested to Secretary Successfully !!!");
                 txtMessage.setText("");
@@ -233,11 +233,11 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Kindly enter a message!");
             return;
         } else {
-            governmentFundRequest.setMessage(message);
+            administrationFundRequest.setMessage(message);
             int dialogResult = JOptionPane.showConfirmDialog(null,  "Would you like to proceed?");
 
             if (dialogResult == JOptionPane.YES_OPTION) {
-                governmentFundRequest.setStatus("Rejected");
+                administrationFundRequest.setStatus("Rejected");
                 txtMessage.setText("");
                 btnReject.setEnabled(false);
                 btnTransferToSecretary.setEnabled(false);

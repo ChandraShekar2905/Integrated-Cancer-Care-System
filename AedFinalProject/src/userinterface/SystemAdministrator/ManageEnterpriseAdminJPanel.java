@@ -147,7 +147,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblEnterprise);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(160, 130, 680, 88);
+        jScrollPane1.setBounds(160, 90, 720, 110);
 
         lblNetwork.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblNetwork.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -227,9 +227,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         lblPasswordConfirm.setBounds(520, 370, 150, 17);
 
         lblManageEnterPrisePanel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblManageEnterPrisePanel.setText("MANAGE ENTERPRISE PANEL");
+        lblManageEnterPrisePanel.setText("MANAGE ENTERPRISE ADMIN PANEL");
         add(lblManageEnterPrisePanel);
-        lblManageEnterPrisePanel.setBounds(390, 50, 260, 21);
+        lblManageEnterPrisePanel.setBounds(390, 50, 350, 21);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ManageEnterprise.png"))); // NOI18N
