@@ -32,7 +32,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="130" width="680" height="88"/>
+          <AbsoluteConstraints x="160" y="90" width="720" height="110"/>
         </Constraint>
       </Constraints>
 
@@ -271,11 +271,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier New" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="MANAGE ENTERPRISE PANEL"/>
+        <Property name="text" type="java.lang.String" value="MANAGE ENTERPRISE ADMIN PANEL"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="50" width="260" height="-1"/>
+          <AbsoluteConstraints x="390" y="50" width="350" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

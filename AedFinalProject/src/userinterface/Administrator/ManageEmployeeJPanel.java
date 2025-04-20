@@ -95,6 +95,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         lblOrganization = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
+        DeleteBtn = new javax.swing.JButton();
+        UpdateEmpBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -141,6 +143,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         btnCreateEmployee.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnCreateEmployee.setText("CREATE EMPLOYEE");
+        btnCreateEmployee.setMinimumSize(new java.awt.Dimension(140, 20));
         btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateEmployeeActionPerformed(evt);
@@ -168,31 +171,29 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         lblName.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         lblName.setText("Name");
 
+        DeleteBtn.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        DeleteBtn.setText("Delete Employee");
+        DeleteBtn.setSize(new java.awt.Dimension(140, 20));
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteBtnActionPerformed(evt);
+            }
+        });
+
+        UpdateEmpBtn.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        UpdateEmpBtn.setText("Update Employee");
+        UpdateEmpBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateEmpBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(225, 225, 225)
-                        .addComponent(lblOrganization)
-                        .addGap(56, 56, 56)
-                        .addComponent(cbOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblSelectOrganization)
-                            .addComponent(lblName))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbOrganizationEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCreateEmployee, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(258, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,6 +201,33 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblManageEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(371, 371, 371))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnBack)
+                            .addGap(225, 225, 225)
+                            .addComponent(lblOrganization)
+                            .addGap(56, 56, 56)
+                            .addComponent(cbOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblSelectOrganization)
+                                .addComponent(lblName))
+                            .addGap(30, 30, 30)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbOrganizationEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(418, 418, 418)
+                            .addComponent(UpdateEmpBtn)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,9 +250,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
-                .addGap(35, 35, 35)
-                .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -259,8 +290,103 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
+        // TODO add your handling code here:                                     
+            int selectedRow = tblOrganization.getSelectedRow();
+
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please select an employee to delete.");
+                return;
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(
+                null, 
+                "Are you sure you want to delete this employee?", 
+                "Confirm Deletion", 
+                JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirm != JOptionPane.YES_OPTION) {
+                return;
+            }
+
+            DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
+            int employeeId = (int) model.getValueAt(selectedRow, 0);
+
+            Organization selectedOrganization = (Organization) cbOrganizations.getSelectedItem();
+
+            if (selectedOrganization != null) {
+                Employee employeeToRemove = null;
+                for (Employee emp : selectedOrganization.getEmployeeDirectory().getEmployeeList()) {
+                    if (emp.getId() == employeeId) {
+                        employeeToRemove = emp;
+                        break;
+                    }
+                }
+
+                if (employeeToRemove != null) {
+                    selectedOrganization.getEmployeeDirectory().getEmployeeList().remove(employeeToRemove);
+                    populateTable(selectedOrganization);  // Refresh the table
+                    JOptionPane.showMessageDialog(null, "Employee deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Employee not found.");
+                }
+            }
+
+    }//GEN-LAST:event_DeleteBtnActionPerformed
+
+    private void UpdateEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateEmpBtnActionPerformed
+        // TODO add your handling code here:
+
+            int selectedRow = tblOrganization.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select an employee to update.");
+            return;
+        }
+
+        String updatedName = txtName.getText().trim();
+        if (updatedName.equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter a new name.");
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(
+            null,
+            "Are you sure you want to update the employee's name?",
+            "Confirm Update",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
+        int employeeId = (int) model.getValueAt(selectedRow, 0);
+
+        Organization selectedOrganization = (Organization) cbOrganizations.getSelectedItem();
+
+        if (selectedOrganization != null) {
+            for (Employee emp : selectedOrganization.getEmployeeDirectory().getEmployeeList()) {
+                if (emp.getId() == employeeId) {
+                    emp.setEmployeename(updatedName);
+                    break;
+                }
+            }
+            populateTable(selectedOrganization);  // Refresh the table
+            txtName.setText("");
+            JOptionPane.showMessageDialog(null, "Employee updated successfully.");
+        }
+
+
+        
+    }//GEN-LAST:event_UpdateEmpBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteBtn;
+    private javax.swing.JButton UpdateEmpBtn;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateEmployee;
     private javax.swing.JComboBox cbOrganizationEmployee;

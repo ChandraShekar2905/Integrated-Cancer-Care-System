@@ -14,6 +14,7 @@ import java.awt.CardLayout;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -66,6 +67,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         btnSendReport = new javax.swing.JButton();
         lblReceptionistWorkArea = new javax.swing.JLabel();
         lblPhoto = new javax.swing.JLabel();
+        DeleteAppointmentBtn = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
@@ -135,21 +137,30 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         lblPhoto.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoto.setText("Patient Details");
 
+        DeleteAppointmentBtn.setText("Delete Appointment");
+        DeleteAppointmentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAppointmentBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCreateAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(DeleteAppointmentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCreateAppointment, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
                         .addGap(142, 142, 142)
                         .addComponent(btnSendReport)
                         .addGap(142, 142, 142)
-                        .addComponent(btnProcessMedicalBills))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btnProcessMedicalBills)))
+                .addGap(0, 106, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,7 +184,9 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnSendReport, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnProcessMedicalBills, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCreateAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DeleteAppointmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -212,8 +225,37 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         frame.setSize(500,500);
     }//GEN-LAST:event_btnSendReportActionPerformed
 
+    private void DeleteAppointmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAppointmentBtnActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRow = tblAllPatients.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a patient appointment to delete.");
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this appointment?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        // Get the selected patient
+        Patient selectedPatient = (Patient) tblAllPatients.getValueAt(selectedRow, 0);
+
+        // Remove the patient from the directory
+        List<Patient> patientList = ((HealthCenterEnterprise) enterprise).getPatientDirectory().getPatientList();
+        patientList.remove(selectedPatient);
+
+        JOptionPane.showMessageDialog(null, "Appointment deleted successfully.");
+
+        // Refresh table
+        populateAllPatientsTable();
+    }//GEN-LAST:event_DeleteAppointmentBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteAppointmentBtn;
     private javax.swing.JButton btnCreateAppointment;
     private javax.swing.JButton btnProcessMedicalBills;
     private javax.swing.JButton btnSendReport;

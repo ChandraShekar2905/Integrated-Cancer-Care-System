@@ -25,39 +25,42 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="387" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblProcessRequest" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="btnReject" linkSize="1" min="-2" pref="135" max="-2" attributes="0"/>
-                      <Component id="btnTransferToSecretary" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="LblMessage" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblPopulation" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
-                          <Component id="txtPopulation" min="-2" pref="116" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtMessage" alignment="1" min="-2" pref="116" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblAmount" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblLocation" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtAmount" min="-2" pref="116" max="-2" attributes="0"/>
-                              <Component id="txtLocation" min="-2" pref="116" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="387" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblProcessRequest" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="btnReject" linkSize="1" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="btnTransferToSecretary" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="LblMessage" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPopulation" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
+                                  <Component id="txtPopulation" min="-2" pref="116" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtMessage" alignment="1" min="-2" pref="116" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblAmount" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblLocation" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtAmount" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <Component id="txtLocation" min="-2" pref="116" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" pref="84" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="395" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Component id="btnBack" min="-2" pref="84" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>

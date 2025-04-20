@@ -16,7 +16,7 @@ public class Employee {
     private static int count = 1;
 
     public Employee() {
-        int count =0;
+
         id = count;
         count++;
     }
