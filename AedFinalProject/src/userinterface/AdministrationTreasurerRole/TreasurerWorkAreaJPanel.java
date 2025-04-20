@@ -57,6 +57,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         requestGovSecretaryBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N

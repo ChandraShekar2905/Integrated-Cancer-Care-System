@@ -17,17 +17,17 @@ import javax.swing.JPanel;
  *
  * @author chandrashekarreddykusukunthla
  */
-public class InsuranceOfficerPanel extends javax.swing.JPanel {
+public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form InsuranceOfficerPanel
+     * Creates new form InsuranceOfficerWorkAreaJPanel
      */
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private InsuranceAgentOrganization insuranceAgentOrganization;
     private Enterprise enterprise;
 
-    public InsuranceOfficerPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
+    public InsuranceOfficerWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = jpanel;
         this.userAccount = userAccount;
@@ -107,7 +107,7 @@ public class InsuranceOfficerPanel extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(160, 60, 690, 21);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance_Agent.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/AdminRecords.jpg"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(12, 57, 330, 340);
     }// </editor-fold>//GEN-END:initComponents

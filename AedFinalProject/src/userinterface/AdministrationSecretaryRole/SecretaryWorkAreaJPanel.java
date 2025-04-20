@@ -58,6 +58,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
@@ -89,7 +90,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(76, 85, 734, 92);
+        jScrollPane1.setBounds(170, 210, 734, 92);
 
         btnAssigntoSelf.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAssigntoSelf.setText("Assign to Self");
@@ -99,7 +100,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAssigntoSelf);
-        btnAssigntoSelf.setBounds(76, 211, 142, 34);
+        btnAssigntoSelf.setBounds(170, 340, 142, 34);
 
         btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnProcessRequest.setText("Process Request");
@@ -109,17 +110,17 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcessRequest);
-        btnProcessRequest.setBounds(265, 211, 150, 34);
+        btnProcessRequest.setBounds(360, 340, 150, 34);
 
         lblSecretery.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblSecretery.setForeground(new java.awt.Color(204, 0, 0));
         lblSecretery.setText("SECRETERY WORK-AREA");
         add(lblSecretery);
-        lblSecretery.setBounds(333, 18, 236, 37);
+        lblSecretery.setBounds(420, 140, 236, 37);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/secretary work area.jpg"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(410, 180, 610, 500);
+        jLabel1.setBounds(330, 320, 610, 500);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssigntoSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssigntoSelfActionPerformed

@@ -74,11 +74,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
-                Object row[] = new Object[2];
-                row[0] = ua;
-                row[1] = ua.getRole();
-                ((DefaultTableModel) tblUser.getModel()).addRow(row);
+            if (organization != null && organization.getUserAccountDirectory() != null) {
+                for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                    if (ua != null) {
+                        Object row[] = new Object[2];
+                        row[0] = ua;
+                        row[1] = ua.getRole();
+                        ((DefaultTableModel) tblUser.getModel()).addRow(row);
+                    }
+                }
             }
         }
     }

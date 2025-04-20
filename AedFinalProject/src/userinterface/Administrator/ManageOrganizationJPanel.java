@@ -56,13 +56,15 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
 
         model.setRowCount(0);
-
+        
         for (Organization organization : directory.getOrganizations()) {
+            if(organization != null){
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization;
 
             model.addRow(row);
+            }
         }
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
         tblOrganization.setRowSorter(sorter);

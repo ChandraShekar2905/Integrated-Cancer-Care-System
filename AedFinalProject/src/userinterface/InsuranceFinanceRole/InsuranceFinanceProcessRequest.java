@@ -69,6 +69,7 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         lblPhoto = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         btnDisburseAmt.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -79,7 +80,7 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
         add(btnDisburseAmt);
-        btnDisburseAmt.setBounds(140, 350, 160, 32);
+        btnDisburseAmt.setBounds(270, 410, 160, 32);
 
         btnRejectClaim.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRejectClaim.setText("Reject Claim");
@@ -89,18 +90,18 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
         add(btnRejectClaim);
-        btnRejectClaim.setBounds(330, 350, 140, 32);
+        btnRejectClaim.setBounds(460, 410, 140, 32);
 
         jLabel3.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("INSURANCE REQUEST PROCESS");
         add(jLabel3);
-        jLabel3.setBounds(180, 30, 400, 29);
+        jLabel3.setBounds(310, 90, 400, 29);
 
         jLabel4.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         jLabel4.setText("Policy Number :");
         add(jLabel4);
-        jLabel4.setBounds(110, 91, 130, 17);
+        jLabel4.setBounds(240, 150, 130, 17);
 
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<<Back");
@@ -110,29 +111,29 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(10, 23, 100, 29);
+        btnBack.setBounds(40, 40, 100, 29);
 
         txtPolicyNum.setEditable(false);
         add(txtPolicyNum);
-        txtPolicyNum.setBounds(278, 86, 116, 23);
+        txtPolicyNum.setBounds(410, 140, 116, 23);
 
         txtPolicyName.setEditable(false);
         add(txtPolicyName);
-        txtPolicyName.setBounds(278, 209, 116, 23);
+        txtPolicyName.setBounds(410, 270, 116, 23);
 
         lblPolicyName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblPolicyName.setText("Policy Name :");
         add(lblPolicyName);
-        lblPolicyName.setBounds(122, 211, 120, 17);
+        lblPolicyName.setBounds(250, 270, 120, 17);
 
         txtBillingAmt.setEditable(false);
         add(txtBillingAmt);
-        txtBillingAmt.setBounds(278, 247, 116, 23);
+        txtBillingAmt.setBounds(410, 300, 116, 23);
 
         lblBillingAmt.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblBillingAmt.setText("Billing Amount :");
         add(lblBillingAmt);
-        lblBillingAmt.setBounds(100, 250, 130, 17);
+        lblBillingAmt.setBounds(230, 310, 130, 17);
 
         txtAmountClaimed.setEditable(false);
         txtAmountClaimed.addActionListener(new java.awt.event.ActionListener() {
@@ -141,17 +142,17 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
         add(txtAmountClaimed);
-        txtAmountClaimed.setBounds(278, 285, 116, 23);
+        txtAmountClaimed.setBounds(410, 340, 116, 23);
 
         lblAmountClaimed.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblAmountClaimed.setText("Claim Amount :");
         add(lblAmountClaimed);
-        lblAmountClaimed.setBounds(120, 290, 120, 17);
+        lblAmountClaimed.setBounds(250, 350, 120, 17);
 
         lblSSN.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblSSN.setText("SSN :");
         add(lblSSN);
-        lblSSN.setBounds(180, 130, 50, 17);
+        lblSSN.setBounds(310, 190, 50, 17);
 
         txtSocialSecurity.setEditable(false);
         txtSocialSecurity.addActionListener(new java.awt.event.ActionListener() {
@@ -160,16 +161,16 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
         add(txtSocialSecurity);
-        txtSocialSecurity.setBounds(278, 124, 116, 23);
+        txtSocialSecurity.setBounds(410, 180, 116, 23);
 
         lblCoverage.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblCoverage.setText("Coverage% :");
         add(lblCoverage);
-        lblCoverage.setBounds(140, 170, 100, 17);
+        lblCoverage.setBounds(270, 230, 100, 17);
 
         txtCoveragePercent.setEditable(false);
         add(txtCoveragePercent);
-        txtCoveragePercent.setBounds(278, 171, 116, 23);
+        txtCoveragePercent.setBounds(410, 230, 116, 23);
 
         lblPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance finance.gif"))); // NOI18N

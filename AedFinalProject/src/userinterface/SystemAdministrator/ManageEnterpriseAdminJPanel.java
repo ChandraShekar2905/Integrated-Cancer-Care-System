@@ -120,6 +120,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         tblEnterprise.setBackground(new java.awt.Color(189, 241, 241));
@@ -146,13 +147,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblEnterprise);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(17, 62, 680, 88);
+        jScrollPane1.setBounds(160, 130, 680, 88);
 
         lblNetwork.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblNetwork.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNetwork.setText("Network :");
         add(lblNetwork);
-        lblNetwork.setBounds(430, 170, 100, 20);
+        lblNetwork.setBounds(570, 230, 100, 20);
 
         cbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -161,25 +162,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(cbNetwork);
-        cbNetwork.setBounds(540, 170, 136, 23);
+        cbNetwork.setBounds(680, 230, 136, 23);
 
         lblUsername.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsername.setText("Username :");
         add(lblUsername);
-        lblUsername.setBounds(430, 230, 100, 17);
+        lblUsername.setBounds(570, 290, 100, 17);
         add(txtUsername);
-        txtUsername.setBounds(540, 230, 136, 20);
+        txtUsername.setBounds(680, 290, 136, 20);
 
         lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEnterprise.setText("Enterprise :");
         add(lblEnterprise);
-        lblEnterprise.setBounds(400, 200, 130, 20);
+        lblEnterprise.setBounds(540, 260, 130, 20);
 
         cbEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cbEnterprise);
-        cbEnterprise.setBounds(540, 200, 136, 23);
+        cbEnterprise.setBounds(680, 260, 136, 23);
 
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -188,23 +189,23 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(520, 390, 80, 23);
+        submitJButton.setBounds(660, 450, 80, 23);
 
         lblPassword.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPassword.setText("Password :");
         add(lblPassword);
-        lblPassword.setBounds(450, 270, 80, 17);
+        lblPassword.setBounds(590, 330, 80, 17);
         add(txtName);
-        txtName.setBounds(540, 350, 136, 20);
+        txtName.setBounds(680, 410, 136, 20);
 
         lblName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblName.setText("Name :");
         add(lblName);
-        lblName.setBounds(480, 350, 50, 17);
+        lblName.setBounds(620, 410, 50, 17);
         add(pfPassword);
-        pfPassword.setBounds(540, 270, 136, 25);
+        pfPassword.setBounds(680, 330, 136, 25);
 
         btnBack.setBackground(new java.awt.Color(155, 232, 232));
         btnBack.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -215,25 +216,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(10, 11, 79, 21);
+        btnBack.setBounds(50, 50, 79, 21);
         add(pfReenterPassword);
-        pfReenterPassword.setBounds(540, 310, 136, 20);
+        pfReenterPassword.setBounds(680, 370, 136, 20);
 
         lblPasswordConfirm.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblPasswordConfirm.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPasswordConfirm.setText("Confirm Password :");
         add(lblPasswordConfirm);
-        lblPasswordConfirm.setBounds(380, 310, 150, 17);
+        lblPasswordConfirm.setBounds(520, 370, 150, 17);
 
         lblManageEnterPrisePanel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblManageEnterPrisePanel.setText("MANAGE ENTERPRISE PANEL");
         add(lblManageEnterPrisePanel);
-        lblManageEnterPrisePanel.setBounds(230, 10, 260, 21);
+        lblManageEnterPrisePanel.setBounds(390, 50, 260, 21);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/AdminRecords.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ManageEnterprise.png"))); // NOI18N
         add(jLabel4);
-        jLabel4.setBounds(20, 160, 680, 410);
+        jLabel4.setBounds(-90, 230, 930, 560);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNetworkActionPerformed
