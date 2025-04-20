@@ -63,7 +63,6 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         btnCreatePolicy = new javax.swing.JButton();
         lblMonthyPremium = new javax.swing.JLabel();
         txtMonthlyPremium = new javax.swing.JTextField();
-        lblPhoto = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -120,23 +119,18 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         lblMonthyPremium.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         lblMonthyPremium.setText("Monthly Premium(USD):");
 
-        lblPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/image.jpg"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 48, Short.MAX_VALUE)
+                .addGap(0, 21, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(178, 178, 178)
+                        .addGap(421, 421, 421)
                         .addComponent(lblPolicyPlannerWorkArea))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(439, 439, 439)
@@ -170,15 +164,9 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPolicyPlannerWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)))
+                .addGap(123, 123, 123)
+                .addComponent(lblPolicyPlannerWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(lblCreateNewPolicy)
@@ -201,7 +189,7 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(txtPolicyTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreatePolicy, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -261,7 +249,6 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblCoverage;
     private javax.swing.JLabel lblCreateNewPolicy;
     private javax.swing.JLabel lblMonthyPremium;
-    private javax.swing.JLabel lblPhoto;
     private javax.swing.JLabel lblPolicyName;
     private javax.swing.JLabel lblPolicyPlannerWorkArea;
     private javax.swing.JLabel lblTermsAndConditions;

@@ -88,7 +88,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblWorkRequest1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(227, 242, 253));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         btnRequestLab.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRequestLab.setText("Request Lab Test");

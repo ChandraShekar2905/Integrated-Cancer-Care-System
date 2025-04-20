@@ -192,64 +192,70 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-    String userName = txtUsername.getText().trim();
-    String password = String.valueOf(pfPassword.getPassword()).trim();
+   String userName = txtUsername.getText().trim();
+        String password = String.valueOf(pfPassword.getPassword()).trim();
 
-    // Step 1: system admin
-    UserAccount userAccount = ecosystem.getUserAccountDirectory()
-                                       .authenticateUser(userName, password);
+        // 1) Try system‑level
+        UserAccount userAccount = ecosystem.getUserAccountDirectory()
+                                           .authenticateUser(userName, password);
+        Enterprise inEnterprise = null;
+        Organization inOrganization = null;
 
-    Enterprise inEnterprise = null;
-    Organization inOrganization = null;
-
-    // Step 2 & 3: enterprise & org lookup
-    if (userAccount == null) {
-        outer:
-        for (Network network : ecosystem.getNetworks()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                // enterprise-level
-                userAccount = enterprise.getUserAccountDirectory()
-                                         .authenticateUser(userName, password);
-                if (userAccount != null) {
-                    inEnterprise = enterprise;
-                    break outer;
-                }
-                // organization-level
-                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-                    if (organization == null) continue;  // skip null
-                    userAccount = organization.getUserAccountDirectory()
-                                              .authenticateUser(userName, password);
+        // 2) Try enterprise & org‑level
+        if (userAccount == null) {
+            outer:
+            for (Network network : ecosystem.getNetworks()) {
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    userAccount = enterprise.getUserAccountDirectory()
+                                             .authenticateUser(userName, password);
                     if (userAccount != null) {
                         inEnterprise = enterprise;
-                        inOrganization = organization;
                         break outer;
+                    }
+                    for (Organization org : 
+                         enterprise.getOrganizationDirectory().getOrganizations()) {
+                        if (org == null) continue;
+                        userAccount = org.getUserAccountDirectory()
+                                         .authenticateUser(userName, password);
+                        if (userAccount != null) {
+                            inEnterprise   = enterprise;
+                            inOrganization = org;
+                            break outer;
+                        }
                     }
                 }
             }
         }
-    }
 
-    // Now userAccount may still be null if login failed
-    if (userAccount == null) {
-        txtUsername.setBorder(BorderFactory.createLineBorder(Color.RED));
-        pfPassword .setBorder(BorderFactory.createLineBorder(Color.RED));
-        JOptionPane.showMessageDialog(this, "Invalid credentials");
-        return;
-    }
+        // 3) Invalid?
+        if (userAccount == null) {
+            txtUsername .setBorder(BorderFactory.createLineBorder(Color.RED));
+            pfPassword  .setBorder(BorderFactory.createLineBorder(Color.RED));
+            JOptionPane.showMessageDialog(this, "Invalid credentials");
+            return;
+        }
 
-    // proceed to switch panels...
-    txtUsername.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-    pfPassword.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-    CardLayout layout = (CardLayout) container.getLayout();
-    container.add("workArea",
-      userAccount.getRole()
-                 .createWorkArea(container, userAccount, inOrganization, inEnterprise, ecosystem));
-    layout.next(container);
+        // 4) Valid – reset borders & show workArea
+        txtUsername .setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        pfPassword  .setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
-    btnLogin .setEnabled(false);
-    btnLogout.setEnabled(true);
-    txtUsername.setEnabled(false);
-    pfPassword .setEnabled(false);
+        JPanel workArea = userAccount.getRole()
+                                     .createWorkArea(
+                                        container,
+                                        userAccount,
+                                        inOrganization,
+                                        inEnterprise,
+                                        ecosystem);
+
+        container.add("workArea", workArea);
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.show(container, "workArea");       // <— jump straight to this card
+
+        // 5) Toggle buttons / fields
+        btnLogin  .setEnabled(false);
+        btnLogout .setEnabled(true);
+        txtUsername.setEnabled(false);
+        pfPassword .setEnabled(false);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
@@ -258,24 +264,30 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
 
-        btnLogout.setEnabled(false);
-        txtUsername.setEnabled(true);
-        pfPassword.setEnabled(true);
-        btnLogin.setEnabled(true);
-        txtUsername.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-        pfPassword.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-        txtUsername.setText("");
-        pfPassword.setText("");
+       // 1) Reset login controls
+        btnLogout     .setEnabled(false);
+        btnLogin      .setEnabled(true);
+        txtUsername   .setEnabled(true);
+        pfPassword    .setEnabled(true);
+        txtUsername   .setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        pfPassword    .setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        txtUsername   .setText("");
+        pfPassword    .setText("");
 
-        // 2) Show the initial splash/login card again
+        // 2) Persist any changes
+        sqliteUtil.storeSystem(ecosystem);
+
+        // 3) Reset the right panel back to splash/login card only
+        container.removeAll();
+        container.add(jLabel1, "card2");            // re‑add your original image panel
         CardLayout layout = (CardLayout) container.getLayout();
         layout.show(container, "card2");
 
-        // 3) Return focus so the caret appears
-        txtUsername.requestFocusInWindow();
+        container.revalidate();
+        container.repaint();
 
-        // 4) Persist the system state
-        sqliteUtil.storeSystem(ecosystem);
+        // 4) Bring focus (and caret) back to username
+        txtUsername.requestFocusInWindow();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**

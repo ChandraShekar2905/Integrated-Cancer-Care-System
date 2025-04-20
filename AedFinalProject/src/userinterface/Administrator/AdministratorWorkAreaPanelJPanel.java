@@ -56,7 +56,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         btnRequestFunds = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(214, 234, 248));
+        setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
 
         lblAdminTitle.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N

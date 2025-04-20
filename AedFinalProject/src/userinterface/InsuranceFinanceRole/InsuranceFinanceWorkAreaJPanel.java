@@ -54,7 +54,6 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         tblFinance = new javax.swing.JTable();
         btnAssignToSelf = new javax.swing.JButton();
         btnProcessRequest = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -88,7 +87,7 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblFinance);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(70, 150, 903, 260);
+        jScrollPane1.setBounds(60, 150, 903, 260);
 
         btnAssignToSelf.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAssignToSelf.setText("Assign To Self");
@@ -109,10 +108,6 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnProcessRequest);
         btnProcessRequest.setBounds(410, 570, 172, 38);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insuranceFinanceWorkArea.jpg"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(60, 70, 920, 510);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignToSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToSelfActionPerformed
@@ -176,7 +171,6 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignToSelf;
     private javax.swing.JButton btnProcessRequest;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblInsuranceFinanceWorkArea;
     private javax.swing.JTable tblFinance;

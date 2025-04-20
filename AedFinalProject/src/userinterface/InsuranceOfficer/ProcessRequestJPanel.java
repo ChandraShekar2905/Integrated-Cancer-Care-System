@@ -58,7 +58,6 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
         txtBillAmount = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -151,10 +150,6 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
         jLabel1.setText("FINANCE DEPARTMENT APPROVAL PANEL");
         add(jLabel1);
         jLabel1.setBounds(350, 70, 380, 21);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insuranceFinance.png"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(140, 60, 740, 490);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMessageActionPerformed
@@ -241,7 +236,6 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnReject;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblClaimAmount;
     private javax.swing.JLabel lblCustomerName;
     private javax.swing.JLabel lblMassage;
