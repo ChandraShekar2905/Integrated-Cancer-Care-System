@@ -57,12 +57,13 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
         lblInsuranceFinanceWorkArea.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblInsuranceFinanceWorkArea.setText("INSURANCE FINANCE WORK-AREA");
         add(lblInsuranceFinanceWorkArea);
-        lblInsuranceFinanceWorkArea.setBounds(299, 30, 297, 21);
+        lblInsuranceFinanceWorkArea.setBounds(350, 100, 297, 21);
 
         tblFinance.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         tblFinance.setModel(new javax.swing.table.DefaultTableModel(
@@ -87,7 +88,7 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblFinance);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(6, 81, 903, 260);
+        jScrollPane1.setBounds(70, 150, 903, 260);
 
         btnAssignToSelf.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAssignToSelf.setText("Assign To Self");
@@ -97,7 +98,7 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAssignToSelf);
-        btnAssignToSelf.setBounds(350, 420, 180, 38);
+        btnAssignToSelf.setBounds(410, 490, 180, 38);
 
         btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnProcessRequest.setText("Process Request");
@@ -107,11 +108,11 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcessRequest);
-        btnProcessRequest.setBounds(350, 500, 172, 38);
+        btnProcessRequest.setBounds(410, 570, 172, 38);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insuranceFinanceWorkArea.jpg"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 920, 510);
+        jLabel1.setBounds(60, 70, 920, 510);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignToSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToSelfActionPerformed

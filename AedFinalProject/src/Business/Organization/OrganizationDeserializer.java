@@ -17,8 +17,7 @@ public class OrganizationDeserializer implements JsonDeserializer<Organization> 
     @Override
     public Organization deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
-        String type = jsonObject.get("type").getAsString(); // Identify subclass type
-
+           String type = jsonObject.get("type").getAsString();
         switch (type) {
             case "DoctorOrganization":
                 return context.deserialize(json, DoctorOrganization.class);
@@ -36,18 +35,19 @@ public class OrganizationDeserializer implements JsonDeserializer<Organization> 
                 return context.deserialize(json, NurseOrganization.class);
             case "SecretaryOrganization":
                 return context.deserialize(json, SecretaryOrganization.class);
-            case "TreasurerOrganization":
-                return context.deserialize(json, TreasurerOrganization.class);
-            case "HealthCareOfficerOrganization":
-                return context.deserialize(json, HealthCareOfficerOrganization.class);
             case "InsuranceAgentOrganization":
                 return context.deserialize(json, InsuranceAgentOrganization.class);
-            case "InsuranceFinanceOrganization":
-                return context.deserialize(json, InsuranceFinanceOrganization.class);
             case "InsurancePolicyPlannerOrganization":
                 return context.deserialize(json, InsurancePolicyPlannerOrganization.class);
+            case "InsuranceFinanceOrganization":
+                return context.deserialize(json, InsuranceFinanceOrganization.class);
+            case "HealthCareOfficerOrganization":
+                return context.deserialize(json, HealthCareOfficerOrganization.class);
+            case "TreasurerOrganization":
+                return context.deserialize(json, TreasurerOrganization.class);
             default:
-                throw new JsonParseException("Unknown type: " + type);
+                System.err.println("Unknown organization type: " + type);
+                return null;
         }
     }
 }

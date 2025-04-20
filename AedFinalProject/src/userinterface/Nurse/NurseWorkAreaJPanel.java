@@ -130,7 +130,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblWorkRequest1);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(40, 140, 1050, 190);
+        jScrollPane2.setBounds(0, 140, 1050, 190);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -66,6 +66,7 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         lblPhoto = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblCreateNewPolicy.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblCreateNewPolicy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
