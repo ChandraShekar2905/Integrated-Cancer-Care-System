@@ -55,7 +55,6 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         btnAssigntoSelf = new javax.swing.JButton();
         btnProcessRequest = new javax.swing.JButton();
         lblSecretery = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -117,10 +116,6 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         lblSecretery.setText("SECRETERY WORK-AREA");
         add(lblSecretery);
         lblSecretery.setBounds(420, 140, 236, 37);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/secretary work area.jpg"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(330, 320, 610, 500);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssigntoSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssigntoSelfActionPerformed
@@ -209,7 +204,6 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssigntoSelf;
     private javax.swing.JButton btnProcessRequest;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblSecretery;
     private javax.swing.JTable tblWorkRequest;

@@ -94,7 +94,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(227, 242, 253));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblProvidePrescription.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N

@@ -114,7 +114,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblOrgnization = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(214, 234, 248));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         cborganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

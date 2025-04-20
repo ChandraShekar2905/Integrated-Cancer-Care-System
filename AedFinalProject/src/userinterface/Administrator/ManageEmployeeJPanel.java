@@ -96,7 +96,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(214, 234, 248));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         cbOrganizationEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbOrganizationEmployee.addActionListener(new java.awt.event.ActionListener() {

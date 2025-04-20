@@ -90,7 +90,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         lblPolicyName = new javax.swing.JLabel();
         cmbInsurancePolicyName = new javax.swing.JComboBox();
         lblInsuranceInformation = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -374,10 +373,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
 
         add(jDesktopPane2);
         jDesktopPane2.setBounds(660, 170, 390, 300);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance_icon.jpg"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(860, 10, 150, 140);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
@@ -538,7 +533,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser jDateChooserDob;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;

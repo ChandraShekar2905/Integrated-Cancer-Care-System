@@ -65,7 +65,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtLastName = new javax.swing.JTextField();
         txtLandline = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(227, 242, 253));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         txtAge.setEditable(false);

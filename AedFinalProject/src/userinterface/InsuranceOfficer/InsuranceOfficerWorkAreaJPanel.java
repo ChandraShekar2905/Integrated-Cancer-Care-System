@@ -52,7 +52,6 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -106,10 +105,6 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Insurance Agent Work Area");
         add(jLabel1);
         jLabel1.setBounds(160, 60, 690, 21);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/AdminRecords.jpg"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(12, 57, 330, 340);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewMemberActionPerformed
@@ -132,7 +127,6 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddNewMember;
     private javax.swing.JButton btnProcessRequests;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
