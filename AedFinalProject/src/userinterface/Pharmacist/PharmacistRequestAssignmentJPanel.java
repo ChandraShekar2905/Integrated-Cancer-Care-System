@@ -7,19 +7,37 @@ package userinterface.Pharmacist;
 import Business.Enterprise.Enterprise;
 import Business.Organization.PharmacyOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PharmacyWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import userinterface.LabTechnician.LabTechnicianWorkAreaJPanel;
 
 /**
  *
  * @author chandrashekarreddykusukunthla
  */
 public class PharmacistRequestAssignmentJPanel extends javax.swing.JPanel {
-
+    
+    private JPanel userProcessContainer;
+    private PharmacyOrganization pharmacyOrganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    /**
     /**
      * Creates new form PharmacistRequestAssignmentJPanel
      */
-    public PharmacistRequestAssignmentJPanel(JPanel userProcessContainer, UserAccount userAccount, PharmacyOrganization par, Enterprise enterprise) {
+    public PharmacistRequestAssignmentJPanel(JPanel userProcessContainer, UserAccount account, PharmacyOrganization organization, Enterprise enterprise) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.pharmacyOrganization = (PharmacyOrganization) organization;
+        
+        populateTable();
     }
 
     /**
@@ -31,19 +49,148 @@ public class PharmacistRequestAssignmentJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        requestTable = new javax.swing.JTable();
+        assignToSelfButton = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setText("Assign Medication Requests");
+
+        requestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Request ID", "Patient Name", "Medication", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(requestTable);
+
+        assignToSelfButton.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        assignToSelfButton.setText("Assign to Self");
+        assignToSelfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignToSelfButtonActionPerformed(evt);
+            }
+        });
+
+        btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(assignToSelfButton)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBack)
+                                .addGap(121, 121, 121)
+                                .addComponent(jLabel1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(242, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBack)
+                    .addComponent(jLabel1))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(assignToSelfButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(394, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 133, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+    public void populateTable() {
+     DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
+    model.setRowCount(0);
+
+    // Iterate through the PharmacyOrganization's WorkQueue
+    for (WorkRequest request : pharmacyOrganization.getWorkQueue().getWorkRequests()) {
+        if (request instanceof PharmacyWorkRequest) {
+            PharmacyWorkRequest pharmacyRequest = (PharmacyWorkRequest) request;
+
+            Object[] row = new Object[4];
+            row[0] = pharmacyRequest.getRequestId();
+            row[1] = pharmacyRequest.getPatient().getFirstName() + " " + pharmacyRequest.getPatient().getLastName();
+            row[2] = pharmacyRequest.getMedication();
+            row[3] = pharmacyRequest.getStatus();
+
+            model.addRow(row);
+        }
+    }
+
+    // Enable sorting
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+    requestTable.setRowSorter(sorter);
+ }
+
+    private void assignToSelfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignToSelfButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assignToSelfButtonActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        LabTechnicianWorkAreaJPanel labassistant = (LabTechnicianWorkAreaJPanel) component;
+        labassistant.populateTable();
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton assignToSelfButton;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable requestTable;
     // End of variables declaration//GEN-END:variables
 }
