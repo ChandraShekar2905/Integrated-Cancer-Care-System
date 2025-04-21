@@ -30,7 +30,7 @@ public class AdministrationEnterprise extends Enterprise {
         List<Organization.Type> orgTypes = new ArrayList<>();
         orgTypes.add(Organization.Type.HealthcareChief);
         orgTypes.add(Organization.Type.AdministrationSecretary);
-        orgTypes.add(Organization.Type.AdministrationTresurer);
+        orgTypes.add(Organization.Type.AdministrationTreasurer);
 
         return orgTypes;
     }

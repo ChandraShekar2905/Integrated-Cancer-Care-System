@@ -210,10 +210,17 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
    String userName = txtUsername.getText().trim();
         String password = String.valueOf(pfPassword.getPassword()).trim();
+        
+        //Debug Code
+        System.out.println("[Login Attempt] Username: " + userName + ", Password: " + password);
+
 
         // 1) Try system‑level
         UserAccount userAccount = ecosystem.getUserAccountDirectory()
                                            .authenticateUser(userName, password);
+        
+        //Debug 
+        System.out.println("→ System-level login: " + (userAccount != null ? "Success" : "Fail"));
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
 
@@ -222,6 +229,8 @@ public class MainJFrame extends javax.swing.JFrame {
             outer:
             for (Network network : ecosystem.getNetworks()) {
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    System.out.println("Trying enterprise: " + enterprise.getName());
+
                     userAccount = enterprise.getUserAccountDirectory()
                                              .authenticateUser(userName, password);
                     if (userAccount != null) {
@@ -230,10 +239,14 @@ public class MainJFrame extends javax.swing.JFrame {
                     }
                     for (Organization org : 
                          enterprise.getOrganizationDirectory().getOrganizations()) {
+                            System.out.println("Checking organization: " + (org != null ? org.getName() : "null"));
+
                         if (org == null) continue;
                         userAccount = org.getUserAccountDirectory()
                                          .authenticateUser(userName, password);
                         if (userAccount != null) {
+                                    System.out.println("✔️ Login success in organization: " + org.getName());
+
                             inEnterprise   = enterprise;
                             inOrganization = org;
                             break outer;
@@ -254,6 +267,8 @@ public class MainJFrame extends javax.swing.JFrame {
         // 4) Valid – reset borders & show workArea
         txtUsername .setBorder(BorderFactory.createLineBorder(Color.GRAY));
         pfPassword  .setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        System.out.println("Logged in as: " + userAccount.getUsername() + " | Role: " + userAccount.getRole().getClass().getSimpleName());
+
 
         JPanel workArea = userAccount.getRole()
                                      .createWorkArea(

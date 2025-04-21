@@ -10,7 +10,6 @@ package Business.Organization;
 
 import Business.Organization.Organization.Type;
 import java.util.ArrayList;
-import static Business.Organization.Organization.Type.InsuranceFundOrganization;
 import java.util.List;
 
 
@@ -86,7 +85,7 @@ public class OrganizationDirectory {
             organizationList.add(organization);
                     
         }
-         else if(type.getValue().equals(Type.AdministrationTresurer.getValue()))
+         else if(type.getValue().equals(Type.AdministrationTreasurer.getValue()))
         {
             organization = new AdministrationTreasurerOrganization();
             organizationList.add(organization);
