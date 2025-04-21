@@ -34,7 +34,7 @@ public abstract class Organization {
         //Insurance Organization Types:
         InsuranceOfficer("InsuranceOfficer Organization"), PolicyPlanner("Insurance Policy Planning Organization"), InsuranceFundOrganization("Insurance Finance Organization"),
         //Administration Organization Types
-        AdministrationTresurer("AdministrationTreasurer Organization"), AdministrationSecretary("AdministrationSecretary Organization"), HealthcareChief("Healthcare Officer Organization"),
+        AdministrationTreasurer("AdministrationTreasurer Organization"), AdministrationSecretary("AdministrationSecretary Organization"), HealthcareChief("Healthcare Officer Organization"),
         //Pharmacist Organization Types:
         Pharmacy("Pharmacy Organization");
         

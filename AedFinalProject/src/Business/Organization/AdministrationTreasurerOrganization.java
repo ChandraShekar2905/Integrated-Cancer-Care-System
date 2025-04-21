@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class AdministrationTreasurerOrganization extends Organization {
 
    public AdministrationTreasurerOrganization() {
-        super(Organization.Type.AdministrationTresurer.getValue());
+        super(Organization.Type.AdministrationTreasurer.getValue());
     }
 
     @Override

@@ -210,10 +210,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
    String userName = txtUsername.getText().trim();
         String password = String.valueOf(pfPassword.getPassword()).trim();
+        
 
         // 1) Try system‑level
         UserAccount userAccount = ecosystem.getUserAccountDirectory()
                                            .authenticateUser(userName, password);
+        
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
 
@@ -222,6 +224,7 @@ public class MainJFrame extends javax.swing.JFrame {
             outer:
             for (Network network : ecosystem.getNetworks()) {
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+
                     userAccount = enterprise.getUserAccountDirectory()
                                              .authenticateUser(userName, password);
                     if (userAccount != null) {
@@ -230,6 +233,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     }
                     for (Organization org : 
                          enterprise.getOrganizationDirectory().getOrganizations()) {
+
                         if (org == null) continue;
                         userAccount = org.getUserAccountDirectory()
                                          .authenticateUser(userName, password);

@@ -43,7 +43,7 @@ public class OrganizationDeserializer implements JsonDeserializer<Organization> 
                 return context.deserialize(json, InsuranceFinanceOrganization.class);
             case "HealthCareOfficerOrganization":
                 return context.deserialize(json, HealthCareOfficerOrganization.class);
-            case "AdministratorTreasurerOrganization":
+            case "AdministrationTreasurerOrganization":
                 return context.deserialize(json, AdministrationTreasurerOrganization.class);
             default:
                 System.err.println("Unknown organization type: " + type);
