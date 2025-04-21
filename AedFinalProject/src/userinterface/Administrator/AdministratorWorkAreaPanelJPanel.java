@@ -129,6 +129,9 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
                             .addComponent(btnManageOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManageEmployee, btnManageOrganization, btnManageUser, btnRequestFunds});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -153,6 +156,9 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1)))
                 .addContainerGap(268, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageEmployee, btnManageOrganization, btnManageUser, btnRequestFunds});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserActionPerformed

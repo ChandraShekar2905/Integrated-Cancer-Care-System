@@ -87,10 +87,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         cbOrgnanization = new javax.swing.JComboBox();
         lblOrganizationType = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(214, 234, 248));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        btnBack.setBackground(new java.awt.Color(102, 153, 255));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +104,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         btnDeleteOrganization.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnDeleteOrganization.setText("Delete Organization");
+        btnDeleteOrganization.setAlignmentX(0.5F);
         btnDeleteOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteOrganizationActionPerformed(evt);
@@ -141,6 +141,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         btnAddOrganization.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAddOrganization.setText("Add Organization");
+        btnAddOrganization.setAlignmentX(0.5F);
         btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddOrganizationActionPerformed(evt);
