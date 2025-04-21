@@ -18,7 +18,7 @@ public class UserAccount {
     private String password;
     private Employee employee;
     private Role role;
-    private WorkQueue workQueue;
+    private transient WorkQueue workQueue;
     
     public UserAccount() {
         workQueue = new WorkQueue();

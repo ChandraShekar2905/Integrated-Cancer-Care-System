@@ -17,10 +17,17 @@ import java.lang.reflect.Type;
  */
 public class WorkRequestSerializer implements JsonSerializer<WorkRequest> {
 
-    @Override
-    public JsonElement serialize(WorkRequest src, Type typeOfSrc, JsonSerializationContext context) {
-        JsonObject jsonObject = context.serialize(src).getAsJsonObject();
-        jsonObject.addProperty("type", src.getType()); // Add the type field
-        return jsonObject;
-    }
+@Override
+public JsonElement serialize(WorkRequest src, Type typeOfSrc, JsonSerializationContext context) {
+    JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("message", src.getMessage());
+    jsonObject.addProperty("status", src.getStatus());
+    jsonObject.addProperty("requestDate", src.getRequestDate().toString());
+    if (src.getResolveDate() != null)
+        jsonObject.addProperty("resolveDate", src.getResolveDate().toString());
+
+    // Don't serialize sender, receiver, or other nested objects
+    return jsonObject;
+}
+
 }
