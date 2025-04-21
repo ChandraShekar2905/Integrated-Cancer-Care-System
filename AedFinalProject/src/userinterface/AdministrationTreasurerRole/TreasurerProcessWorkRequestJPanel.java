@@ -124,6 +124,7 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
         jLabel3.setBounds(520, 240, 64, 17);
 
         lblTreasurerTitle.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblTreasurerTitle.setForeground(new java.awt.Color(204, 0, 51));
         lblTreasurerTitle.setText("Treasurer Work-Area");
         add(lblTreasurerTitle);
         lblTreasurerTitle.setBounds(540, 110, 209, 21);
