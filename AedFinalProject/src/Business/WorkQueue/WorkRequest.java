@@ -13,8 +13,8 @@ public abstract class WorkRequest {
     //private String requestId;
     private String requestId;
     private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
+    private transient UserAccount sender;
+    private transient UserAccount receiver;
     private String status;
     private Date requestDate;
     private Date resolveDate;
