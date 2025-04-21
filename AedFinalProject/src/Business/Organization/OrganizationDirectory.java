@@ -57,9 +57,9 @@ public class OrganizationDirectory {
                     
         }
         
-        else if(type.getValue().equals(Type.Accountant.getValue()))
+        else if(type.getValue().equals(Type.Receptionist.getValue()))
         {
-            organization = new AccountantOrganization();
+            organization = new ReceptionistOrganization();
             organizationList.add(organization);
                     
         }
@@ -71,7 +71,7 @@ public class OrganizationDirectory {
         }
         
         
-        //Adding Government Organizations
+        //Adding Administration Organizations
         
         else if(type.getValue().equals(Type.HealthcareChief.getValue()))
         {
@@ -80,23 +80,23 @@ public class OrganizationDirectory {
                     
         }
         
-         else if(type.getValue().equals(Type.GovernmentSecretary.getValue()))
+         else if(type.getValue().equals(Type.AdministrationSecretary.getValue()))
         {
-            organization = new SecretaryOrganization();
+            organization = new AdministrationSecretaryOrganization();
             organizationList.add(organization);
                     
         }
-         else if(type.getValue().equals(Type.GovernmentAccountant.getValue()))
+         else if(type.getValue().equals(Type.AdministrationTresurer.getValue()))
         {
-            organization = new TreasurerOrganization();
+            organization = new AdministrationTreasurerOrganization();
             organizationList.add(organization);
                     
         }
                 //Adding Insurance Organizations
                 
-          else if(type.getValue().equals(Type.InsuranceAgent.getValue()))
+          else if(type.getValue().equals(Type.InsuranceOfficer.getValue()))
         {
-            organization = new InsuranceAgentOrganization();
+            organization = new InsuranceOfficerOrganization();
             organizationList.add(organization);
                     
         } 

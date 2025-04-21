@@ -27,24 +27,24 @@ public class OrganizationDeserializer implements JsonDeserializer<Organization> 
                 return context.deserialize(json, PatientOrganization.class);
             case "PharmacyOrganization":
                 return context.deserialize(json, PharmacyOrganization.class);
-            case "AccountantOrganization":
-                return context.deserialize(json, AccountantOrganization.class);
+            case "ReceptionistOrganization":
+                return context.deserialize(json, ReceptionistOrganization.class);
             case "AdminOrganization":
                 return context.deserialize(json, AdminOrganization.class);
             case "NurseOrganization":
                 return context.deserialize(json, NurseOrganization.class);
-            case "SecretaryOrganization":
-                return context.deserialize(json, SecretaryOrganization.class);
-            case "InsuranceAgentOrganization":
-                return context.deserialize(json, InsuranceAgentOrganization.class);
+            case "AdministrationSecretaryOrganization":
+                return context.deserialize(json, AdministrationSecretaryOrganization.class);
+            case "InsuranceOfficerOrganization":
+                return context.deserialize(json, InsuranceOfficerOrganization.class);
             case "InsurancePolicyPlannerOrganization":
                 return context.deserialize(json, InsurancePolicyPlannerOrganization.class);
             case "InsuranceFinanceOrganization":
                 return context.deserialize(json, InsuranceFinanceOrganization.class);
             case "HealthCareOfficerOrganization":
                 return context.deserialize(json, HealthCareOfficerOrganization.class);
-            case "TreasurerOrganization":
-                return context.deserialize(json, TreasurerOrganization.class);
+            case "AdministratorTreasurerOrganization":
+                return context.deserialize(json, AdministrationTreasurerOrganization.class);
             default:
                 System.err.println("Unknown organization type: " + type);
                 return null;

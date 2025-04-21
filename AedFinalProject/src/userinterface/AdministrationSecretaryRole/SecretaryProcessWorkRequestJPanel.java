@@ -7,7 +7,7 @@ package userinterface.AdministrationSecretaryRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.TreasurerOrganization;
+import Business.Organization.AdministrationTreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AdministrationFundRequest;
 import java.awt.CardLayout;
@@ -209,7 +209,7 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         Organization org = null;
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-            if (organization instanceof TreasurerOrganization) {
+            if (organization instanceof AdministrationTreasurerOrganization) {
                 org = organization;
                 break;
             }

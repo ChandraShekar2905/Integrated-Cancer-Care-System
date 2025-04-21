@@ -29,20 +29,20 @@ public class EnterpriseDirectory {
         Enterprise enterprise=null;
         
         if(type==Enterprise.EnterpriseType.HealthcareCenter){
-            enterprise=new HealthCenterEnterprise(name);
+            enterprise=new HospitalsEnterprise(name);
             enterpriseList.add(enterprise);
         }
         
-        else if(type == Enterprise.EnterpriseType.GovernmentAid)
+        else if(type == Enterprise.EnterpriseType.AdministrationAid)
         {
-            enterprise =  new GovernmentEnterprise(name);
+            enterprise =  new AdministrationEnterprise(name);
             enterpriseList.add(enterprise);
             
         }
         
         else if(type == Enterprise.EnterpriseType.InsuranceCompany)
         {
-            enterprise = new InsuranceCompanyEnterprise(name);
+            enterprise = new InsuranceProvidersEnterprise(name);
             enterpriseList.add(enterprise);
             }
          else if(type == Enterprise.EnterpriseType.Pharmacy)

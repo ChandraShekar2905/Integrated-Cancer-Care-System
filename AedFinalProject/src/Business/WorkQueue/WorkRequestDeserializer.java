@@ -20,9 +20,9 @@ public class WorkRequestDeserializer implements JsonDeserializer<WorkRequest> {
 
         // Match the type to the corresponding subclass
         switch (type) {
-            case "AccountantBillingRequest":
-                return context.deserialize(json, AccountantBillingRequest.class);
-            case "GovernmentFundRequest":
+            case "ReceptionistBillingRequest":
+                return context.deserialize(json, ReceptionistBillingRequest.class);
+            case "AdministrationFundRequest":
                 return context.deserialize(json, AdministrationFundRequest.class);
             case "InsuranceWorkRequest":
                 return context.deserialize(json, InsuranceWorkRequest.class);

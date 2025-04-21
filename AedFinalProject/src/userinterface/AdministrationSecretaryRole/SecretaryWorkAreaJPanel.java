@@ -7,7 +7,7 @@ package userinterface.AdministrationSecretaryRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
+import Business.Organization.AdministrationSecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AdministrationFundRequest;
 import Business.WorkQueue.WorkRequest;
@@ -28,14 +28,14 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel jPanel;
     private UserAccount userAccount;
-    private SecretaryOrganization secretaryOrganization;
+    private AdministrationSecretaryOrganization secretaryOrganization;
     private Enterprise enterprise;
 
     public SecretaryWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
         this.enterprise = enterprise;
         this.jPanel = jpanel;
-        this.secretaryOrganization = (SecretaryOrganization) organization;
+        this.secretaryOrganization = (AdministrationSecretaryOrganization) organization;
         this.userAccount = userAccount;
 
         populateTable();

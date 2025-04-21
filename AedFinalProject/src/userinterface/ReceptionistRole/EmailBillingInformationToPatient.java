@@ -5,7 +5,7 @@
  */
 package userinterface.ReceptionistRole;
 
-import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.ReceptionistBillingRequest;
 import java.awt.CardLayout;
 import java.util.Properties;
 import javax.mail.Message;
@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 public class EmailBillingInformationToPatient extends javax.swing.JPanel {
 
     JPanel userPrcessContainer;
-    private AccountantBillingRequest accountBillingRequest;
+    private ReceptionistBillingRequest accountBillingRequest;
 
     /**
      * Creates new form EmailBillingInformationToPatient
@@ -32,7 +32,7 @@ public class EmailBillingInformationToPatient extends javax.swing.JPanel {
 //    public EmailBillingInformationToPatient() {
 //        
 //    }
-    EmailBillingInformationToPatient(JPanel userProcessContainer, AccountantBillingRequest accountBillingRequest) {
+    EmailBillingInformationToPatient(JPanel userProcessContainer, ReceptionistBillingRequest accountBillingRequest) {
         initComponents();
         this.userPrcessContainer = userProcessContainer;
         this.accountBillingRequest = accountBillingRequest;

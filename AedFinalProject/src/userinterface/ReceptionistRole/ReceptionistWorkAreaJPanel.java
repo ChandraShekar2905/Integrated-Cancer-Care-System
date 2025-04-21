@@ -6,8 +6,8 @@ package userinterface.ReceptionistRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Organization.AccountantOrganization;
+import Business.Enterprise.HospitalsEnterprise;
+import Business.Organization.ReceptionistOrganization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -32,18 +32,18 @@ import org.jfree.data.general.DefaultPieDataset;
 public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form AccountantWorkAreaJPanel
+     * Creates new form ReceptionistWorkAreaJPanel
      */
         private JPanel userProcessContainer;
     private UserAccount userAccount;
-    private AccountantOrganization accountantOrganization;
+    private ReceptionistOrganization receptionistOrganization;
     private Enterprise enterprise;
     private EcoSystem ecoSystem;
-    public ReceptionistWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AccountantOrganization accountantOrganization, Enterprise enterprise, EcoSystem ecosystem) {
+    public ReceptionistWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ReceptionistOrganization receptionistOrganization, Enterprise enterprise, EcoSystem ecosystem) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
-        this.accountantOrganization = accountantOrganization;
+        this.receptionistOrganization = receptionistOrganization;
         this.userAccount = account;
         this.enterprise = enterprise;
         this.ecoSystem = ecosystem;
@@ -200,7 +200,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnProcessMedicalBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessMedicalBillsActionPerformed
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("ProcessMedicalBillingsJPanel", new ProcessMedicalBillingsJPanel(userProcessContainer, userAccount, enterprise, accountantOrganization, ecoSystem));
+        userProcessContainer.add("ProcessMedicalBillingsJPanel", new ProcessMedicalBillingsJPanel(userProcessContainer, userAccount, enterprise, receptionistOrganization, ecoSystem));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnProcessMedicalBillsActionPerformed
 
@@ -208,7 +208,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         List<Patient> underTreatmentPatients = new ArrayList<>();
         List<Patient> treatedPatients = new ArrayList<>();
         DefaultPieDataset defaultPieDataset = new DefaultPieDataset();
-        List<Patient> patients = ((HealthCenterEnterprise) enterprise).getPatientDirectory().getPatientList();
+        List<Patient> patients = ((HospitalsEnterprise) enterprise).getPatientDirectory().getPatientList();
         for (Patient patient : patients) {
             if (patient.isIsTreatmentComplete()) {
                 treatedPatients.add(patient);
@@ -244,7 +244,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         Patient selectedPatient = (Patient) tblAllPatients.getValueAt(selectedRow, 0);
 
         // Remove the patient from the directory
-        List<Patient> patientList = ((HealthCenterEnterprise) enterprise).getPatientDirectory().getPatientList();
+        List<Patient> patientList = ((HospitalsEnterprise) enterprise).getPatientDirectory().getPatientList();
         patientList.remove(selectedPatient);
 
         JOptionPane.showMessageDialog(null, "Appointment deleted successfully.");
@@ -265,7 +265,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblAllPatients;
     // End of variables declaration//GEN-END:variables
  public void populateAllPatientsTable() {
-        List<Patient> patients = ((HealthCenterEnterprise) enterprise).getPatientDirectory().getPatientList();
+        List<Patient> patients = ((HospitalsEnterprise) enterprise).getPatientDirectory().getPatientList();
         DefaultTableModel dtm = (DefaultTableModel) tblAllPatients.getModel();
         dtm.setRowCount(0);
         for (Patient patient : patients) {
@@ -284,10 +284,5 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
         tblAllPatients.setRowSorter(sorter);
     }
-
-
-
-
-
 
 }

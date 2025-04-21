@@ -15,12 +15,12 @@ import java.util.List;
  *
  * @author hrishipal
  */
-public class InsuranceCompanyEnterprise extends Enterprise {
+public class InsuranceProvidersEnterprise extends Enterprise {
 
     private InsuredIndividualDirectory insuranceCustomerList;
     private InsurancePolicyDirectory insurancePolicyList;
 
-    public InsuranceCompanyEnterprise(String name) {
+    public InsuranceProvidersEnterprise(String name) {
         super(Enterprise.EnterpriseType.InsuranceCompany, name);
         insuranceCustomerList = new InsuredIndividualDirectory();
         insurancePolicyList = new InsurancePolicyDirectory();
@@ -35,7 +35,7 @@ public class InsuranceCompanyEnterprise extends Enterprise {
     @Override
     public List<Organization.Type> getOrganizationTypes() {
         List<Organization.Type> orgTypes = new ArrayList<>();
-        orgTypes.add(Organization.Type.InsuranceAgent);
+        orgTypes.add(Organization.Type.InsuranceOfficer);
         orgTypes.add(Organization.Type.PolicyPlanner);
         orgTypes.add(Organization.Type.InsuranceFundOrganization);
 

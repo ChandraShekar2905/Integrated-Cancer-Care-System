@@ -16,11 +16,11 @@ import java.util.List;
  * @author hrishipal
  */
 
-public class HealthCenterEnterprise extends Enterprise {
+public class HospitalsEnterprise extends Enterprise {
 
     private PatientDirectory patientDirectory;
 
-    public HealthCenterEnterprise(String name) {
+    public HospitalsEnterprise(String name) {
         super(EnterpriseType.HealthcareCenter, name);
         patientDirectory = new PatientDirectory();
     }
@@ -36,7 +36,7 @@ public class HealthCenterEnterprise extends Enterprise {
         orgTypes.add(Organization.Type.Doctor);
         orgTypes.add(Organization.Type.Lab);
         orgTypes.add(Organization.Type.Patient);
-        orgTypes.add(Organization.Type.Accountant);
+        orgTypes.add(Organization.Type.Receptionist);
         orgTypes.add(Organization.Type.Nurse);
         
 

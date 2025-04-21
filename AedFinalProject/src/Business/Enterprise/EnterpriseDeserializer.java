@@ -22,12 +22,12 @@ public class EnterpriseDeserializer implements JsonDeserializer<Enterprise> {
         String type = jsonObject.get("type").getAsString();
 
         switch (type) {
-            case "HealthCenterEnterprise":
-                return context.deserialize(json, HealthCenterEnterprise.class);
-            case "GovernmentEnterprise":
-                return context.deserialize(json, GovernmentEnterprise.class);
-            case "InsuranceCompanyEnterprise":
-                return context.deserialize(json, InsuranceCompanyEnterprise.class);
+            case "HospitalsEnterprise":
+                return context.deserialize(json, HospitalsEnterprise.class);
+            case "AdministrationEnterprise":
+                return context.deserialize(json, AdministrationEnterprise.class);
+            case "InsuranceProvidersEnterprise":
+                return context.deserialize(json, InsuranceProvidersEnterprise.class);
             case "PharmacyEnterprise":
                 return context.deserialize(json, PharmacyEnterprise.class);
             default:

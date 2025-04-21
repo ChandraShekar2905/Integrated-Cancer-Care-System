@@ -138,7 +138,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier New" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="REQUEST GOVERNMENT AID"/>
+        <Property name="text" type="java.lang.String" value="REQUEST ADMINISTRATION AID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLocation">

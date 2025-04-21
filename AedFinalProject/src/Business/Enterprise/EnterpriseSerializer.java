@@ -18,7 +18,7 @@ public class EnterpriseSerializer implements JsonSerializer<Enterprise> {
     @Override
     public JsonElement serialize(Enterprise src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject jsonObject = context.serialize(src).getAsJsonObject();
-        jsonObject.addProperty("type", src.getClass().getSimpleName()); // Add type field
+        jsonObject.addProperty("type", src.getClass().getSimpleName()); 
         return jsonObject;
     }
 }

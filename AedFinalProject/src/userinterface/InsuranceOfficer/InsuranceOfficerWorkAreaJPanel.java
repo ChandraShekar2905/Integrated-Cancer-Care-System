@@ -6,7 +6,7 @@
 package userinterface.InsuranceOfficer;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.InsuranceAgentOrganization;
+import Business.Organization.InsuranceOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -24,14 +24,14 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private UserAccount userAccount;
-    private InsuranceAgentOrganization insuranceAgentOrganization;
+    private InsuranceOfficerOrganization insuranceOfficerOrganization;
     private Enterprise enterprise;
 
     public InsuranceOfficerWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = jpanel;
         this.userAccount = userAccount;
-        this.insuranceAgentOrganization = (InsuranceAgentOrganization) organization;
+        this.insuranceOfficerOrganization = (InsuranceOfficerOrganization) organization;
         this.enterprise = enterprise;
 
     }
@@ -124,7 +124,7 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private void btnProcessRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRequestsActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("ProcessInsuranceRequestsJPanel", new AllInsuranceRequestsJPanel(userProcessContainer, userAccount, enterprise, insuranceAgentOrganization));
+        userProcessContainer.add("ProcessInsuranceRequestsJPanel", new AllInsuranceRequestsJPanel(userProcessContainer, userAccount, enterprise, insuranceOfficerOrganization));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnProcessRequestsActionPerformed
 

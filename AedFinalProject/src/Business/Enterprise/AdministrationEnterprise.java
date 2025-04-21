@@ -14,10 +14,10 @@ import java.util.List;
  *
  * @author Hrishipal
  */
-public class GovernmentEnterprise extends Enterprise {
+public class AdministrationEnterprise extends Enterprise {
 
-    public GovernmentEnterprise(String name) {
-        super(EnterpriseType.GovernmentAid, name);
+    public AdministrationEnterprise(String name) {
+        super(EnterpriseType.AdministrationAid, name);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class GovernmentEnterprise extends Enterprise {
     public List<Organization.Type> getOrganizationTypes() {
         List<Organization.Type> orgTypes = new ArrayList<>();
         orgTypes.add(Organization.Type.HealthcareChief);
-        orgTypes.add(Organization.Type.GovernmentSecretary);
-        orgTypes.add(Organization.Type.GovernmentAccountant);
+        orgTypes.add(Organization.Type.AdministrationSecretary);
+        orgTypes.add(Organization.Type.AdministrationTresurer);
 
         return orgTypes;
     }

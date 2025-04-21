@@ -30,11 +30,11 @@ public abstract class Organization {
     public enum Type {
 
         //HealthCenter Organization Types:
-        Admin("Admin Organization"), Doctor("Doctor Organization"),Nurse("Nurse Organization"), Lab("Lab Organization"), Patient("Patient Organization"), Accountant("Accountant Organization"),
+        Admin("Admin Organization"), Doctor("Doctor Organization"),Nurse("Nurse Organization"), Lab("Lab Organization"), Patient("Patient Organization"), Receptionist("Receptionist Organization"),
         //Insurance Organization Types:
-        InsuranceAgent("Insurance Agent Organization"), PolicyPlanner("Insurance Policy Planning Organization"), InsuranceFundOrganization("Insurance Finance Organization"),
-        //Government Organization Types
-        GovernmentAccountant("Treasurer Organization"), GovernmentSecretary("Secretary Organization"), HealthcareChief("Healthcare Officer Organization"),
+        InsuranceOfficer("InsuranceOfficer Organization"), PolicyPlanner("Insurance Policy Planning Organization"), InsuranceFundOrganization("Insurance Finance Organization"),
+        //Administration Organization Types
+        AdministrationTresurer("AdministrationTreasurer Organization"), AdministrationSecretary("AdministrationSecretary Organization"), HealthcareChief("Healthcare Officer Organization"),
         //Pharmacist Organization Types:
         Pharmacy("Pharmacy Organization");
         

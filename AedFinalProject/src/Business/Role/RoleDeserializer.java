@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.Role;
+import Business.Role.AdministratorRole;
+import Business.Role.AdministrationHealthOfficerRole;
 
 import com.google.gson.*;
 
@@ -20,17 +22,17 @@ public class RoleDeserializer implements JsonDeserializer<Role> {
 
         // Match the type to the corresponding subclass
         switch (type) {
-            case "AccountantRole":
-                return context.deserialize(json, AccountantRole.class);
-            case "EnterpriseAdminRole":
+            case "ReceptionistRole":
+                return context.deserialize(json, ReceptionistRole.class);
+            case "AdministratorRole":
                 return context.deserialize(json, AdministratorRole.class);
-            case "GovernmentHealthOfficerRole":
+            case "AdministrationHealthOfficerRole":
                 return context.deserialize(json, AdministrationHealthOfficerRole.class);
-            case "GovernmentSecretaries":
+            case "AdministrationSecretary":
                 return context.deserialize(json, AdministrationSecretary.class);
-            case "GovernmentTreasurer":
+            case "AdministrationTreasurer":
                 return context.deserialize(json, AdministrationTreasurer.class);
-            case "InsuranceAgentRole":
+            case "InsuranceOfficerRole":
                 return context.deserialize(json, InsuranceOfficerRole.class);
             case "InsuranceFinanceManagerRole":
                 return context.deserialize(json, InsuranceFinanceManagerRole.class);

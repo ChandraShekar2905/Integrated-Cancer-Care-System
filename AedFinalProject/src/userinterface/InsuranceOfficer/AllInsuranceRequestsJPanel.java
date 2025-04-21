@@ -7,7 +7,7 @@ package userinterface.InsuranceOfficer;
 
 import Business.Enterprise.Enterprise;
 
-import Business.Organization.InsuranceAgentOrganization;
+import Business.Organization.InsuranceOfficerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -31,14 +31,14 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private Enterprise enterprise;
-    private InsuranceAgentOrganization insuranceAgentOrganization;
+    private InsuranceOfficerOrganization insuranceOfficerOrganization;
 
-    public AllInsuranceRequestsJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, InsuranceAgentOrganization insuranceAgentOrganization) {
+    public AllInsuranceRequestsJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, InsuranceOfficerOrganization insuranceOfficerOrganization) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.enterprise = enterprise;
-        this.insuranceAgentOrganization = insuranceAgentOrganization;
+        this.insuranceOfficerOrganization = insuranceOfficerOrganization;
         populateTable();
     }
 
@@ -261,7 +261,7 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : insuranceAgentOrganization.getWorkQueue().getWorkRequests()) {
+        for (WorkRequest request : insuranceOfficerOrganization.getWorkQueue().getWorkRequests()) {
             Object[] row = new Object[8];
             String status = request.getStatus();
             row[0] = ((InsuranceWorkRequest) request);

@@ -6,7 +6,7 @@
 package userinterface.InsurancePolicyPlannerRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.Insurance.Insurance;
 import Business.Organization.InsurancePolicyPlannerOrganization;
 import Business.UserAccount.UserAccount;
@@ -25,7 +25,7 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private InsurancePolicyPlannerOrganization insurancePolicyPlannerOrganization;
-    private InsuranceCompanyEnterprise insuranceCompanyEnterprise;
+    private InsuranceProvidersEnterprise insuranceCompanyEnterprise;
 
     /**
      * Creates new form InsurancePolicyPlannerJPanel
@@ -35,7 +35,7 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.insurancePolicyPlannerOrganization = insurancePolicyPlannerOrganization;
-        this.insuranceCompanyEnterprise = (InsuranceCompanyEnterprise) enterprise;
+        this.insuranceCompanyEnterprise = (InsuranceProvidersEnterprise) enterprise;
 
         populateTable();
     }
@@ -229,7 +229,7 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         insurance.setPolicyTC(policyTC);
         insurance.setMonthlyInstallment(monthlyPremium);
 
-        // InsuranceCompanyEnterprise insuranceCompanyEnterprise = insuranceCompanyEnterprise;
+        // InsuranceProvidersEnterprise insuranceCompanyEnterprise = insuranceCompanyEnterprise;
         insuranceCompanyEnterprise.getInsurancePolicyList().getInsurancePolicies().add(insurance);
         JOptionPane.showMessageDialog(null, "Policy Added Successfully");
         System.out.println("Policy Added Successfully:" + insuranceCompanyEnterprise.getInsurancePolicyList().getInsurancePolicies());

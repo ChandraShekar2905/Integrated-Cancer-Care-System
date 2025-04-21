@@ -7,9 +7,9 @@ package Business;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.EnterpriseDeserializer;
 import Business.Enterprise.EnterpriseSerializer;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Enterprise.GovernmentEnterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.HospitalsEnterprise;
+import Business.Enterprise.AdministrationEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.Enterprise.PharmacyEnterprise;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationSerializer;
@@ -25,7 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 /**
  *
- * @author anushaprakash
+ * @author hrishipal
  */
 public class GsonFactory {
     

@@ -8,7 +8,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.InsuranceAgentOrganization;
+import Business.Organization.InsuranceOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -23,7 +23,7 @@ public class InsuranceOfficerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-     return new InsuranceOfficerWorkAreaJPanel(userProcessContainer, account, (InsuranceAgentOrganization)organization, enterprise);
+     return new InsuranceOfficerWorkAreaJPanel(userProcessContainer, account, (InsuranceOfficerOrganization)organization, enterprise);
     }
     
 }
