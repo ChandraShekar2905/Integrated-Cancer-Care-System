@@ -130,7 +130,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         lblReceptionistWorkArea.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lblReceptionistWorkArea.setForeground(new java.awt.Color(204, 0, 0));
         lblReceptionistWorkArea.setText("RECEIPTIONIST WORK AREA");
 
         lblPhoto.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -149,7 +148,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -160,7 +159,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(btnSendReport)
                         .addGap(142, 142, 142)
                         .addComponent(btnProcessMedicalBills)))
-                .addGap(0, 106, Short.MAX_VALUE))
+                .addGap(0, 70, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,6 +169,9 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(lblReceptionistWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DeleteAppointmentBtn, btnCreateAppointment, btnProcessMedicalBills, btnSendReport});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -186,8 +188,11 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnCreateAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DeleteAppointmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {DeleteAppointmentBtn, btnCreateAppointment, btnProcessMedicalBills, btnSendReport});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAppointmentActionPerformed

@@ -123,7 +123,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
-        tblEnterprise.setBackground(new java.awt.Color(189, 241, 241));
         tblEnterprise.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,9 +204,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(lblName);
         lblName.setBounds(620, 410, 50, 17);
         add(pfPassword);
-        pfPassword.setBounds(680, 330, 136, 25);
+        pfPassword.setBounds(680, 330, 140, 20);
 
-        btnBack.setBackground(new java.awt.Color(155, 232, 232));
         btnBack.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +216,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(50, 50, 79, 21);
         add(pfReenterPassword);
-        pfReenterPassword.setBounds(680, 370, 136, 20);
+        pfReenterPassword.setBounds(680, 370, 140, 20);
 
         lblPasswordConfirm.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblPasswordConfirm.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

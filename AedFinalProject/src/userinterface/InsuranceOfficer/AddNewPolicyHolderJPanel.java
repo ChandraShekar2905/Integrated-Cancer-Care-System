@@ -100,7 +100,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         add(lblInsuranceMember);
         lblInsuranceMember.setBounds(375, 16, 264, 21);
 
-        btnAddCustomer.setBackground(new java.awt.Color(204, 204, 255));
         btnAddCustomer.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAddCustomer.setText("Add Customer");
         btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +116,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         add(lblPersonalInformation);
         lblPersonalInformation.setBounds(10, 180, 180, 17);
 
-        tblCustomerPolicy.setBackground(new java.awt.Color(204, 204, 255));
         tblCustomerPolicy.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -148,7 +146,6 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
         add(jLabel16);
         jLabel16.setBounds(54, 986, 83, 15);
 
-        btnBack.setBackground(new java.awt.Color(204, 204, 255));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {

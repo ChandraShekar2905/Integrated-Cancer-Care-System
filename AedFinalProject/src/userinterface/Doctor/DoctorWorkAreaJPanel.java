@@ -141,7 +141,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         lblWorkAreaForDoctors.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblWorkAreaForDoctors.setForeground(new java.awt.Color(0, 153, 51));
         lblWorkAreaForDoctors.setText("WORK-AREA FOR DOCTOR");
 
         tblWorkRequest1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -179,7 +178,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblWorkAreaForDoctors)
@@ -211,6 +210,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssignToMe, btnPrescribe, btnRequestLab, btnTreated, btnViewPatient, lblWorkAreaForDoctors});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -240,6 +242,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAssignToMe, btnPrescribe, btnRequestLab, btnTreated, btnViewPatient, lblWorkAreaForDoctors});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestLabActionPerformed

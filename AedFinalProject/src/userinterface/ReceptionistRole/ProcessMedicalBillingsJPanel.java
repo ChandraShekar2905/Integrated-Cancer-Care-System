@@ -70,7 +70,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        btnProcessRequest.setBackground(new java.awt.Color(0, 153, 255));
         btnProcessRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +78,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblWorkRequest.setBackground(new java.awt.Color(204, 204, 255));
         tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -122,7 +120,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblWorkRequest);
 
-        btnAssignToMe.setBackground(new java.awt.Color(0, 153, 255));
         btnAssignToMe.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssignToMe.setText("AssignToMe");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +128,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(0, 153, 255));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +139,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         lblReceptionistPatientBillingArea.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblReceptionistPatientBillingArea.setText("Receptionist: Patient Billing Area");
 
-        tblInsurance.setBackground(new java.awt.Color(204, 204, 255));
         tblInsurance.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -196,22 +191,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(btnBack)
-                                .addGap(222, 222, 222)
-                                .addComponent(lblReceptionistPatientBillingArea))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(331, 331, 331)
-                                .addComponent(lblInsuranceClaimStatusTable)))
-                        .addGap(0, 311, Short.MAX_VALUE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnAssignToMe)
@@ -219,10 +198,28 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                 .addComponent(btnProcessRequest)
                 .addGap(362, 362, 362))
             .addGroup(layout.createSequentialGroup()
-                .addGap(446, 446, 446)
-                .addComponent(lblPatientBillingTable)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(btnBack)
+                            .addGap(222, 222, 222)
+                            .addComponent(lblReceptionistPatientBillingArea))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(331, 331, 331)
+                            .addComponent(lblInsuranceClaimStatusTable)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(446, 446, 446)
+                        .addComponent(lblPatientBillingTable)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssignToMe, btnProcessRequest});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -244,6 +241,11 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(248, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAssignToMe, btnProcessRequest});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProcessRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRequestActionPerformed

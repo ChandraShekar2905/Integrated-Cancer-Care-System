@@ -92,7 +92,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        enterpriseJTable.setBackground(new java.awt.Color(173, 234, 203));
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -129,7 +128,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         cbEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnSubmit.setBackground(new java.awt.Color(173, 234, 203));
         btnSubmit.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +136,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(173, 234, 203));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +144,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(173, 234, 203));
         btnDelete.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {

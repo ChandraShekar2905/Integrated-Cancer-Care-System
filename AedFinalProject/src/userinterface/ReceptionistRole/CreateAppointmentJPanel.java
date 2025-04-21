@@ -126,7 +126,6 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblCreateAppointment.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lblCreateAppointment.setForeground(new java.awt.Color(153, 0, 0));
         lblCreateAppointment.setText("CREATE APPOINTMENT");
 
         btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N

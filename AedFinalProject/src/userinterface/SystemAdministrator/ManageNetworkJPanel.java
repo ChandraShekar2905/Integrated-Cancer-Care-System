@@ -66,7 +66,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        networkJTable.setBackground(new java.awt.Color(173, 234, 203));
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -101,7 +100,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         lblName.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblName.setText("Name :");
 
-        btnSubmit.setBackground(new java.awt.Color(173, 234, 203));
         btnSubmit.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +108,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(173, 234, 203));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +119,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         lblManageNetworks.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblManageNetworks.setText("MANAGE NETWORKS");
 
-        btnDelete.setBackground(new java.awt.Color(173, 234, 203));
         btnDelete.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +155,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDelete, btnSubmit});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -176,6 +175,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                     .addComponent(lblName))
                 .addContainerGap(439, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnDelete, btnSubmit});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed

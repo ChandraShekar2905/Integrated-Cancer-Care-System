@@ -77,7 +77,6 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblBillingRequest.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        lblBillingRequest.setForeground(new java.awt.Color(0, 153, 51));
         lblBillingRequest.setText("BILLING REQUEST");
 
         lblPatientInfo.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -152,7 +151,6 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRequestBill.setBackground(new java.awt.Color(0, 153, 255));
         btnRequestBill.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         btnRequestBill.setText("Send Billing Request");
         btnRequestBill.addActionListener(new java.awt.event.ActionListener() {
@@ -249,6 +247,9 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(236, 236, 236))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtConsultationFees, txtLabFees, txtMedicationFees, txtMiscellaneousFees});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -320,8 +321,11 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtConsultationFees, txtLabFees, txtMedicationFees, txtMiscellaneousFees});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtConsultationFeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultationFeesActionPerformed
