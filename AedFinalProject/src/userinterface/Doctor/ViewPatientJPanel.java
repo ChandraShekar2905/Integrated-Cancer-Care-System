@@ -117,7 +117,6 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         lblPatientId.setText("Patient ID :");
 
         lblPrescriptionHistory.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblPrescriptionHistory.setForeground(new java.awt.Color(255, 0, 51));
         lblPrescriptionHistory.setText("PRESCRIPTION HISTORY");
 
         txtDisorder.setEditable(false);
@@ -176,17 +175,17 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblFirstName)
                                     .addComponent(lblPatientId))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(388, 388, 388)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblAge)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtAge))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(339, 339, 339)
+                                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblLastName)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtLastName))))
+                                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(88, 88, 88))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblHomePhoneNo)
@@ -195,11 +194,11 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane1)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtFirstName)
-                                            .addComponent(txtPatientId)
-                                            .addComponent(txtLandline, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtPatientId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                                            .addComponent(txtFirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtLandline))
+                                        .addGap(0, 468, Short.MAX_VALUE)))))
                         .addGap(44, 44, 44))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
@@ -255,6 +254,9 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAge, txtFirstName, txtLandline, txtLastName, txtPatientId});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed

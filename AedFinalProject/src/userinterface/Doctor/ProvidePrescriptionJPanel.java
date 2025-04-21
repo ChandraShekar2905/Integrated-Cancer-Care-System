@@ -99,7 +99,6 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblProvidePrescription.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblProvidePrescription.setForeground(new java.awt.Color(0, 153, 51));
         lblProvidePrescription.setText("Provide Prescription");
 
         jLabel6.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
