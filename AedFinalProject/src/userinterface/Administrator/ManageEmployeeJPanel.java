@@ -100,6 +100,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
+        cbOrganizationEmployee.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         cbOrganizationEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbOrganizationEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,12 +108,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblSelectOrganization.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblSelectOrganization.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblSelectOrganization.setText("Organization");
 
-        lblManageEmployee.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        lblManageEmployee.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblManageEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageEmployee.setText("Manage Employee");
 
+        tblOrganization.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -141,7 +144,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrganization);
 
-        btnCreateEmployee.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnCreateEmployee.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnCreateEmployee.setText("CREATE EMPLOYEE");
         btnCreateEmployee.setMinimumSize(new java.awt.Dimension(140, 20));
         btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +153,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
+        cbOrganizations.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         cbOrganizations.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbOrganizations.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +161,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblOrganization.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblOrganization.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblOrganization.setText("Organization");
 
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -168,10 +172,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblName.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblName.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblName.setText("Name");
 
-        DeleteBtn.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        DeleteBtn.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         DeleteBtn.setText("Delete Employee");
         DeleteBtn.setSize(new java.awt.Dimension(140, 20));
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +184,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        UpdateEmpBtn.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        UpdateEmpBtn.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         UpdateEmpBtn.setText("Update Employee");
         UpdateEmpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,40 +198,36 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(252, 252, 252))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblManageEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(371, 371, 371))))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(252, 252, 252))
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnBack)
-                            .addGap(225, 225, 225)
-                            .addComponent(lblOrganization)
-                            .addGap(56, 56, 56)
-                            .addComponent(cbOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblSelectOrganization)
-                                .addComponent(lblName))
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cbOrganizationEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(418, 418, 418)
-                            .addComponent(UpdateEmpBtn)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBack)
+                        .addGap(225, 225, 225)
+                        .addComponent(lblOrganization)
+                        .addGap(56, 56, 56)
+                        .addComponent(cbOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblSelectOrganization)
+                            .addComponent(lblName))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbOrganizationEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104)
+                        .addComponent(UpdateEmpBtn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblManageEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +255,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(btnCreateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UpdateEmpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

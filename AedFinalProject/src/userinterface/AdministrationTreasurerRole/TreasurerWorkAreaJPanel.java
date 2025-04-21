@@ -60,10 +60,11 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TREASURER WORK-AREA");
         add(jLabel1);
-        jLabel1.setBounds(350, 40, 209, 21);
+        jLabel1.setBounds(-1, 40, 1030, 30);
 
         workRequestJTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         workRequestJTable.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -98,7 +99,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(80, 150, 820, 120);
 
-        btnAssign.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAssign.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnAssign.setText("Assign To Self");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,9 +107,9 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAssign);
-        btnAssign.setBounds(260, 330, 142, 34);
+        btnAssign.setBounds(260, 330, 120, 34);
 
-        requestGovSecretaryBtn.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        requestGovSecretaryBtn.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         requestGovSecretaryBtn.setText("Process Request");
         requestGovSecretaryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +117,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(requestGovSecretaryBtn);
-        requestGovSecretaryBtn.setBounds(500, 330, 150, 34);
+        requestGovSecretaryBtn.setBounds(500, 330, 139, 34);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed

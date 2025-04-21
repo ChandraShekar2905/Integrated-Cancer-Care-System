@@ -91,7 +91,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btnRequestLab.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnRequestLab.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnRequestLab.setText("Request Lab Test");
         btnRequestLab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,16 +99,17 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblEnterprise.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblEnterprise.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblEnterprise.setText("Enterprise :");
 
         lblValue.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblValue.setText("<value>");
 
-        lblMedicalTestWorkQueue.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 12)); // NOI18N
+        lblMedicalTestWorkQueue.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        lblMedicalTestWorkQueue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMedicalTestWorkQueue.setText("Medical Test Work Queue");
 
-        btnAssignToMe.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAssignToMe.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +117,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnPrescribe.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnPrescribe.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnPrescribe.setText("Provide Prescription");
         btnPrescribe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +125,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnTreated.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnTreated.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnTreated.setText("Complete Treatment");
         btnTreated.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +133,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewPatient.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnViewPatient.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnViewPatient.setText("View Patient");
         btnViewPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +141,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblWorkAreaForDoctors.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblWorkAreaForDoctors.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblWorkAreaForDoctors.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWorkAreaForDoctors.setText("WORK-AREA FOR DOCTOR");
 
         tblWorkRequest1.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -177,41 +179,37 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addComponent(lblWorkAreaForDoctors, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblWorkAreaForDoctors)
-                        .addGap(396, 396, 396))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblEnterprise)
-                                .addGap(6, 6, 6)
-                                .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(368, 368, 368)
-                                .addComponent(lblMedicalTestWorkQueue))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnViewPatient)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAssignToMe)
-                                .addGap(32, 32, 32)
-                                .addComponent(btnRequestLab)
-                                .addGap(34, 34, 34)
-                                .addComponent(btnPrescribe)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnTreated)))
-                        .addGap(65, 65, 65))))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1002, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(328, 328, 328)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(lblMedicalTestWorkQueue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(btnViewPatient)
+                .addGap(18, 18, 18)
+                .addComponent(btnAssignToMe)
+                .addGap(32, 32, 32)
+                .addComponent(btnRequestLab)
+                .addGap(34, 34, 34)
+                .addComponent(btnPrescribe)
+                .addGap(18, 18, 18)
+                .addComponent(btnTreated)
+                .addContainerGap(227, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(lblEnterprise)
+                .addGap(6, 6, 6)
+                .addComponent(lblValue, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssignToMe, btnPrescribe, btnRequestLab, btnTreated, btnViewPatient, lblWorkAreaForDoctors});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssignToMe, btnPrescribe, btnRequestLab, btnTreated, btnViewPatient});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +226,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(lblMedicalTestWorkQueue)
                 .addGap(6, 6, 6)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnTreated, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -238,7 +236,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnAssignToMe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRequestLab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPrescribe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

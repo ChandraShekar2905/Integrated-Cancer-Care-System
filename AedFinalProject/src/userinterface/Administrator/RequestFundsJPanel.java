@@ -93,10 +93,11 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        lblRequestFunds.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblRequestFunds.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblRequestFunds.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRequestFunds.setText("REQUEST ADMINISTRATION AID");
 
-        lblLocation.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblLocation.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblLocation.setText("Location:");
 
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +106,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblPopulation.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblPopulation.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblPopulation.setText("Population:");
 
         txtPopulation.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +120,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblAmount.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        lblAmount.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblAmount.setText("Amount:");
 
         txtAmount.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +134,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRequestFunds.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        btnRequestFunds.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnRequestFunds.setText("Request Fund");
         btnRequestFunds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,10 +170,11 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblFundRequest);
 
-        jLabel4.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("All Fund Requests");
 
-        jLabel5.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel5.setText("Total Funds Received :");
 
         txtFundsReceived.setEditable(false);
@@ -217,30 +219,28 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(443, 443, 443)
                         .addComponent(btnRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
+            .addComponent(lblRequestFunds, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(446, 446, 446)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(182, 182, 182)
-                        .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(371, 371, 371))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBack))
+                        .addContainerGap()
+                        .addComponent(btnBack)
+                        .addGap(8, 8, 8)
+                        .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -250,7 +250,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                                 .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblLocation))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 47, Short.MAX_VALUE)
+                                .addGap(0, 46, Short.MAX_VALUE)
                                 .addComponent(lblPopulation)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,14 +263,14 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                         .addGap(28, 28, 28)
                         .addComponent(btnRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)))
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

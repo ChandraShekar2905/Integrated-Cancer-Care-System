@@ -29,13 +29,14 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Courier New" size="18" style="1"/>
+          <Font name="Helvetica Neue" size="24" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TREASURER WORK-AREA"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="350" y="40" width="-1" height="-1"/>
+          <AbsoluteConstraints x="-1" y="40" width="1030" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -115,7 +116,7 @@
     <Component class="javax.swing.JButton" name="btnAssign">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Courier New" size="14" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Assign To Self"/>
       </Properties>
@@ -131,7 +132,7 @@
     <Component class="javax.swing.JButton" name="requestGovSecretaryBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Courier New" size="14" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Process Request"/>
       </Properties>

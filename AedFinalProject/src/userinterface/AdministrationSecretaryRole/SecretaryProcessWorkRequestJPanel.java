@@ -67,10 +67,11 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        lblSecretery.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblSecretery.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblSecretery.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSecretery.setText("PROCESS PENDING SECRETERY REQUESTS");
 
-        btnTransferRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnTransferRequest.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnTransferRequest.setText("Forward Request To Treasurer");
         btnTransferRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +79,7 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblLocation.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblLocation.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         lblLocation.setText("Location :");
 
         btnBack.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
@@ -93,15 +94,15 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         txtPopulation.setEnabled(false);
 
-        lblPopulation.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblPopulation.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         lblPopulation.setText("Population :");
 
         txtAmount.setEnabled(false);
 
-        lblAmount.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblAmount.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         lblAmount.setText("Amount :");
 
-        lblMessage.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        lblMessage.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         lblMessage.setText("Message :");
 
         txtMessage.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +111,7 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnReject.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnReject.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,11 +150,9 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
                                 .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPopulation, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMessage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(lblSecretery, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(236, Short.MAX_VALUE))
+                                    .addComponent(txtMessage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(274, Short.MAX_VALUE))
+            .addComponent(lblSecretery, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnReject, btnTransferRequest});
@@ -182,7 +181,7 @@ public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTransferRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(380, Short.MAX_VALUE))
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnReject, btnTransferRequest});

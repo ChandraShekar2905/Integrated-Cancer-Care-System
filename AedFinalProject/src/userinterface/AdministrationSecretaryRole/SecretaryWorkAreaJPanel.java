@@ -60,6 +60,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
+        tblWorkRequest.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -91,7 +92,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(150, 200, 734, 92);
 
-        btnAssigntoSelf.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAssigntoSelf.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnAssigntoSelf.setText("Assign to Self");
         btnAssigntoSelf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,9 +100,9 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnAssigntoSelf);
-        btnAssigntoSelf.setBounds(350, 330, 142, 34);
+        btnAssigntoSelf.setBounds(350, 330, 125, 34);
 
-        btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnProcessRequest.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,12 +110,13 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcessRequest);
-        btnProcessRequest.setBounds(540, 330, 150, 34);
+        btnProcessRequest.setBounds(540, 330, 145, 34);
 
-        lblSecretery.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblSecretery.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblSecretery.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSecretery.setText("SECRETERY WORK-AREA");
         add(lblSecretery);
-        lblSecretery.setBounds(410, 130, 236, 37);
+        lblSecretery.setBounds(0, 130, 1020, 37);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssigntoSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssigntoSelfActionPerformed
