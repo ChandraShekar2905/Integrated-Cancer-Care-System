@@ -29,13 +29,13 @@ public abstract class Role {
         LabAssistant("Lab Assistant"),
         Patient("Patient"),
         Pharmacist("Pharmacist"),
-        Accountant("Accountant"),
-        InsuranceAgent("Insurance Agent"),
+        Receptionist("Receptionist"),
+        InsuranceOfficer("Insurance Officer"),
         InsurancePlanner("Insurance Policy Planner"),
         InsuranceFinanceManager("Insurance Finance Manager"),
-        GovernmentHealthOfficer("Government Health Officer"),
-        GovernmentTreasurer("Government Treasure"),
-        GovernmentSecretaries("Government Secretaries");
+        AdministrationHealthOfficer("Administration Health Officer"),
+        AdministrationTreasurer("Administration Treasurer"),
+        AdministrationSecretary("Administration Secretary");
 
         private String value;
 

@@ -30,7 +30,7 @@ public abstract class Enterprise extends Organization {
 
         HealthcareCenter("HealthcareCenter"),
         InsuranceCompany("InsuranceCompany"),
-        GovernmentAid("GovernmentAid"),
+        AdministrationAid("AdministrationAid"),
         Pharmacy("Pharmacy");
         
 

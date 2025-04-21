@@ -9,7 +9,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.TreasurerOrganization;
+import Business.Organization.AdministrationTreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.AdministrationTreasurerRole.TreasurerWorkAreaJPanel;
@@ -22,7 +22,7 @@ public class AdministrationTreasurer extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new TreasurerWorkAreaJPanel(userProcessContainer, userAccount, (TreasurerOrganization)organization, enterprise);
+        return new TreasurerWorkAreaJPanel(userProcessContainer, userAccount, (AdministrationTreasurerOrganization)organization, enterprise);
     }
     
 }

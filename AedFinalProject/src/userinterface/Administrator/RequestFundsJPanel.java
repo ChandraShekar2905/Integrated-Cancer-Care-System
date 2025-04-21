@@ -94,7 +94,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         lblRequestFunds.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblRequestFunds.setText("REQUEST GOVERNMENT AID");
+        lblRequestFunds.setText("REQUEST ADMINISTRATION AID");
 
         lblLocation.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         lblLocation.setText("Location:");
@@ -314,9 +314,9 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             return;
         }
 
-        AdministrationFundRequest governmentFundRequest = new AdministrationFundRequest(location, Integer.parseInt(population), Double.parseDouble(amount));
-        governmentFundRequest.setSender(userAccount);
-        governmentFundRequest.setStatus("Sent");
+        AdministrationFundRequest administrationFundRequest = new AdministrationFundRequest(location, Integer.parseInt(population), Double.parseDouble(amount));
+        administrationFundRequest.setSender(userAccount);
+        administrationFundRequest.setStatus("Sent");
 
         Organization org = null;
 
@@ -337,8 +337,8 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         }
 
         if (org != null) {
-            org.getWorkQueue().getWorkRequests().add(governmentFundRequest);
-            userAccount.getWorkQueue().getWorkRequests().add(governmentFundRequest);
+            org.getWorkQueue().getWorkRequests().add(administrationFundRequest);
+            userAccount.getWorkQueue().getWorkRequests().add(administrationFundRequest);
         }
         populateRequestTable();
 

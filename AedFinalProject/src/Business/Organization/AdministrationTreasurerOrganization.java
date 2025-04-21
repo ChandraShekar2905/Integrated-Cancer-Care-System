@@ -13,10 +13,10 @@ import java.util.ArrayList;
  *
  * @author aaryakpawar
  */
-public class TreasurerOrganization extends Organization {
+public class AdministrationTreasurerOrganization extends Organization {
 
-   public TreasurerOrganization() {
-        super(Organization.Type.GovernmentAccountant.getValue());
+   public AdministrationTreasurerOrganization() {
+        super(Organization.Type.AdministrationTresurer.getValue());
     }
 
     @Override

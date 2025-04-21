@@ -7,8 +7,8 @@ package userinterface.ReceptionistRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.HospitalsEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.Insurance.Insurance;
 import Business.InsuredIndividual.InsuredIndividual;
 import Business.Network.Network;
@@ -696,7 +696,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             Insurance insurance = new Insurance(policyName, insuranceCompany, coverage);
             InsuredIndividual insuranceCustomer = new InsuredIndividual(policyNumber, insurance);
             
-            HealthCenterEnterprise healthCenterEnterprise = (HealthCenterEnterprise) enterprise;
+            HospitalsEnterprise healthCenterEnterprise = (HospitalsEnterprise) enterprise;
             Patient patient = new Patient();
             
             patient.setAppointmentDate(txtDate.getText());
@@ -751,17 +751,17 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         boolean isPatientFound = false;
         String ssn = txtPatientSSN.getText().trim();
         List<Network> networks = ecosystem.getNetworks();
-        List<HealthCenterEnterprise> healthCenterEnterprises = new ArrayList<>();
+        List<HospitalsEnterprise> healthCenterEnterprises = new ArrayList<>();
         
         for (Network network : networks) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                if (enterprise instanceof HealthCenterEnterprise) {
-                    healthCenterEnterprises.add((HealthCenterEnterprise) enterprise);
+                if (enterprise instanceof HospitalsEnterprise) {
+                    healthCenterEnterprises.add((HospitalsEnterprise) enterprise);
                 }
             }
         }
         
-        for (HealthCenterEnterprise healthCenterEnterprise : healthCenterEnterprises) {
+        for (HospitalsEnterprise healthCenterEnterprise : healthCenterEnterprises) {
             List<Patient> patients = healthCenterEnterprise.getPatientDirectory().getPatientList();
             for (Patient patient : patients) {
                 if (ssn.equals(patient.getSsn())) {
@@ -780,19 +780,19 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
     private void btnFindPolicyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindPolicyActionPerformed
         String insurancePolicyNumber = txtPolicyNum.getText().trim();
         String ssn = txtSSN.getText().trim();
-        List<InsuranceCompanyEnterprise> insuranceEnterprises = new ArrayList<>();
+        List<InsuranceProvidersEnterprise> insuranceEnterprises = new ArrayList<>();
         InsuredIndividual matchedCustomer = null;
         
         List<Network> networks = ecosystem.getNetworks();
         for (Network network : networks) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                if (enterprise instanceof InsuranceCompanyEnterprise) {
-                    insuranceEnterprises.add((InsuranceCompanyEnterprise) enterprise);
+                if (enterprise instanceof InsuranceProvidersEnterprise) {
+                    insuranceEnterprises.add((InsuranceProvidersEnterprise) enterprise);
                 }
             }
         }
         
-        for (InsuranceCompanyEnterprise insuranceCompanyEnterprise : insuranceEnterprises) {
+        for (InsuranceProvidersEnterprise insuranceCompanyEnterprise : insuranceEnterprises) {
             List<InsuredIndividual> insuranceCustomers = insuranceCompanyEnterprise.getInsuranceCustomerList().getInsuranceHolders();
             for (InsuredIndividual insuranceCustomer : insuranceCustomers) {
                 if (insurancePolicyNumber.equals(insuranceCustomer.getInsurancePolicyNumber()) && ssn.equals(insuranceCustomer.getSocialSecurityID())) {
@@ -994,17 +994,17 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
              boolean isPatientFound = false;
         String ssn = txtPatientSSN.getText().trim();
         List<Network> networks = ecosystem.getNetworks();
-        List<HealthCenterEnterprise> healthCenterEnterprises = new ArrayList<>();
+        List<HospitalsEnterprise> healthCenterEnterprises = new ArrayList<>();
         
         for (Network network : networks) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                if (enterprise instanceof HealthCenterEnterprise) {
-                    healthCenterEnterprises.add((HealthCenterEnterprise) enterprise);
+                if (enterprise instanceof HospitalsEnterprise) {
+                    healthCenterEnterprises.add((HospitalsEnterprise) enterprise);
                 }
             }
         }
         
-        for (HealthCenterEnterprise healthCenterEnterprise : healthCenterEnterprises) {
+        for (HospitalsEnterprise healthCenterEnterprise : healthCenterEnterprises) {
             List<Patient> patients = healthCenterEnterprise.getPatientDirectory().getPatientList();
             for (Patient patient : patients) {
                 if (patientEmail.equals(patient.getEmail())) {

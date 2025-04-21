@@ -7,7 +7,7 @@ package userinterface.AdministrationTreasurerRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.TreasurerOrganization;
+import Business.Organization.AdministrationTreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AdministrationFundRequest;
 import Business.WorkQueue.WorkRequest;
@@ -28,14 +28,14 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel jPanel;
     private UserAccount userAccount;
-    private TreasurerOrganization treasurerOrganization;
+    private AdministrationTreasurerOrganization treasurerOrganization;
     private Enterprise enterprise;
 
     public TreasurerWorkAreaJPanel(JPanel jpanel, UserAccount userAccount, Organization organization, Enterprise enterprise) {
         initComponents();
         this.enterprise = enterprise;
         this.jPanel = jpanel;
-        this.treasurerOrganization = (TreasurerOrganization) organization;
+        this.treasurerOrganization = (AdministrationTreasurerOrganization) organization;
         this.userAccount = userAccount;
 
         populateTable();

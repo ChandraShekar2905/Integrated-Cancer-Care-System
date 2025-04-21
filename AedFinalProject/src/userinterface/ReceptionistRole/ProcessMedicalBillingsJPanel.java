@@ -7,9 +7,9 @@ package userinterface.ReceptionistRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.AccountantOrganization;
+import Business.Organization.ReceptionistOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.ReceptionistBillingRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -29,18 +29,18 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private Enterprise enterprise;
-    private AccountantOrganization accountantOrganization;
+    private ReceptionistOrganization ReceptionistOrganization;
     private EcoSystem ecoSystem;
 
     /**
      * Creates new form ProcessMedicalBillingsJPanel
      */
-    public ProcessMedicalBillingsJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, AccountantOrganization accountantOrganization, EcoSystem ecoSystem) {
+    public ProcessMedicalBillingsJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, ReceptionistOrganization ReceptionistOrganization, EcoSystem ecoSystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.enterprise = enterprise;
-        this.accountantOrganization = accountantOrganization;
+        this.ReceptionistOrganization = ReceptionistOrganization;
         this.ecoSystem = ecoSystem;
         populateTable();
         populateInsuranceClaimTable();
@@ -102,7 +102,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "PatientId", "Patient Name", "Assigned Doctor", "Accountant ", "Status", "Billing Amount"
+                "PatientId", "Patient Name", "Assigned Doctor", "Receptionist", "Status", "Billing Amount"
             }
         ) {
             Class[] types = new Class [] {
@@ -166,7 +166,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Policy Number", "Accountant", "Insurance Agent", "Billing Amount", "Claim Amount", "Claim Status"
+                "Policy Number", "Receptionist", "Insurance Agent", "Billing Amount", "Claim Amount", "Claim Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -255,13 +255,13 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             return;
         } else {
 
-            AccountantBillingRequest accountBillingRequest = (AccountantBillingRequest) tblWorkRequest.getValueAt(selectedRow, 5);
+            ReceptionistBillingRequest accountBillingRequest = (ReceptionistBillingRequest) tblWorkRequest.getValueAt(selectedRow, 5);
 
             if (accountBillingRequest.getReceiver() != null) {
                 if (accountBillingRequest.getReceiver().equals(userAccount)) {
                     if (accountBillingRequest.getStatus().equalsIgnoreCase("Pending on " + accountBillingRequest.getReceiver().getEmployee().getEmployeename())) {
                         ReceptionistProcessRequestJPanel panel = new ReceptionistProcessRequestJPanel(userProcessContainer, userAccount, accountBillingRequest, enterprise, ecoSystem);
-                        userProcessContainer.add("AccountantProcessRequestJPanel", panel);
+                        userProcessContainer.add("ReceptionistProcessRequestJPanel", panel);
                         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                         layout.next(userProcessContainer);
                     } else {
@@ -284,7 +284,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row !");
             return;
         } else {
-            WorkRequest request = (AccountantBillingRequest) tblWorkRequest.getValueAt(selectedRow, 5);
+            WorkRequest request = (ReceptionistBillingRequest) tblWorkRequest.getValueAt(selectedRow, 5);
             if (request.getReceiver() == null) {
 
                 request.setReceiver(userAccount);
@@ -322,11 +322,11 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : accountantOrganization.getWorkQueue().getWorkRequests()) {
+        for (WorkRequest request : ReceptionistOrganization.getWorkQueue().getWorkRequests()) {
             Object[] row = new Object[6];
             String status = request.getStatus();
-            row[0] = ((AccountantBillingRequest) request).getPatient();
-            row[1] = ((AccountantBillingRequest) request).getPatient().getFirstName() + " " + ((AccountantBillingRequest) request).getPatient().getLastName();
+            row[0] = ((ReceptionistBillingRequest) request).getPatient();
+            row[1] = ((ReceptionistBillingRequest) request).getPatient().getFirstName() + " " + ((ReceptionistBillingRequest) request).getPatient().getLastName();
             row[2] = request.getSender().getEmployee().getEmployeename();
             if (status.equalsIgnoreCase("Sent to Treasurer") || status.equalsIgnoreCase("Sent to Secretary")) {
                 row[2] = null;
@@ -335,7 +335,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             }
             //row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             row[4] = request.getStatus();
-            row[5] = ((AccountantBillingRequest) request);
+            row[5] = ((ReceptionistBillingRequest) request);
 
             model.addRow(row);
         }

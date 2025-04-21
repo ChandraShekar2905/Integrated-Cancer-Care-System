@@ -6,8 +6,8 @@ package userinterface.Administrator;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.GovernmentEnterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.AdministrationEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -34,7 +34,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         this.ecoSystem = ecoSystem;
         valueLabel.setText(enterprise.getName());
 
-        if (enterprise instanceof GovernmentEnterprise || enterprise instanceof InsuranceCompanyEnterprise) {
+        if (enterprise instanceof AdministrationEnterprise || enterprise instanceof InsuranceProvidersEnterprise) {
             btnRequestFunds.setVisible(false);
         }
     }
@@ -94,7 +94,7 @@ public class AdministratorWorkAreaPanelJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
 
         btnRequestFunds.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        btnRequestFunds.setText("Request Funds from Government");
+        btnRequestFunds.setText("Request Funds from Administration");
         btnRequestFunds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestFundsActionPerformed(evt);

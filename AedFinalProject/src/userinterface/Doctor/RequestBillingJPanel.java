@@ -6,10 +6,10 @@ package userinterface.Doctor;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.AccountantOrganization;
+import Business.Organization.ReceptionistOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.ReceptionistBillingRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -379,24 +379,24 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             if (dialogResult == JOptionPane.YES_OPTION) {
                 patientTreatmentWorkRequest.setStatus("Consultation Completed");
 
-                AccountantBillingRequest accountantBillingRequest = new AccountantBillingRequest();
-                accountantBillingRequest.setBill(billingAmount);
-                //  accountantBillingRequest.setPatientId(Integer.parseInt(txtPatientId.getText()));
+                ReceptionistBillingRequest receptionistBillingRequest = new ReceptionistBillingRequest();
+                receptionistBillingRequest.setBill(billingAmount);
+                //  receptionistBillingRequest.setPatientId(Integer.parseInt(txtPatientId.getText()));
 
-                accountantBillingRequest.setSender(userAccount);
-                accountantBillingRequest.setStatus("Sent");
-                accountantBillingRequest.setPatient(patientTreatmentWorkRequest.getPatient());
+                receptionistBillingRequest.setSender(userAccount);
+                receptionistBillingRequest.setStatus("Sent");
+                receptionistBillingRequest.setPatient(patientTreatmentWorkRequest.getPatient());
 
                 Organization org = null;
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-                    if (organization instanceof AccountantOrganization) {
+                    if (organization instanceof ReceptionistOrganization) {
                         org = organization;
                         break;
                     }
                 }
                 if (org != null) {
-                    org.getWorkQueue().getWorkRequests().add(accountantBillingRequest);
-                    userAccount.getWorkQueue().getWorkRequests().add(accountantBillingRequest);
+                    org.getWorkQueue().getWorkRequests().add(receptionistBillingRequest);
+                    userAccount.getWorkQueue().getWorkRequests().add(receptionistBillingRequest);
                 }
 
                 JOptionPane.showMessageDialog(null, "Prescription submitted successfully");

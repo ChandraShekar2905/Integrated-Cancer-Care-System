@@ -6,15 +6,15 @@ package userinterface.ReceptionistRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.Insurance.Insurance;
 import Business.InsuredIndividual.InsuredIndividual;
 import Business.Network.Network;
-import Business.Organization.AccountantOrganization;
-import Business.Organization.InsuranceAgentOrganization;
+import Business.Organization.ReceptionistOrganization;
+import Business.Organization.InsuranceOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.ReceptionistBillingRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -32,20 +32,20 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private Enterprise enterprise;
-    private AccountantOrganization accountantOrganization;
-    private AccountantBillingRequest accountantBillingRequest;
+    private ReceptionistOrganization receptionistOrganization;
+    private ReceptionistBillingRequest receptionistBillingRequest;
     private EcoSystem ecosystem;
     private double amountToBePaid;
     /**
      * Creates new form ReceptionistProcessRequestJPanel
      */
-    public ReceptionistProcessRequestJPanel(JPanel userProcessContainer, UserAccount userAccount, AccountantBillingRequest request, Enterprise enterprise, EcoSystem ecoSystem) {
+    public ReceptionistProcessRequestJPanel(JPanel userProcessContainer, UserAccount userAccount, ReceptionistBillingRequest request, Enterprise enterprise, EcoSystem ecoSystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.enterprise = enterprise;
-        this.accountantOrganization = accountantOrganization;
-        this.accountantBillingRequest = request;
+        this.receptionistOrganization = receptionistOrganization;
+        this.receptionistBillingRequest = request;
         this.ecosystem = ecoSystem;
         populate();
     }
@@ -263,18 +263,18 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendRequestForInsuranceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestForInsuranceActionPerformed
-        String policyNumber = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
-        String ssn = accountantBillingRequest.getPatient().getSsn();
-        String policyName = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
-        String insuranceCompany = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName();
+        String policyNumber = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
+        String ssn = receptionistBillingRequest.getPatient().getSsn();
+        String policyName = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
+        String insuranceCompany = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName();
         double claimAmount = Double.parseDouble(txtAmountClaimed.getText());
-        double billAmount = accountantBillingRequest.getBill();
-        if (("Patient Transaction Completed").equals(accountantBillingRequest.getStatus())) {
+        double billAmount = receptionistBillingRequest.getBill();
+        if (("Patient Transaction Completed").equals(receptionistBillingRequest.getStatus())) {
             JOptionPane.showMessageDialog(null, "Insurance request sent for claim");
             return;
         }
         Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
-        insurance.setCoveragepercentage(accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoveragepercentage());
+        insurance.setCoveragepercentage(receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoveragepercentage());
         InsuredIndividual insuranceCustomer = new InsuredIndividual(policyNumber,insurance);
         insuranceCustomer.setFirstName(txtFirstName.getText().trim());
         insuranceCustomer.setLastName((txtLastName.getText().trim()));
@@ -293,20 +293,20 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
         insuranceWorkRequest.setInsuranceCustomer(insuranceCustomer);
 
         Organization org = null;
-        InsuranceCompanyEnterprise matchedInsuranceCompany = null;
+        InsuranceProvidersEnterprise matchedInsuranceCompany = null;
 
         List<Network> networks = ecosystem.getNetworks();
         for (Network network : networks) {
             List<Enterprise> enterprises = network.getEnterpriseDirectory().getEnterpriseList();
             for (Enterprise enterprise : enterprises) {
-                if (enterprise.getName().equalsIgnoreCase(accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName())) {
-                    matchedInsuranceCompany = (InsuranceCompanyEnterprise) enterprise;
+                if (enterprise.getName().equalsIgnoreCase(receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName())) {
+                    matchedInsuranceCompany = (InsuranceProvidersEnterprise) enterprise;
                 }
             }
         }
 
         for (Organization organization : matchedInsuranceCompany.getOrganizationDirectory().getOrganizations()) {
-            if (organization instanceof InsuranceAgentOrganization) {
+            if (organization instanceof InsuranceOfficerOrganization) {
                 org = organization;
                 break;
             }
@@ -314,8 +314,8 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
         if (org != null) {
             org.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
             userAccount.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
-            accountantBillingRequest.setStatus("Patient Transaction Completed");
-            accountantBillingRequest.getPatient().setIsTreatmentComplete(true);
+            receptionistBillingRequest.setStatus("Patient Transaction Completed");
+            receptionistBillingRequest.getPatient().setIsTreatmentComplete(true);
             JOptionPane.showMessageDialog(null, "Money received from patient: " + String.format("%.2f", String.valueOf(amountToBePaid)) + ". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
             btnSendRequestForInsurance.setEnabled(false);
         }
@@ -336,7 +336,7 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
 
     private void btnCollectCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCollectCashActionPerformed
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("EmailBillingInformationToPatient", new EmailBillingInformationToPatient(userProcessContainer, accountantBillingRequest));
+        userProcessContainer.add("EmailBillingInformationToPatient", new EmailBillingInformationToPatient(userProcessContainer, receptionistBillingRequest));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCollectCashActionPerformed
 
@@ -365,20 +365,20 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 private void populate() {
-        String policyNumber = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
+        String policyNumber = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
         DecimalFormat df2 = new DecimalFormat("#.##");
-        double coverage = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoveragepercentage();
-        double billAmount = accountantBillingRequest.getBill();
-        String ssn = accountantBillingRequest.getPatient().getSsn();
-        String policyName = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
-        String insuranceCompany = accountantBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName();
+        double coverage = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoveragepercentage();
+        double billAmount = receptionistBillingRequest.getBill();
+        String ssn = receptionistBillingRequest.getPatient().getSsn();
+        String policyName = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
+        String insuranceCompany = receptionistBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompanyName();
         double claimAmount = (coverage * billAmount) / 100;
         amountToBePaid = billAmount - claimAmount;
 
         txtPolicyNumber.setText(policyNumber);
         txtSSN.setText(ssn);
-        txtFirstName.setText(accountantBillingRequest.getPatient().getFirstName());
-        txtLastName.setText(accountantBillingRequest.getPatient().getLastName());
+        txtFirstName.setText(receptionistBillingRequest.getPatient().getFirstName());
+        txtLastName.setText(receptionistBillingRequest.getPatient().getLastName());
         txtBillAmount.setText(String.valueOf(billAmount));
         txtInsurancePolicyName.setText(policyName);
         txtAmountClaimed.setText(String.valueOf(claimAmount));

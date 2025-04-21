@@ -9,7 +9,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
+import Business.Organization.AdministrationSecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.AdministrationSecretaryRole.SecretaryWorkAreaJPanel;
@@ -22,7 +22,7 @@ import userinterface.AdministrationSecretaryRole.SecretaryWorkAreaJPanel;
 public class AdministrationSecretary extends Role{
 @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new SecretaryWorkAreaJPanel(userProcessContainer, userAccount, (SecretaryOrganization)organization, enterprise);
+        return new SecretaryWorkAreaJPanel(userProcessContainer, userAccount, (AdministrationSecretaryOrganization)organization, enterprise);
     }
     
     

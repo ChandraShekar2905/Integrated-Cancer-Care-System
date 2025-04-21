@@ -24,11 +24,6 @@ public class PharmacyEnterprise extends Enterprise {
         return null;
     }
 
-//    public List<Organization.Type> getOrganizationTypes() {
-//        List<Organization.Type> orgTypes = new ArrayList<>();
-//        orgTypes.add(Organization.Type.Pharmacy); // Support Pharmacist organizations
-//        return orgTypes;
-//    }
 @Override
 public List<Organization.Type> getOrganizationTypes() {
     List<Organization.Type> orgTypes = new ArrayList<>();

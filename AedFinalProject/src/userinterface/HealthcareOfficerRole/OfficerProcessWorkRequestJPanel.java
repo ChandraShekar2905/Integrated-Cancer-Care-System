@@ -7,7 +7,7 @@ package userinterface.HealthcareOfficerRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
+import Business.Organization.AdministrationSecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AdministrationFundRequest;
 import java.awt.CardLayout;
@@ -208,7 +208,7 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
 
                 Organization org = null;
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-                    if (organization instanceof SecretaryOrganization) {
+                    if (organization instanceof AdministrationSecretaryOrganization) {
                         org = organization;
                         break;
                     }

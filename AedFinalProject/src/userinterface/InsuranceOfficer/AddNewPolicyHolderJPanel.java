@@ -6,7 +6,7 @@
 package userinterface.InsuranceOfficer;
 
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Enterprise.InsuranceProvidersEnterprise;
 import Business.Insurance.Insurance;
 import Business.InsuredIndividual.InsuredIndividual;
 import Business.UserAccount.UserAccount;
@@ -38,13 +38,13 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private UserAccount userAccount;
-    private InsuranceCompanyEnterprise insuranceCompanyEnterprise;
+    private InsuranceProvidersEnterprise insuranceCompanyEnterprise;
     private String policyNumber;
 
     public AddNewPolicyHolderJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, String policyNumber) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.insuranceCompanyEnterprise = (InsuranceCompanyEnterprise) enterprise;
+        this.insuranceCompanyEnterprise = (InsuranceProvidersEnterprise) enterprise;
         this.userAccount = userAccount;
         this.policyNumber = policyNumber;
         populateFields();
