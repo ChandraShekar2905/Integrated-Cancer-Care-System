@@ -58,7 +58,6 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(null);
 
-        btnAddNewMember.setBackground(new java.awt.Color(204, 204, 255));
         btnAddNewMember.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAddNewMember.setText("Create New Member");
         btnAddNewMember.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +68,6 @@ public class InsuranceOfficerWorkAreaJPanel extends javax.swing.JPanel {
         add(btnAddNewMember);
         btnAddNewMember.setBounds(610, 270, 184, 41);
 
-        btnProcessRequests.setBackground(new java.awt.Color(204, 204, 255));
         btnProcessRequests.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnProcessRequests.setText("Process Insurance Requests");
         btnProcessRequests.addActionListener(new java.awt.event.ActionListener() {

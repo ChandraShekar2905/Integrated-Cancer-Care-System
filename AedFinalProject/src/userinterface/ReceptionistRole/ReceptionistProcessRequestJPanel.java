@@ -86,7 +86,6 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
 
         lblBillingRequestArea.setBackground(new java.awt.Color(255, 255, 255));
         lblBillingRequestArea.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lblBillingRequestArea.setForeground(new java.awt.Color(204, 0, 0));
         lblBillingRequestArea.setText("BILLING REQUEST AREA");
 
         txtFirstName.setEditable(false);
@@ -211,8 +210,11 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
                                 .addComponent(btnSendRequestForInsurance)
                                 .addGap(45, 45, 45)
                                 .addComponent(btnCollectCash)))))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(350, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCollectCash, btnSendRequestForInsurance, lblBillingRequestArea});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -260,6 +262,9 @@ public class ReceptionistProcessRequestJPanel extends javax.swing.JPanel {
                     .addComponent(btnCollectCash, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(252, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCollectCash, btnSendRequestForInsurance});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendRequestForInsuranceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestForInsuranceActionPerformed

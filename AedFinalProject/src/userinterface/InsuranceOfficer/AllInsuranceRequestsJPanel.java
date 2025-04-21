@@ -63,10 +63,8 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Process Requests");
 
-        tblInsuranceWorkload.setBackground(new java.awt.Color(204, 204, 255));
         tblInsuranceWorkload.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -101,7 +99,6 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblInsuranceWorkload);
 
-        btnProcessRequest.setBackground(new java.awt.Color(204, 204, 255));
         btnProcessRequest.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +107,6 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(204, 204, 255));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +115,6 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAssign.setBackground(new java.awt.Color(204, 204, 255));
         btnAssign.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnAssign.setText("Assign To Self");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {

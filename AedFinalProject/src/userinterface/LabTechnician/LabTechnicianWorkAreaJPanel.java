@@ -77,7 +77,6 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        tblLabRequest.setBackground(new java.awt.Color(173, 234, 203));
         tblLabRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -106,7 +105,6 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblLabRequest);
 
-        btnAssign.setBackground(new java.awt.Color(173, 234, 203));
         btnAssign.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnAssign.setText("Self Assignment");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +113,6 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcess.setBackground(new java.awt.Color(173, 234, 203));
         btnProcess.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         btnProcess.setText("Proceed");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +144,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(157, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssign, btnProcess});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -160,6 +160,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(367, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAssign, btnProcess});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed

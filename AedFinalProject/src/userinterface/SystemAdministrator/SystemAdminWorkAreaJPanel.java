@@ -120,7 +120,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(173, 234, 203));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1024, 762));
 
         lblSelectedNodeBar.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N

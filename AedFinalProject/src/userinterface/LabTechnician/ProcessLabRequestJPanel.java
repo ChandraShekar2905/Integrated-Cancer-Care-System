@@ -49,7 +49,6 @@ public class ProcessLabRequestJPanel extends javax.swing.JPanel {
         jLabel2.setToolTipText("");
         jLabel2.setAutoscrolls(true);
 
-        btnBack.setBackground(new java.awt.Color(173, 234, 203));
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +61,6 @@ public class ProcessLabRequestJPanel extends javax.swing.JPanel {
         lblResult.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         lblResult.setText("Result :");
 
-        btnSubmitResult.setBackground(new java.awt.Color(173, 234, 203));
         btnSubmitResult.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnSubmitResult.setText("Submit");
         btnSubmitResult.addActionListener(new java.awt.event.ActionListener() {
