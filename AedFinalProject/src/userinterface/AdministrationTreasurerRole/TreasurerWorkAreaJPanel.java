@@ -61,7 +61,6 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("TREASURER WORK-AREA");
         add(jLabel1);
         jLabel1.setBounds(350, 40, 209, 21);
