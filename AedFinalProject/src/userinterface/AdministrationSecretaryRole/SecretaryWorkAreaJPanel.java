@@ -112,7 +112,6 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         btnProcessRequest.setBounds(540, 330, 150, 34);
 
         lblSecretery.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblSecretery.setForeground(new java.awt.Color(204, 0, 0));
         lblSecretery.setText("SECRETERY WORK-AREA");
         add(lblSecretery);
         lblSecretery.setBounds(410, 130, 236, 37);
