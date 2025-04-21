@@ -59,7 +59,7 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        btnSubmit.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnSubmit.setText("Disburse Amount");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(490, 370, 150, 33);
+        btnSubmit.setBounds(490, 370, 139, 33);
 
         btnBack.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnBack.setText("<<Back");
@@ -77,9 +77,9 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack);
-        btnBack.setBounds(300, 110, 99, 29);
+        btnBack.setBounds(30, 50, 99, 29);
 
-        btnReject.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnReject.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,17 +89,17 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
         add(btnReject);
         btnReject.setBounds(660, 370, 116, 33);
 
-        jLabel2.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setText("Message :");
         add(jLabel2);
-        jLabel2.setBounds(510, 290, 72, 17);
+        jLabel2.setBounds(540, 290, 72, 17);
         add(btnMessage);
         btnMessage.setBounds(640, 290, 116, 23);
 
-        jLabel4.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel4.setText("Location :");
         add(jLabel4);
-        jLabel4.setBounds(500, 210, 80, 17);
+        jLabel4.setBounds(540, 200, 80, 17);
 
         btnLocation.setEnabled(false);
         add(btnLocation);
@@ -109,25 +109,25 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
         add(btnPopulation);
         btnPopulation.setBounds(640, 260, 116, 23);
 
-        jLabel5.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel5.setText("Population :");
         add(jLabel5);
-        jLabel5.setBounds(490, 270, 96, 17);
+        jLabel5.setBounds(530, 260, 96, 17);
 
         btnAmount.setEnabled(false);
         add(btnAmount);
         btnAmount.setBounds(640, 230, 116, 23);
 
-        jLabel3.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setText("Amount :");
         add(jLabel3);
-        jLabel3.setBounds(520, 240, 64, 17);
+        jLabel3.setBounds(550, 230, 64, 17);
 
-        lblTreasurerTitle.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblTreasurerTitle.setForeground(new java.awt.Color(204, 0, 51));
+        lblTreasurerTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblTreasurerTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTreasurerTitle.setText("Treasurer Work-Area");
         add(lblTreasurerTitle);
-        lblTreasurerTitle.setBounds(540, 110, 209, 21);
+        lblTreasurerTitle.setBounds(-1, 110, 1330, 30);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/treasurer workarea.jpg"))); // NOI18N

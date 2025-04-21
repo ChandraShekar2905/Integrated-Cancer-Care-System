@@ -99,10 +99,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
 
         lblHeaderManageOrg.setBackground(new java.awt.Color(0, 0, 0));
-        lblHeaderManageOrg.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblHeaderManageOrg.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblHeaderManageOrg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeaderManageOrg.setText("Manage Organizations");
 
-        btnDeleteOrganization.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnDeleteOrganization.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnDeleteOrganization.setText("Delete Organization");
         btnDeleteOrganization.setAlignmentX(0.5F);
         btnDeleteOrganization.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +140,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrganization);
 
-        btnAddOrganization.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnAddOrganization.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btnAddOrganization.setText("Add Organization");
         btnAddOrganization.setAlignmentX(0.5F);
         btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +156,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblOrganizationType.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        lblOrganizationType.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblOrganizationType.setText("Organization Type :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -179,19 +180,18 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                                 .addComponent(btnDeleteOrganization))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(btnBack)
-                        .addGap(268, 268, 268)
-                        .addComponent(lblHeaderManageOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBack)))
                 .addContainerGap(260, Short.MAX_VALUE))
+            .addComponent(lblHeaderManageOrg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHeaderManageOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBack))
-                .addGap(80, 80, 80)
+                .addComponent(btnBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHeaderManageOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -200,7 +200,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                     .addComponent(lblOrganizationType))
                 .addGap(82, 82, 82)
                 .addComponent(btnAddOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

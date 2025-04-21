@@ -58,24 +58,20 @@
                       <Component id="btnRequestFunds" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="9" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="395" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
+          <Component id="lblRequestFunds" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" pref="130" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                      <Component id="btnBack" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
-                      <Component id="lblRequestFunds" min="-2" pref="290" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnBack" min="-2" pref="95" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel4" min="-2" pref="237" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="371" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,12 +79,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblRequestFunds" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblRequestFunds" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -100,7 +95,7 @@
                               <Component id="lblLocation" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
                               <Component id="lblPopulation" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -118,7 +113,7 @@
                       <Component id="btnRequestFunds" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="349" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -127,7 +122,7 @@
               <Component id="jLabel4" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="97" max="-2" attributes="0"/>
-              <EmptySpace pref="159" max="32767" attributes="0"/>
+              <EmptySpace pref="157" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,15 +131,16 @@
     <Component class="javax.swing.JLabel" name="lblRequestFunds">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Courier New" size="18" style="1"/>
+          <Font name="Helvetica Neue" size="24" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="REQUEST ADMINISTRATION AID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLocation">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Location:"/>
       </Properties>
@@ -157,7 +153,7 @@
     <Component class="javax.swing.JLabel" name="lblPopulation">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Population:"/>
       </Properties>
@@ -171,7 +167,7 @@
     <Component class="javax.swing.JLabel" name="lblAmount">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Amount:"/>
       </Properties>
@@ -185,7 +181,7 @@
     <Component class="javax.swing.JButton" name="btnRequestFunds">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Request Fund"/>
       </Properties>
@@ -220,15 +216,16 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="18" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="All Fund Requests"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Monospaced" size="12" style="1"/>
+          <Font name="Helvetica Neue" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Total Funds Received :"/>
       </Properties>
