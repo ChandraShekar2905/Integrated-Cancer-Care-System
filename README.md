@@ -1,98 +1,117 @@
 # Integrated Cancer Care System (ICCS)
 
 ## Overview
-The **Integrated Cancer Care System (ICCS)** is a Java Swing-based desktop application developed as the Final Project for the **Application Engineering and Development (INFO 5100)** course.  
-The system is designed to streamline cancer treatment workflows by integrating multiple roles — from patients and doctors to insurers and administrators — within a single ecosystem.  
+The **Integrated Cancer Care System (ICCS)** is a comprehensive Java Swing-based desktop application designed to streamline and manage the complex workflows involved in cancer treatment. It integrates various stakeholders—patients, doctors, insurance providers, and administrators—into a single, unified ecosystem.
 
-It provides:
-- A unified **ecosystem** of networks, enterprises, and organizations.  
-- A structured **WorkQueue** system for task assignment and tracking.  
-- A persistent data model using **SQLite** for storage and **Gson** serialization.  
-- A modular, extensible design supporting future expansion.  
-
----
+This project was developed as the Final Project for the **Application Engineering and Development (INFO 5100)** course.
 
 ## Features
-- **User Role Management**: Patients, Doctors, Insurance Agents, and Admins with role-specific dashboards.  
-- **Patient Onboarding**: Receptionists can create patient accounts and assign doctors.  
-- **Work Queues**: Supports request creation, routing, and tracking across different roles.  
-- **Insurance Integration**: Allows processing and tracking of insured individuals.  
-- **Data Persistence**:  
-  - **SQLite Database** (`Databank.sqlite`) for structured data storage.  
-  - **Gson** for serialization and deserialization of system states.  
-- **UML Design**: Includes high-level and detailed UML diagrams to explain architecture.  
-
----
+*   **Role-Based Access Control**: Secure login and customized dashboards for:
+    *   **System Admin**: Manage networks, enterprises, and top-level configuration.
+    *   **Doctor**: Manage patient treatments, request lab tests, and prescribe medication.
+    *   **Patient**: View medical history, book appointments, and manage insurance.
+    *   **Insurance Agent**: Process insurance claims and verify coverage.
+    *   **Receptionist**: Onboard new patients and schedule initial consultations.
+    *   **Lab Assistant**: Process and update lab test results.
+    *   **Pharmacist**: Fulfill medication orders.
+*   **Work Queue System**: A robust task management system allowing requests (e.g., lab tests, insurance claims) to be routed between different organizations and roles.
+*   **Data Persistence**:
+    *   **SQLite Database**: Stores the entire ecosystem state in a structured local database (`Databank.sqlite`).
+    *   **Gson Serialization**: Converts complex Java object graphs into JSON format for storage.
+*   **Enterprise & Network Management**: Hierarchical structure supporting multiple networks (cities) and enterprises (Hospitals, Insurance Companies, Pharmacies).
 
 ## System Architecture
-The project follows a **multi-layered architecture**:
+The application follows a multi-layered architecture to ensure separation of concerns:
 
-- **Business Layer (`Business/`)**  
-  Defines core entities such as `EcoSystem`, `Network`, `Enterprise`, `Organization`, `WorkQueue`, `UserAccount`, `Patient`, and `Insurance`.  
-
-- **Operating System & Ecosystem (`ConfigureASystem.java`)**  
-  Bootstraps the initial system configuration, networks, and admin accounts.  
-
-- **Data Layer (`SQLiteUtility/`)**  
-  Handles SQLite database connectivity and persistence.  
-
-- **Presentation Layer (`userinterface/`)**  
-  Implements GUI components using Java Swing for different roles.  
-
-- **Supporting Resources**  
-  - `Images/` and `icons/` for the UI.  
-  - UML diagrams (`UML_Diagram_Group20.pdf`, `HighLevelComponentDiagram_Group20.pdf`) to visualize design.  
-
----
+1.  **Presentation Layer (`userinterface/`)**:
+    *   Built using **Java Swing**.
+    *   Uses `CardLayout` for navigation between different role-specific work areas.
+2.  **Business Layer (`Business/`)**:
+    *   Contains the core logic and entity models (`EcoSystem`, `Enterprise`, `Organization`, `UserAccount`, `WorkQueue`).
+    *   Implements the Singleton pattern for the main `EcoSystem`.
+3.  **Data Layer (`Business/SQLiteUtility/`)**:
+    *   Handles connection to the SQLite database.
+    *   Uses `Gson` to serialize/deserialize the system state.
 
 ## Tech Stack
-- **Language**: Java (JDK 8+)  
-- **UI Framework**: Java Swing  
-- **Database**: SQLite  
-- **Build Tool**: Apache Ant (`build.xml`)  
-- **Serialization**: Gson  
-- **IDE**: NetBeans  
+*   **Programming Language**: Java (JDK 23)
+*   **GUI Framework**: Java Swing
+*   **Database**: SQLite (`sqlite-jdbc`)
+*   **Serialization**: Google Gson
+*   **Build Tool**: Apache Ant
+*   **IDE**: NetBeans IDE
 
----
+## Project Structure
+```
+Integrated-Cancer-Care-System/
+├── AedFinalProject/
+│   ├── src/
+│   │   ├── Business/           # Core business logic and entities
+│   │   │   ├── Employee/
+│   │   │   ├── Enterprise/
+│   │   │   ├── Network/
+│   │   │   ├── Organization/
+│   │   │   ├── Role/
+│   │   │   ├── SQLiteUtility/  # Database handling code
+│   │   │   ├── UserAccount/
+│   │   │   ├── WorkQueue/
+│   │   │   ├── ConfigureASystem.java
+│   │   │   └── EcoSystem.java
+│   │   ├── userinterface/      # Swing GUI classes
+│   │   ├── Images/             # Application images
+│   │   └── icons/              # UI Icons
+│   ├── build.xml               # Ant build script
+│   ├── Databank.sqlite         # Local database file
+│   └── manifest.mf
+├── README.md                   # This file
+└── [Documentation Files]       # UML Diagrams, Proposal, Presentation
+```
 
-## Installation & Setup
-1. Clone or extract the project repository.  
-2. Open in **NetBeans IDE** (or any IDE with Ant support).  
-3. Build the project using `build.xml` or directly from IDE.  
-4. Ensure `Databank.sqlite` is present in the project directory for persistence.  
-5. Run the project to launch the main application.  
+## Prerequisites
+Before running the application, ensure you have the following installed:
+1.  **Java Development Kit (JDK)**: Version 23 or compatible.
+2.  **NetBeans IDE**: Recommended for opening and building the project (supports Ant projects natively).
+3.  **Libraries**: The project relies on several JARs (included in dependencies or required to be added to classpath):
+    *   `sqlite-jdbc-3.47.1.0.jar`
+    *   `gson-2.11.0.jar`
+    *   `jfreechart`, `jcalendar`, `javax.mail`, etc.
 
----
+## Installation & Running
+1.  **Clone/Download** the repository to your local machine.
+2.  **Open in NetBeans**:
+    *   Launch NetBeans IDE.
+    *   Go to `File` -> `Open Project`.
+    *   Select the `AedFinalProject` folder.
+3.  **Verify Dependencies**:
+    *   Right-click the project -> `Properties` -> `Libraries`.
+    *   Ensure all JAR paths are correct and resolved. If any are missing (red), remove them and add the correct versions from your local library folder.
+4.  **Database Setup**:
+    *   Ensure the `Databank.sqlite` file is present in the `AedFinalProject` root directory.
+    *   If missing, the system will attempt to create a new one, but it will be empty.
+5.  **Build and Run**:
+    *   Click the **Run** button (Green Play icon) or press `F6`.
+    *   The application window should appear.
 
-## Usage
-- Log in with the appropriate role credentials (admin, doctor, patient, etc.).  
-- Navigate through dashboards tailored to the logged-in role.  
-- Perform tasks such as creating patient records, assigning doctors, managing insurance, and processing workflows.  
+## Usage Guide
+### Default Credentials
+If the system is pre-populated (check `ConfigureASystem.java` for bootstrap data), you can try:
+*   **Username**: `sysadmin`
+*   **Password**: `sysadmin`
 
----
+### Common Workflows
+1.  **Login**: Enter your username and password. The system automatically detects your role and enterprise.
+2.  **System Admin**: Create new Networks (e.g., "Boston"), then Enterprises (e.g., "Mass General"), then Admin accounts for those enterprises.
+3.  **Enterprise Admin**: Log in to create Organizations (e.g., "Doctor Organization") and Employee/User accounts.
+4.  **Doctor**: Log in to view assigned patients, request lab tests, or prescribe medicine.
+5.  **Logout**: Always use the Logout button to ensure data is saved to the database.
 
-## Project Artifacts
-- 📄 `Project Proposal_Group20.pdf` – Initial proposal with problem statement & goals.  
-- 📄 `HighLevelComponentDiagram_Group20.pdf` – System-level architecture diagram.  
-- 📄 `UML_Diagram_Group20.pdf` – Class and interaction diagrams.  
-- 📊 `FinalProject_Group20.pptx` – Final presentation slides.  
+## Troubleshooting
+*   **"Error connecting to database"**: Ensure `Databank.sqlite` is in the correct working directory (usually the project root). Check file permissions.
+*   **"Class not found" errors**: Verify that all JAR files in the `Libraries` section of the project properties are correctly linked.
+*   **UI Glitches**: If running on a high-DPI screen, you may need to adjust Java scaling settings or NetBeans font sizes.
 
----
-
-## Team
-**Group 20** – INFO 5100 AED Final Project  
-- Chandra Shekar Reddy Kusukunthla  
-- Hrishi Pal  
-- Aryak Pawar  
-
----
-
-## Future Enhancements
-- Web-based version for broader accessibility.  
-- Advanced analytics & dashboards for treatment outcomes.  
-- Integration with external healthcare APIs and insurance providers.  
-- Enhanced security and HIPAA compliance.  
-
----
-
-✨ This project demonstrates the application of **Object-Oriented Design, UML Modeling, Database Integration, and Swing UI Development** principles covered in the course.  
+## Contributors
+**Group 20** - INFO 5100 AED Final Project
+*   Chandra Shekar Reddy Kusukunthla
+*   Hrishi Pal
+*   Aryak Pawar
